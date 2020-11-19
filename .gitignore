@@ -1,0 +1,5 @@
+.DS_Store
+plugged/
+tmp/
+plugsetting/tags
+plugsetting/coc.vimback
