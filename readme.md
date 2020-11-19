@@ -2,7 +2,9 @@
 
 <center><img src="https://i.loli.net/2020/11/19/trADL8Oag9VCYmI.png"</center>
 
-This is my awesome nvim configs.
+This is my nvim configs.
+
+In my view, it's **AWESOME** !!!
 
 the most configs of my nvim is inspired by @theniceboy.
 
