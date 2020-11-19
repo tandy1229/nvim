@@ -6,10 +6,12 @@ This is my nvim configs.
 
 In my view, it's **AWESOME** !!!
 
-the most configs of my nvim is inspired by @theniceboy.
+The most of neovim config is inspired by @theniceboy.
 
-In the past, I am not familiar with neovim. And I add more plugins to my vimrc but I just know a few plugins' feather. But now I know I have to read more **Offical Documents of these plugins** . And so.
+In the past, I am not familiar with neovim. And I add more plugins to my vimrc but I just know a few plugins' feather. But now I know I have to read more **Offical Documents** of these plugins . And so.
 
-(In my situation, I have to pass the CET4 in the last month of 2020
+To improve the level of my English, I need to make more effect.
+
+( And in my situation, I have to pass the CET4 in the last month of 2020
 
 
