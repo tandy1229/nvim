@@ -20,9 +20,11 @@
 "  the awesome vimrc
 "
 "
-" ====================
-" === Editor Setup ===
-" ====================
+" ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''' 
+" '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+" >>> EDITER SETUP
+" ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''' 
+" ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''' 
 
 " 渲染百万色
 set termguicolors
@@ -34,33 +36,32 @@ let mapleader=","
 set number         " 显示行号
 set relativenumber " 显示相对行号
 set cursorline     " 高亮光标所在的行和列
-set hidden " 切换文件不保存，隐藏 
+set hidden         " 切换文件不保存，隐藏
 " tab的补全长度
 set tabstop=2
 set shiftwidth=2
 set softtabstop=2
-set expandtab " 将tab转为空格
-set nocompatible   " 不兼容vi
-set ignorecase     " 设置忽略大小写
-set smartcase      " 设置智能识别大小写
-" set numberwidth=4  设置行号列宽
-set wrap           " 自动折行
-set ttimeoutlen=0  " 无延迟
+set expandtab         " 将tab转为空格
+set nocompatible      " 不兼容vi
+set ignorecase        " 设置忽略大小写
+set smartcase         " 设置智能识别大小写
+                      " set numberwidth=4  设置行号列宽
+set wrap              " 自动折行
+set ttimeoutlen=0     " 无延迟
 set notimeout
-set foldenable " 折叠
+set foldenable        " 折叠
 set foldmethod=indent " 代码折叠
-set foldlevel=99 " 相当于默认不折叠
-set indentexpr=   " 禁用vim缩进indent
-set autoindent " 换行时自动缩进
-set history=200 " 存储的历史记录
+set foldlevel=99      " 相当于默认不折叠
+set indentexpr=       " 禁用vim缩进indent
+set autoindent        " 换行时自动缩进
+set history=200       " 存储的历史记录
 
-" 记住游标
 set viewoptions=cursor,folds,slash,unix " viminfo 记录的内容
 set scrolloff=5
 set completeopt=longest,noinsert,menuone,noselect,preview
-set showcmd " 显示输入的命令
-set wildmenu " 命令行补全
-set ttyfast " 滚动快？？？？！
+set showcmd      " 显示输入的命令
+set wildmenu     " 命令行补全
+set ttyfast      " 滚动快？？？？！
 set splitright
 set splitbelow
 set shortmess+=c " 减少错误信息
@@ -70,7 +71,7 @@ set inccommand=split
 
 set lazyredraw
 set visualbell
-set list " 显示不可见字符
+set list         " 显示不可见字符
 
 " 某种备份
 silent !mkdir -p ~/.config/nvim/tmp/backup
@@ -90,10 +91,12 @@ set virtualedit=block
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 
 
+" ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''' 
+" '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+" >>> 自定义按键布局
+" ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''' 
+" ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''' 
 
-" ==========================
-" ====== 自定义快捷键 ======
-" ==========================
 noremap S :w<CR>
 noremap Q :q<CR>
 
@@ -128,6 +131,8 @@ vnoremap Y "+y
 
 cnoremap <expr> %% getcmdtype( ) == ':' ? expand('%:h').'/' : '%%'
 
+" open lazygit
+noremap <c-g> :tabe<CR>:-tabmove<CR>:term lazygit<CR>
 
 
 " ===
