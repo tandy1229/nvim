@@ -117,3 +117,4 @@ let g:coc_snippet_next = '<c-n>'
 let g:coc_snippet_prev = '<c-i>'
 imap <C-n> <Plug>(coc-snippets-expand-jump)
 autocmd BufRead,BufNewFile tsconfig.json set filetype=jsonc
+let g:node_client_debug = 1

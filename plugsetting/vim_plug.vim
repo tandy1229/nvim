@@ -32,14 +32,13 @@ call plug#begin('~/.vim/plugged')
 
 
 Plug 'tweekmonster/startuptime.vim', { 'on': 'Startuptime' }
-Plug 'Yggdroot/indentLine'
 
 
 " FZF
 " the plug I love best!!!
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-Plug 'Yggdroot/LeaderF', { 'do': ':LeaderfInstallCExtension', 'on': 'Leaderf' } " 模糊搜索
+Plug 'Yggdroot/LeaderF', { 'do': ':LeaderfInstallCExtension', 'on': 'LeaderfFile' } " 模糊搜索
 
 
 " Find & Replace
@@ -88,6 +87,13 @@ Plug 'tweekmonster/braceless.vim', { 'for' :['python', 'vim-plug'] }
 Plug 'fatih/vim-go' , { 'for': ['go', 'vim-plug'], 'tag': '*' }
 
 
+" html && css && js
+Plug 'elzr/vim-json'
+Plug 'neoclide/jsonc.vim'
+Plug 'othree/html5.vim'
+Plug 'alvan/vim-closetag'
+Plug 'yuezk/vim-js', { 'for': ['vim-plug', 'php', 'html', 'javascript', 'css', 'less'] }
+
 " beautiful vim 
 Plug 'ryanoasis/vim-devicons'
 
@@ -126,6 +132,7 @@ Plug 'mbbill/undotree', { 'on': 'UndotreeToggle' }
 Plug 'cohama/agit.vim', { 'on': 'Agit' }
 " Plug 'tpope/vim-fugitive' " use in git
 Plug 'airblade/vim-gitgutter'
+Plug 'fszymanski/fzf-gitignore'
 
 
 " 对齐文本
@@ -139,13 +146,14 @@ Plug 'jiangmiao/auto-pairs' " 补全括号
 Plug 'luochen1990/rainbow' " 彩虹括号哦
 Plug 'tpope/vim-surround' " 改括号
 Plug 'AndrewRadev/splitjoin.vim' " 一行代码变多行
-" Plug 'Yggdroot/indentLine' " 细线显示缩进
+Plug 'Yggdroot/indentLine' " 细线显示缩进
 Plug 'rhysd/clever-f.vim' " f不能用；
 Plug 'wincent/terminus'    " 鼠标支持
 Plug 'airblade/vim-rooter' " ???
 Plug 'svermeulen/vim-subversive' " 替换:s/的升级版
 Plug 'mg979/vim-visual-multi'
 Plug 'gcmt/wildfire.vim'
+Plug 'junegunn/vim-peekaboo' " yank
 
 
 " focus mode

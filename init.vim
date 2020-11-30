@@ -19,6 +19,7 @@
 "  the awesome vimrc
 "
 "
+"
 
 source ~/.config/nvim/plugsetting/vim_plug.vim
 source ~/.config/nvim/plugsetting/basic.vim
