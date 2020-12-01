@@ -31,7 +31,7 @@
 call plug#begin('~/.vim/plugged')
 
 
-Plug 'tweekmonster/startuptime.vim', { 'on': 'Startuptime' }
+Plug 'tweekmonster/startuptime.vim', { 'on': 'StartupTime' }
 
 
 " FZF
@@ -74,6 +74,7 @@ Plug 'theniceboy/nvim-deus'
 
 " rager: the document arragement
 Plug 'kevinhwang91/rnvimr', { 'on': 'RnvimrToggle' }
+Plug 'pechorin/any-jump.vim'
 
 
 " python
@@ -141,19 +142,19 @@ Plug 'junegunn/vim-easy-align' " I need to pratice
 
 
 " useful plug
-Plug 'itchyny/vim-cursorword' " 高亮相同的单词
-Plug 'jiangmiao/auto-pairs' " 补全括号
-Plug 'luochen1990/rainbow' " 彩虹括号哦
-Plug 'tpope/vim-surround' " 改括号
+Plug 'itchyny/vim-cursorword'    " 高亮相同的单词
+Plug 'jiangmiao/auto-pairs'      " 补全括号
+Plug 'luochen1990/rainbow'       " 彩虹括号哦
+Plug 'tpope/vim-surround'        " 改括号
 Plug 'AndrewRadev/splitjoin.vim' " 一行代码变多行
-Plug 'Yggdroot/indentLine' " 细线显示缩进
-Plug 'rhysd/clever-f.vim' " f不能用；
-Plug 'wincent/terminus'    " 鼠标支持
-Plug 'airblade/vim-rooter' " ???
+" Plug 'Yggdroot/indentLine'     " 细线显示缩进
+Plug 'rhysd/clever-f.vim'        " f不能用；
+Plug 'wincent/terminus'          " 鼠标支持
+Plug 'airblade/vim-rooter'       " ???
 Plug 'svermeulen/vim-subversive' " 替换:s/的升级版
-Plug 'mg979/vim-visual-multi'
-Plug 'gcmt/wildfire.vim'
-Plug 'junegunn/vim-peekaboo' " yank
+Plug 'mg979/vim-visual-multi'    " 多括号
+Plug 'gcmt/wildfire.vim'         " 超级回车
+Plug 'junegunn/vim-peekaboo'     " yank
 
 
 " focus mode
@@ -172,7 +173,7 @@ Plug 'RRethy/vim-illuminate'
 
 
 " Treesitter
-Plug 'nvim-treesitter/nvim-treesitter'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSpdate'}
 Plug 'nvim-treesitter/playground'
 
 

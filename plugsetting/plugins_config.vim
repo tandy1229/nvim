@@ -37,6 +37,7 @@
 " ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''' 
 
 color deus
+hi NonText ctermfg=gray guifg=grey10
 
 
 
@@ -284,12 +285,33 @@ noremap <silent> <C-f> :Rg<CR>
 noremap <silent> <C-h> :History<CR>
 "noremap <C-t> :BTags<CR>
 noremap <silent> <C-l> :Lines<CR>
-noremap <silent> <C-w> :Buffers<CR>
+noremap <silent> <C-b> :Buffers<CR>
 noremap <leader>; :History:<CR>
 
 let g:fzf_preview_window = 'right:60%'
 let g:fzf_commits_log_options = '--graph --color=always --format="%C(auto)%h%d %s %C(black)%C(bold)%cr"'
 
+
+function! s:list_buffers()
+  redir => list
+  silent ls
+  redir END
+  return split(list, "\n")
+endfunction
+
+function! s:delete_buffers(lines)
+  execute 'bwipeout' join(map(a:lines, {_, line -> split(line)[0]}))
+endfunction
+
+command! BD call fzf#run(fzf#wrap({
+  \ 'source': s:list_buffers(),
+  \ 'sink*': { lines -> s:delete_buffers(lines) },
+  \ 'options': '--multi --reverse --bind ctrl-a:select-all+accept'
+\ }))
+
+noremap <c-d> :BD<CR>
+
+let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.8 } }
 
 
 
@@ -348,14 +370,18 @@ let g:instant_markdown_autoscroll = 1
 " >>> nvim-treesitter
 " ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''' 
 " ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''' 
+"  ensure_installed = { "all" },     -- one of "all", "language", or a list of languages
 
 lua <<EOF
 require'nvim-treesitter.configs'.setup {
-  ensure_installed = {"typescript", "dart", "java"},     -- one of "all", "language", or a list of languages
+  ensure_installed = "all",     -- one of "all", "language", or a list of languages
   highlight = {
-    enable = true,              -- false will disable the whole extension
-    disable = { "c", "rust" },  -- list of language that will be disabled
+    enable = true,         -- false will disable the whole extension
+    disable = {},          -- list of language that will be disabled
   },
+  indent = {
+    enable = true
+  }
 }
 EOF
 
@@ -500,8 +526,8 @@ vmap ga :Tabularize /
 " ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''' 
 " ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''' 
 
-nmap <Leader>l :Limelight<CR> 
-nmap <Leader>; :Limelight!<CR> 
+nmap <Leader>; :Limelight<CR> 
+nmap <Leader>' :Limelight!<CR> 
 let g:limelight_default_coefficient = 0.7
 
 
@@ -524,7 +550,7 @@ let g:vmt_fence_closing_text = '/TOC'
 " ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''' 
 " ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''' 
 
-let g:indentLine_char_list = ['|', '¦', '┆', '┊']
+" let g:indentLine_char_list = ['|', '¦', '┆', '┊']
 
 
 
@@ -535,3 +561,6 @@ let g:indentLine_char_list = ['|', '¦', '┆', '┊']
 " ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''' 
 
 noremap <LEADER>gi :FzfGitignore<CR>
+
+
+

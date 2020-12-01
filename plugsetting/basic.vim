@@ -31,7 +31,7 @@ set termguicolors
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 
 " <leader>
-let mapleader=","
+let mapleader=" "
 
 set number         " 显示行号
 set relativenumber " 显示相对行号
@@ -66,8 +66,7 @@ set splitright
 set splitbelow
 set shortmess+=c " 减少错误信息
 set inccommand=split
-" set list
-" set listchars=tab:\|\ ,trail:▫
+set listchars=tab:\|\ ,trail:▫
 
 set lazyredraw
 set visualbell
@@ -100,16 +99,16 @@ au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g
 noremap S :w<CR>
 noremap Q :q<CR>
 
-noremap <LEADER>h <C-w>h
-noremap <LEADER>j <C-w>j
-noremap <LEADER>k <C-w>k
-noremap <LEADER>l <C-w>l
+noremap ,h <C-w>h
+noremap ,j <C-w>j
+noremap ,k <C-w>k
+noremap ,l <C-w>l
 
 " 分屏
-noremap sh :set splitright<CR>:vsplit<CR>
-noremap sl :set nosplitright<CR>:vsplit<CR>
-noremap sj :set nosplitbelow<CR>:split<CR>
-noremap sk :set splitbelow<CR>:split<CR>
+noremap sl :set splitright<CR>:vsplit<CR>
+noremap sh :set nosplitright<CR>:vsplit<CR>
+noremap sk :set nosplitbelow<CR>:split<CR>
+noremap sj :set splitbelow<CR>:split<CR>
 
 
 " Resize splits with arrow keys
