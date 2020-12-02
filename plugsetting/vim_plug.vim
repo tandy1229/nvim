@@ -57,10 +57,11 @@ Plug 'mzlogin/vim-markdown-toc', { 'for': ['gitignore', 'markdown', 'vim-plug'] 
 " 超好看的状态栏
 " now I use airline, it has the great-capability on many platflot
 Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+Plug 'tandy1229/vim-airline-themes'
 Plug 'ojroques/vim-scrollstatus'
 " another tabline
 " Plug 'theniceboy/eleline.vim'
+" Plug 'liuchengxu/eleline.vim'
 " Plug 'mg979/vim-xtabline'
 " Plug 'itchyny/lightline.vim'
 " Plug 'mengelbrecht/lightline-bufferline'
@@ -131,7 +132,7 @@ Plug 'mbbill/undotree', { 'on': 'UndotreeToggle' }
 
 " git diff
 Plug 'cohama/agit.vim', { 'on': 'Agit' }
-" Plug 'tpope/vim-fugitive' " use in git
+Plug 'tpope/vim-fugitive' " use in git
 Plug 'airblade/vim-gitgutter'
 Plug 'fszymanski/fzf-gitignore'
 
@@ -155,6 +156,7 @@ Plug 'svermeulen/vim-subversive' " 替换:s/的升级版
 Plug 'mg979/vim-visual-multi'    " 多括号
 Plug 'gcmt/wildfire.vim'         " 超级回车
 Plug 'junegunn/vim-peekaboo'     " yank
+" Plug 'easymotion/vim-easymotion' " find
 
 
 " focus mode

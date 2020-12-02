@@ -47,9 +47,25 @@ hi NonText ctermfg=gray guifg=grey10
 " ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''' 
 " ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''' 
 
+let g:airline_extensions = [ 'branch', 'hunks', 'tabline' ] " make it fast
+
+" beautify
 let g:airline_theme="deus" 
-let g:airline_extensions = [ 'branch', 'hunks', 'tabline' ]
+let g:airline_left_sep=''
+let g:airline_right_sep=''
+let g:airline#extensions#default#layout = [
+    \ ['a', 'error', 'b', 'c'],
+    \ ['warning', 'y', 'z', 'x']
+    \ ]
 let g:airline_section_x = '%{ScrollStatus()}'
+
+function! AirlineInit()
+  let g:airline_section_b = airline#section#create(['hunks' ])
+  let g:airline_section_warning = airline#section#create(['[', 'filetype',']'])
+  let g:airline_section_error= airline#section#create(['branch'])
+endfunction
+autocmd User AirlineAfterInit call AirlineInit()
+
 
 " 这个是安装powerline字体后 必须设置此项
 let g:airline_powerline_fonts = 1  
@@ -58,18 +74,6 @@ let g:airline_powerline_fonts = 1
 " 我还省去了minibufexpl插件，因为我习惯在1个Tab下用多个buffer
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#buffer_nr_show = 1
-
-" 多窗口会显示窗口的数字的选项，可取消注释
-" function! WindowNumber(...)
-"     let builder = a:1
-"     let context = a:2
-"     call builder.add_section('airline_b', '%{tabpagewinnr(tabpagenr())}')
-"     return 0
-" endfunction
-"
-" call airline#add_statusline_func('WindowNumber')
-" call airline#add_inactive_statusline_func('WindowNumber')
-
 
 "设置切换Buffer快捷键"
 nnoremap <C-j> :bn<CR>
@@ -98,7 +102,6 @@ let g:Lf_WildIgnore = {
         \}
 let g:Lf_UseMemoryCache = 0
 let g:Lf_UseCache = 0
-
 
 
 
@@ -564,3 +567,22 @@ noremap <LEADER>gi :FzfGitignore<CR>
 
 
 
+" ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''' 
+" '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+" >>> vim-git
+" ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''' 
+" ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''' 
+let g:gitgutter_sign_allow_clobber = 0
+let g:gitgutter_map_keys = 0
+let g:gitgutter_override_sign_column_highlight = 0
+let g:gitgutter_preview_win_floating = 1
+let g:gitgutter_sign_added = '▎'
+let g:gitgutter_sign_modified = '░'
+let g:gitgutter_sign_removed = '▏'
+let g:gitgutter_sign_removed_first_line = '▔'
+let g:gitgutter_sign_modified_removed = '▒'
+" autocmd BufWritePost * GitGutter
+nnoremap <LEADER>gf :GitGutterFold<CR>
+nnoremap H :GitGutterPreviewHunk<CR>
+nnoremap <LEADER>g- :GitGutterPrevHunk<CR>
+nnoremap <LEADER>g= :GitGutterNextHunk<CR>

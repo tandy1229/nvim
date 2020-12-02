@@ -26,13 +26,6 @@
 " ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''' 
 " ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''' 
 
-" 渲染百万色
-set termguicolors
-let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-
-" <leader>
-let mapleader=" "
-
 set number         " 显示行号
 set relativenumber " 显示相对行号
 set cursorline     " 高亮光标所在的行和列
@@ -66,11 +59,12 @@ set splitright
 set splitbelow
 set shortmess+=c " 减少错误信息
 set inccommand=split
+set list         " 显示不可见字符
 set listchars=tab:\|\ ,trail:▫
 
 set lazyredraw
 set visualbell
-set list         " 显示不可见字符
+set updatetime=100
 
 " 某种备份
 silent !mkdir -p ~/.config/nvim/tmp/backup
@@ -92,17 +86,57 @@ au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g
 
 " ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''' 
 " '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+" >>> termial settings
+" ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''' 
+" ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''' 
+
+" 渲染百万色
+set termguicolors
+let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+
+let g:neoterm_autoscroll = 1
+autocmd TermOpen term://* startinsert
+tnoremap <C-N> <C-\><C-N>
+tnoremap <C-O> <C-\><C-N><C-O>
+let g:terminal_color_0  = '#000000'
+let g:terminal_color_1  = '#FF5555'
+let g:terminal_color_2  = '#50FA7B'
+let g:terminal_color_3  = '#F1FA8C'
+let g:terminal_color_4  = '#BD93F9'
+let g:terminal_color_5  = '#FF79C6'
+let g:terminal_color_6  = '#8BE9FD'
+let g:terminal_color_7  = '#BFBFBF'
+let g:terminal_color_8  = '#4D4D4D'
+let g:terminal_color_9  = '#FF6E67'
+let g:terminal_color_10 = '#5AF78E'
+let g:terminal_color_11 = '#F4F99D'
+let g:terminal_color_12 = '#CAA9FA'
+let g:terminal_color_13 = '#FF92D0'
+let g:terminal_color_14 = '#9AEDFE'
+
+
+" ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''' 
+" '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 " >>> 自定义按键布局
 " ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''' 
 " ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''' 
 
+
+" <leader>
+let mapleader=" "
+
+noremap ; :
+
 noremap S :w<CR>
 noremap Q :q<CR>
 
+" 切屏
+noremap ,w <C-w>w
 noremap ,h <C-w>h
 noremap ,j <C-w>j
 noremap ,k <C-w>k
 noremap ,l <C-w>l
+
 
 " 分屏
 noremap sl :set splitright<CR>:vsplit<CR>
@@ -128,17 +162,78 @@ nnoremap Y y$
 " Copy to system clipboard
 vnoremap Y "+y
 
+" some personable
+noremap - N
+noremap = n
+
+" disable the default s key
+noremap s <nop>
+
+
+
+" ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''' 
+" '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+" >>> cursor
+" ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''' 
+" ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''' 
+
+" K/J keys for 5 times u/e (faster navigation)
+noremap <silent> K 5k
+noremap <silent> J 5j
+
+" Faster in-line navigation
+noremap W 5w
+noremap B 5b
+
+
+
+
+" auto spell in markdown
+autocmd BufRead,BufNewFile *.md setlocal spell
+
+
+" Spelling Check with <space>sc
+noremap <LEADER>sc :set spell!<CR>
+
+" Press ` to change case (instead of ~)
+noremap ` ~
+
+noremap <C-c> zz
+
+" Auto change directory to current dir
+autocmd BufEnter * silent! lcd %:p:h
+
+" Call figlet
+noremap tx :r !figlet 
+
+" find and replace
+noremap \s :%s//g<left><left>
+
+" set wrap
+noremap <LEADER>sw :set wrap<CR>
+
+" press f10 to show hlgroup
+function! SynGroup()
+	let l:s = synID(line('.'), col('.'), 1)
+	echo synIDattr(l:s, 'name') . ' -> ' . synIDattr(synIDtrans(l:s), 'name')
+endfun
+map <F10> :call SynGroup()<CR>
+
+" Space to Tab
+nnoremap <LEADER>tt :%s/    /\t/g
+vnoremap <LEADER>tt :s/    /\t/g
+
 cnoremap <expr> %% getcmdtype( ) == ':' ? expand('%:h').'/' : '%%'
+
+" open init.vim anytime
+noremap <LEADER>rc :e ~/.config/nvim/plugsetting/plugins_config.vim<CR>
 
 " open lazygit
 noremap <c-g> :tabe<CR>:-tabmove<CR>:term lazygit<CR>
 
+" Folding
+noremap <silent> <LEADER>o za
 
-" ===
-" === Searching
-" ===
-noremap - N
-noremap = n
 
 " Press space twice to jump to the next '<++>' and edit it
 noremap <LEADER><LEADER> <Esc>/<++><CR>:nohlsearch<CR>c4l
