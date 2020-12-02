@@ -1,7 +1,7 @@
 .DS_Store
 plugged/
 tmp/
-.netrwhist
 plugsetting/tags
 plugsetting/coc.vimback
 plugsetting/deus.vim
+.netrwhist
