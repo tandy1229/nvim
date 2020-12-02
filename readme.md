@@ -1,6 +1,6 @@
 ## awesome nvim config
 
-<center><img src="https://i.loli.net/2020/11/19/trADL8Oag9VCYmI.png"</center>
+<center><img src="https://i.loli.net/2020/12/02/KdbP1m5t8Z2D4Xg.png"</center>
 
 This are my nvim configurations.
 
