@@ -135,6 +135,7 @@ Plug 'cohama/agit.vim', { 'on': 'Agit' }
 Plug 'tpope/vim-fugitive' " use in git
 Plug 'airblade/vim-gitgutter'
 Plug 'fszymanski/fzf-gitignore'
+Plug 'kdheepak/lazygit.nvim'
 
 
 " 对齐文本

@@ -586,3 +586,16 @@ nnoremap <LEADER>gf :GitGutterFold<CR>
 nnoremap H :GitGutterPreviewHunk<CR>
 nnoremap <LEADER>g- :GitGutterPrevHunk<CR>
 nnoremap <LEADER>g= :GitGutterNextHunk<CR>
+
+
+" ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''' 
+" '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+" >>> nvim-lazygit
+" ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''' 
+" ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''' 
+let g:lazygit_floating_window_winblend = 0 " transparency of floating window
+let g:lazygit_floating_window_scaling_factor = 0.9 " scaling factor for floating window
+let g:lazygit_floating_window_corner_chars = ['╭', '╮', '╰', '╯'] " customize lazygit popup window corner characters
+let g:lazygit_use_neovim_remote = 1 " for neovim-remote support
+
+nnoremap <silent> <leader>lg :LazyGit<CR>
