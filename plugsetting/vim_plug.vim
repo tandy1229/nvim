@@ -157,12 +157,14 @@ Plug 'svermeulen/vim-subversive' " 替换:s/的升级版
 Plug 'mg979/vim-visual-multi'    " 多括号
 Plug 'gcmt/wildfire.vim'         " 超级回车
 Plug 'junegunn/vim-peekaboo'     " yank
+Plug 'theniceboy/antovim'        " gs to switch
 " Plug 'easymotion/vim-easymotion' " find
 
 
 " focus mode
 Plug 'junegunn/goyo.vim', { 'on': 'Goyo' }
 Plug 'junegunn/limelight.vim', { 'on': 'Limelight' }
+Plug 'ron89/thesaurus_query.vim'
 
 
 " 注释插件

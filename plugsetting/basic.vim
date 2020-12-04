@@ -152,6 +152,16 @@ noremap <left> :vertical resize-5<CR>
 noremap <right> :vertical resize+5<CR>
 
 
+" Create a new tab with tu
+noremap tj :tabe<CR>
+" Move around tabs with tn and ti
+noremap th :-tabnext<CR>
+noremap tl :+tabnext<CR>
+" Move the tabs with tmn and tmi
+noremap tmh :-tabmove<CR>
+noremap tml :+tabmove<CR>
+
+
 " Indentation
 nnoremap < <<
 nnoremap > >>

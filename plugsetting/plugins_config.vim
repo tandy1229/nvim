@@ -51,8 +51,16 @@ let g:airline_extensions = [ 'branch', 'hunks', 'tabline' ] " make it fast
 
 " beautify
 let g:airline_theme="deus" 
+
+if !exists('g:airline_symbols')
+  let g:airline_symbols = {}
+endif
 let g:airline_left_sep=''
 let g:airline_right_sep=''
+let g:airline_symbols.linenr = ''
+let g:airline_symbols.dirty=' 🍀'
+let g:airline_symbols.notexists = ' 🌺'
+
 let g:airline#extensions#default#layout = [
     \ ['a', 'error', 'b', 'c'],
     \ ['warning', 'y', 'z', 'x']
@@ -88,7 +96,7 @@ nnoremap <C-k> :bp<CR>
 " ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''' 
 " ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''' 
 
-nnoremap fff :LeaderfFile<CR>
+nnoremap <leader>F :LeaderfFile<CR>
 let g:Lf_WindowPosition = 'popup'
 let g:Lf_PreviewInPopup = 1
 let g:Lf_PreviewCode = 1
