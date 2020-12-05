@@ -1,7 +1,7 @@
 {
-	"coc.preferences.hoverTarget": "preview",
+  "coc.preferences.hoverTarget": "preview",
 	"coc.preferences.enableFloatHighlight": true,
-	"coc.preferences.snippetStatusText": "Ⓢ ",
+	"coc.preferences.snippetStatusText": "🌸",
 	"coc.preferences.extensionUpdateCheck": "daily",
 	"coc.preferences.messageLevel": "error",
 	"coc.source.around.firstMatch": false,
@@ -19,7 +19,7 @@
 	"suggest.snippetIndicator": "",
 	"suggest.triggerCompletionWait": 100,
 	"suggest.echodocSupport": true,
-	"suggest.compltionItemKindLabels": {
+	"suggest.completionItemKindLabels": {
 		"class": "\uf0e8",
 		"color": "\ue22b",
 		"constant": "\uf8fe",
@@ -63,20 +63,9 @@
 	"list.previousKeymap": "<C-k>",
 	"snippets.ultisnips.directories": [
 		"$HOME/.config/nvim/Ultisnips/",
-		"$HOME/.config/nvim/plugged/vim-snippets/UltiSnips/"
+		"$HOME/.vim/plugged/vim-snippets/UltiSnips"
 	],
-	"coc.preferences.formatOnSaveFiletypes": [
-		"javascript",
-		"typescript",
-		"html",
-		"css",
-		"json",
-		"python",
-		"vue",
-		"svelte",
-		"c",
-		"cpp"
-	],
+	"coc.preferences.formatOnSaveFiletypes": ["javascript", "typescript", "html", "css", "json", "python", "vue", "svelte", "c", "cpp"],
 	"yaml.format.enable": true,
 	"signature.target": "float",
 	"yank.enableCompletion": false,
@@ -107,12 +96,13 @@
 		"<tab>": "actionMenu",
 		"gl": "expandRecursive",
 		"gh": "collapseRecursive",
+		"l": "open",
 		"<cr>": "open",
 		"I": "openInVsplit",
 		"o": "expand",
 		"O": "openInTab",
 		"n": "collapse",
-		"l": "gotoParent",
+		"i": "gotoParent",
 		"yp": "copyFilepath",
 		"yn": "copyFilename",
 		"yy": "copyFile",

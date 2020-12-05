@@ -56,10 +56,12 @@ if !exists('g:airline_symbols')
   let g:airline_symbols = {}
 endif
 let g:airline_left_sep=''
+let g:airline_left_alt_sep='|'
 let g:airline_right_sep=''
-let g:airline_symbols.linenr = ''
+let g:airline_right_alt_sep='|'
 let g:airline_symbols.dirty=' 🍀'
 let g:airline_symbols.notexists = ' 🌺'
+let g:airline_symbols.linenr = ''
 
 let g:airline#extensions#default#layout = [
     \ ['a', 'error', 'b', 'c'],
@@ -84,8 +86,8 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#buffer_nr_show = 1
 
 "设置切换Buffer快捷键"
-nnoremap <C-j> :bn<CR>
-nnoremap <C-k> :bp<CR>
+nnoremap b] :bn<CR>
+nnoremap b[ :bp<CR>
 
 
 

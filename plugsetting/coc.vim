@@ -20,14 +20,19 @@
 "  the awesome vimrc
 "
 "
-" ===
-" === coc.nvim
-" ===
+" ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''' 
+" '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+" >>> coc
+" ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''' 
+" ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''' 
+
+
 let g:coc_global_extensions = [
 	\ 'coc-actions',
 	\ 'coc-css',
 	\ 'coc-diagnostic',
 	\ 'coc-explorer',
+	\ 'coc-flutter-tools',
 	\ 'coc-gitignore',
 	\ 'coc-html',
 	\ 'coc-json',
@@ -93,7 +98,7 @@ nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 " nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
-nmap <leader>rn <Plug>(coc-rename)
+nmap <leader> rn <Plug>(coc-rename)
 nmap tt :CocCommand explorer<CR>
 " coc-translator
 nmap ts <Plug>(coc-translator-p)
@@ -111,9 +116,10 @@ nnoremap <leader>tu :CocCommand todolist.download<CR>:CocCommand todolist.upload
 noremap <silent> <leader>ts :CocList tasks<CR>
 " coc-snippets
 imap <C-l> <Plug>(coc-snippets-expand)
-vmap <C-n> <Plug>(coc-snippets-select)
-let g:coc_snippet_next = '<c-n>'
-let g:coc_snippet_prev = '<c-i>'
-imap <C-n> <Plug>(coc-snippets-expand-jump)
+vmap <C-j> <Plug>(coc-snippets-select)
+let g:coc_snippet_next = '<c-j>'
+let g:coc_snippet_prev = '<c-k>'
+imap <C-j> <Plug>(coc-snippets-expand-jump)
+let g:snips_author = 'David Chen'
 autocmd BufRead,BufNewFile tsconfig.json set filetype=jsonc
 let g:node_client_debug = 1
