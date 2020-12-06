@@ -64,7 +64,6 @@ set listchars=tab:\|\ ,trail:▫
 
 set lazyredraw
 set visualbell
-set updatetime=100
 
 " 某种备份
 silent !mkdir -p ~/.config/nvim/tmp/backup
