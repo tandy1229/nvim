@@ -37,8 +37,8 @@ let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#buffer_nr_show = 1
 "设置切换Buffer快捷键"
-nnoremap b] :bn<CR>
-nnoremap b[ :bp<CR>
+nnoremap <M-k> :bn<CR>
+nnoremap <M-j> :bp<CR>
 
 " >>> LeaderF
 " ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''' 
