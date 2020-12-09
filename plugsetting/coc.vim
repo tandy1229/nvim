@@ -51,7 +51,7 @@ nnoremap <LEADER>h :call Show_documentation()<CR>
 nnoremap <silent><nowait> <LEADER>d :CocList diagnostics<cr>
 nmap <silent> <LEADER>- <Plug>(coc-diagnostic-prev)
 nmap <silent> <LEADER>= <Plug>(coc-diagnostic-next)
-nnoremap <C-c> :CocFzfList commands<CR>
+nnoremap <C-c> :CocFzfList<CR>
 " Text Objects
 xmap kf <Plug>(coc-funcobj-i)
 xmap af <Plug>(coc-funcobj-a)
