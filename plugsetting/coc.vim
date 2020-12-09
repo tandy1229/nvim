@@ -51,7 +51,7 @@ nnoremap <LEADER>h :call Show_documentation()<CR>
 nnoremap <silent><nowait> <LEADER>d :CocList diagnostics<cr>
 nmap <silent> <LEADER>- <Plug>(coc-diagnostic-prev)
 nmap <silent> <LEADER>= <Plug>(coc-diagnostic-next)
-nnoremap <C-c> :CocFzfList<CR>
+nnoremap <C-c> :CocFzfList commands<CR>
 " Text Objects
 xmap kf <Plug>(coc-funcobj-i)
 xmap af <Plug>(coc-funcobj-a)
@@ -66,7 +66,7 @@ nnoremap <silent> <space>y :<C-u>CocList -A --normal yank<cr>
 nmap <silent> gm <Plug>(coc-codeaction)
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
-" nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 nmap <leader> rn <Plug>(coc-rename)
 nmap tt :CocCommand explorer<CR>

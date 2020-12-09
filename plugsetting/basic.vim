@@ -213,8 +213,11 @@ noremap \r :call CompileRunGcc()<CR>
 func! CompileRunGcc()
 	exec "w"
 	if &filetype == 'c'
-		exec "!gcc % -o %<"
-		exec "!time ./%<"
+    set splitbelow
+    :sp
+    :term gcc % -o %< && ./%<
+		" exec "!gcc % -o %<"
+		" exec "!time ./%<"
 	elseif &filetype == 'cpp'
 		set splitbelow
 		exec "!gcc -std=c++11 % -Wall -o %<"
