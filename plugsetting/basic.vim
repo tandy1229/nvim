@@ -1,45 +1,22 @@
-"
-"
-"
-"
-"
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"    __  ____   __         __     _____ __  __ ____   ____    "
-"   |  \/  \ \ / /         \ \   / /_ _|  \/  |  _ \ / ___|   "
-"   | |\/| |\ V /   _____   \ \ / / | || |\/| | |_) | |       "
-"   | |  | | | |   |_____|   \ V /  | || |  | |  _ <| |___    "
-"   |_|  |_| |_|              \_/  |___|_|  |_|_| \_\\____|   "
-"                                                             "
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"
-"
-"
-"  author: @tandy1229 
-"  modifiy from @theniceboy
-"  
-"  the awesome vimrc
-"
-"
 " ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''' 
 " '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 " >>> EDITER SETUP
 " ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''' 
 " ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''' 
-
+set ttyfast      " 滚动快？？？？！
+set nocompatible      " 不兼容vi
 set number         " 显示行号
 set relativenumber " 显示相对行号
 set cursorline     " 高亮光标所在的行和列
 set hidden         " 切换文件不保存，隐藏
-" tab的补全长度
 set tabstop=2
 set shiftwidth=2
 set softtabstop=2
 set expandtab         " 将tab转为空格
-set nocompatible      " 不兼容vi
 set ignorecase        " 设置忽略大小写
 set smartcase         " 设置智能识别大小写
-                      " set numberwidth=4  设置行号列宽
 set wrap              " 自动折行
+set linebreak         " 折行时不会将单词分开
 set ttimeoutlen=0     " 无延迟
 set notimeout
 set foldenable        " 折叠
@@ -48,20 +25,17 @@ set foldlevel=99      " 相当于默认不折叠
 set indentexpr=       " 禁用vim缩进indent
 set autoindent        " 换行时自动缩进
 set history=200       " 存储的历史记录
-
 set viewoptions=cursor,folds,slash,unix " viminfo 记录的内容
 set scrolloff=5
 set completeopt=longest,noinsert,menuone,noselect,preview
 set showcmd      " 显示输入的命令
 set wildmenu     " 命令行补全
-set ttyfast      " 滚动快？？？？！
 set splitright
 set splitbelow
 set shortmess+=c " 减少错误信息
 set inccommand=split
 set list         " 显示不可见字符
 set listchars=tab:\|\ ,trail:▫
-
 set lazyredraw
 set visualbell
 
@@ -78,6 +52,7 @@ endif
 set colorcolumn=100
 set updatetime=100
 set virtualedit=block
+set autowrite
 
 " 记住前一次退出的位置
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
@@ -97,21 +72,6 @@ let g:neoterm_autoscroll = 1
 autocmd TermOpen term://* startinsert
 tnoremap <C-N> <C-\><C-N>
 tnoremap <C-O> <C-\><C-N><C-O>
-let g:terminal_color_0  = '#000000'
-let g:terminal_color_1  = '#FF5555'
-let g:terminal_color_2  = '#50FA7B'
-let g:terminal_color_3  = '#F1FA8C'
-let g:terminal_color_4  = '#BD93F9'
-let g:terminal_color_5  = '#FF79C6'
-let g:terminal_color_6  = '#8BE9FD'
-let g:terminal_color_7  = '#BFBFBF'
-let g:terminal_color_8  = '#4D4D4D'
-let g:terminal_color_9  = '#FF6E67'
-let g:terminal_color_10 = '#5AF78E'
-let g:terminal_color_11 = '#F4F99D'
-let g:terminal_color_12 = '#CAA9FA'
-let g:terminal_color_13 = '#FF92D0'
-let g:terminal_color_14 = '#9AEDFE'
 
 
 " ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''' 
@@ -218,9 +178,6 @@ noremap tx :r !figlet
 " find and replace
 noremap \s :%s//g<left><left>
 
-" set wrap
-noremap <LEADER>sw :set wrap<CR>
-
 " press f10 to show hlgroup
 function! SynGroup()
 	let l:s = synID(line('.'), col('.'), 1)
@@ -252,15 +209,15 @@ noremap <LEADER>/ :set splitbelow<CR>:split<CR>:res +10<CR>:term<CR>
 
 
 " Compile function
-noremap r :call CompileRunGcc()<CR>
+noremap \r :call CompileRunGcc()<CR>
 func! CompileRunGcc()
 	exec "w"
 	if &filetype == 'c'
-		exec "!g++ % -o %<"
+		exec "!gcc % -o %<"
 		exec "!time ./%<"
 	elseif &filetype == 'cpp'
 		set splitbelow
-		exec "!g++ -std=c++11 % -Wall -o %<"
+		exec "!gcc -std=c++11 % -Wall -o %<"
 		:sp
 		:res -15
 		:term ./%<

@@ -1,57 +1,14 @@
-"
-"
-"
-"
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"    __  ____   __         __     _____ __  __ ____   ____    "
-"   |  \/  \ \ / /         \ \   / /_ _|  \/  |  _ \ / ___|   "
-"   | |\/| |\ V /   _____   \ \ / / | || |\/| | |_) | |       "
-"   | |  | | | |   |_____|   \ V /  | || |  | |  _ <| |___    "
-"   |_|  |_| |_|              \_/  |___|_|  |_|_| \_\\____|   "
-"                                                             "
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"
-"
-"
-"  author: @tandy1229 
-"  modifiy from @theniceboy
-"  
-"  the awesome vimrc
-"
-"
-"
-" ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''' 
-" '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-" >>> gruvbox
-" ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''' 
-" ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''' 
-
-" colorscheme gruvbox
-" set background=dark    " Setting dark mode
-
-
-" ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''' 
-" '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 " >>> colorscheme deus
 " ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''' 
-" ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''' 
-
+set rtp+=/Users/yitaimin/.vim/plugged/nvim-deus
 color deus
 hi NonText ctermfg=gray guifg=grey10
 
-
-
-" ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''' 
-" '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 " >>> airline
 " ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''' 
-" ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''' 
-
-let g:airline_extensions = [ 'branch', 'hunks', 'tabline' ] " make it fast
-
 " beautify
 let g:airline_theme="deus" 
-
+let g:airline_extensions = [ 'branch', 'hunks', 'tabline' ] " make it fast
 if !exists('g:airline_symbols')
   let g:airline_symbols = {}
 endif
@@ -62,42 +19,29 @@ let g:airline_right_alt_sep='|'
 let g:airline_symbols.dirty=' 🍀'
 let g:airline_symbols.notexists = ' 🌺'
 let g:airline_symbols.linenr = ''
-
 let g:airline#extensions#default#layout = [
     \ ['a', 'error', 'b', 'c'],
     \ ['warning', 'y', 'z', 'x']
     \ ]
 let g:airline_section_x = '%{ScrollStatus()}'
-
 function! AirlineInit()
   let g:airline_section_b = airline#section#create(['hunks' ])
   let g:airline_section_warning = airline#section#create(['[', 'filetype',']'])
   let g:airline_section_error= airline#section#create(['branch'])
 endfunction
 autocmd User AirlineAfterInit call AirlineInit()
-
-
-" 这个是安装powerline字体后 必须设置此项
+" use powerline font
 let g:airline_powerline_fonts = 1  
-
 " 打开tabline功能,方便查看Buffer和切换，这个功能比较不错
 " 我还省去了minibufexpl插件，因为我习惯在1个Tab下用多个buffer
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#buffer_nr_show = 1
-
 "设置切换Buffer快捷键"
 nnoremap b] :bn<CR>
 nnoremap b[ :bp<CR>
 
-
-
-
-" ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''' 
-" '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 " >>> LeaderF
 " ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''' 
-" ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''' 
-
 nnoremap <leader>F :LeaderfFile<CR>
 let g:Lf_WindowPosition = 'popup'
 let g:Lf_PreviewInPopup = 1
@@ -113,29 +57,13 @@ let g:Lf_WildIgnore = {
 let g:Lf_UseMemoryCache = 0
 let g:Lf_UseCache = 0
 
-
-
-
-
-" ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''' 
-" '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 " >>> rainbow
 " ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''' 
-" ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''' 
-
 let g:rainbow_active = 1 "set to 0 if you want to enable it later via :RainbowToggle
 
 
-
-
-
-
-" ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''' 
-" '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 " >>> defx(新型异步文件管理器)
 " ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''' 
-" ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''' 
-
 call defx#custom#option('_', {
       \ 'winwidth': 35,
       \ 'split': 'vertical',
@@ -145,11 +73,7 @@ call defx#custom#option('_', {
       \ 'toggle': 1,
       \ 'resume': 1
       \ })
-
-" 备用键位
-" Toggle Defx using Ctrl + Space
 map D :Defx<CR>
-
 autocmd FileType defx call s:defx_my_settings()
 function! s:defx_my_settings() abort
   " Define mappings
@@ -214,22 +138,11 @@ function! s:defx_my_settings() abort
   nnoremap <silent><buffer><expr> cd
   \ defx#do_action('change_vim_cwd')
 endfunction
-
+" use icon
 let g:defx_icons_enable_syntax_highlight = 1
 
-
-
-
-
-
-
-
-" ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''' 
-" '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 " >>> undotree
 " ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''' 
-" ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''' 
-
 nnoremap L :UndotreeToggle<cr>
 let g:undotree_DiffAutoOpen = 1
 let g:undotree_SetFocusWhenToggle = 1
@@ -244,15 +157,8 @@ function g:Undotree_CustomMap()
 	nmap <buffer> J 5<plug>UndotreePreviousState
 endfunc
 
-
-
-
-" ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''' 
-" '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 " >>> vista.vim
 " ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''' 
-" ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''' 
-
 noremap <LEADER>v :Vista!!<CR>
 noremap <c-t> :silent! Vista finder coc<CR>
 let g:vista_icon_indent = ["╰─▸ ", "├─▸ "]
@@ -263,34 +169,10 @@ let g:vista#renderer#icons = {
 \   "function": "\uf794",
 \   "variable": "\uf71b",
 \  }
-" function! NearestMethodOrFunction() abort
-" 	return get(b:, 'vista_nearest_method_or_function', '')
-" endfunction
-" set statusline+=%{NearestMethodOrFunction()}
-" autocmd VimEnter * call vista#RunForNearestMethodOrFunction()
-
 let g:scrollstatus_size = 15
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-" ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''' 
-" '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 " >>> fzf
 " ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''' 
-" ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''' 
-
 set rtp+=/usr/local/opt/fzf
 map ff :FZF<CR>
 " noremap <silent> <C-p> :Files<CR>
@@ -302,8 +184,8 @@ noremap <silent> <C-b> :Buffers<CR>
 noremap <leader>; :History:<CR>
 
 let g:fzf_preview_window = 'right:60%'
+let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6 } }
 let g:fzf_commits_log_options = '--graph --color=always --format="%C(auto)%h%d %s %C(black)%C(bold)%cr"'
-
 
 function! s:list_buffers()
   redir => list
@@ -326,46 +208,21 @@ noremap <c-d> :BD<CR>
 
 let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.8 } }
 
-
-
-" ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''' 
-" '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 " >>> far.vim
 " ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''' 
-" ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''' 
-
 noremap <LEADER>f :F  **/*<left><left><left><left><left>
 let g:far#mapping = {
 		\ "replace_undo" : ["l"],
 		\ }
 
-
-
-
-
-
-" ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''' 
-" '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 " >>> vim-table-mode
 " ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''' 
-" ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''' 
-
 noremap <LEADER>tm :TableModeToggle<CR>
 "let g:table_mode_disable_mappings = 1
 let g:table_mode_cell_text_object_i_map = 'k<Bar>'
 
-
-
-
-
-
-
-" ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''' 
-" '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 " >>> vim-instant-markdown
 " ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''' 
-" ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''' 
-
 let g:instant_markdown_slow = 0
 let g:instant_markdown_autostart = 0
 " let g:instant_markdown_open_to_the_world = 1
@@ -374,17 +231,9 @@ let g:instant_markdown_autostart = 0
 " let g:instant_markdown_mathjax = 1
 let g:instant_markdown_autoscroll = 1
 
-
-
-
-
-" ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''' 
-" '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 " >>> nvim-treesitter
 " ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''' 
-" ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''' 
-"  ensure_installed = { "all" },     -- one of "all", "language", or a list of languages
-
+" lua config
 lua <<EOF
 require'nvim-treesitter.configs'.setup {
   ensure_installed = "all",     -- one of "all", "language", or a list of languages
@@ -398,189 +247,66 @@ require'nvim-treesitter.configs'.setup {
 }
 EOF
 
-" ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''' 
-" '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-" >>> xtabline
-" ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''' 
-" ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''' 
-
-" let g:xtabline_settings = get(g:, 'xtabline_settings', {})
-" let g:xtabline_settings.enable_mappings = 0
-" let g:xtabline_settings.tabline_modes = ['tabs', 'buffers']
-" let g:xtabline_settings.mode_labels = 'secondary'
-" let g:xtabline_settings.enable_persistance = 0
-" let g:xtabline_settings.last_open_first = 1
-" let g:xtabline_settings.tab_icon = ["*", "*"]
-" let g:xtabline_settings.icons = {
-"         \'pin': '📌',
-"         \'star': '★',
-"         \'book': '📖',
-"         \'lock': '🔒',
-"         \'hammer': '🔨',
-"         \'tick': '✔',
-"         \'cross': '✖',
-"         \'warning': '⚠',
-"         \'menu': '☰',
-"         \'apple': '🍎',
-"         \'linux': '🐧',
-"         \'windows': '⌘',
-"         \'git': '',
-"         \'palette': '🎨',
-"         \'lens': '🔍',
-"         \'flag': '🏁',
-"         \}
-
-
-
-
-" ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''' 
-" '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 " >>> goyo.vim
 " ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''' 
-" ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''' 
-
 map <LEADER>gy :Goyo<CR>
 
-
-
-
-
-" ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''' 
-" '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 " >>> AsyncRun
 " ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''' 
-" ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''' 
-
 noremap gp :AsyncRun git push<CR>
 
-
-" ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''' 
-" '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 " >>> AsyncTask
 " ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''' 
-" ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''' 
-
 let g:asyncrun_open = 6
 
-
-" ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''' 
-" '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 " >>> vim-subversive
 " ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''' 
-" ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''' 
-
 nmap s <plug>(SubversiveSubstitute)
 nmap ss <plug>(SubversiveSubstituteLine)
 
-
-
-
-" ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''' 
-" '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 " >>> rnvimr
 " ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''' 
-" ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''' 
-
 let g:rnvimr_ex_enable = 1
 let g:rnvimr_pick_enable = 1
 let g:rnvimr_draw_border = 0
+let g:rnvim_shadow_winblend = 70
 " let g:rnvimr_bw_enable = 1
 highlight link RnvimrNormal CursorLine
-nnoremap <silent> R :RnvimrToggle<CR><C-\><C-n>:RnvimrResize 0<CR>
-let g:rnvimr_action = {
-            \ '<C-t>': 'NvimEdit tabedit',
-            \ '<C-x>': 'NvimEdit split',
-            \ '<C-v>': 'NvimEdit vsplit',
-            \ 'gw': 'JumpNvimCwd',
-            \ 'yw': 'EmitRangerCwd'
-            \ }
-let g:rnvimr_layout = { 'relative': 'editor',
-            \ 'width': &columns,
-            \ 'height': &lines,
-            \ 'col': 0,
-            \ 'row': 0,
-            \ 'style': 'minimal' }
-let g:rnvimr_presets = [{'width': 1.0, 'height': 1.0}]
+nnoremap <silent> R :RnvimrToggle<CR>
 
-
-
-" ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''' 
-" '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 " >>> vim-illuminate
 " ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''' 
-" ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''' 
-
 let g:Illuminate_delay = 750
 hi illuminatedWord cterm=undercurl gui=undercurl
 
-
-
-" ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''' 
-" '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 " >>> vim-rooter
 " ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''' 
-" ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''' 
-
 let g:rooter_patterns = ['__vim_project_root', '.git/']
 let g:rooter_silent_chdir = 1
 
-" ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''' 
-" '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 " >>> tabular
 " ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''' 
-" ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''' 
-
 vmap ga :Tabularize /
 
-
-" ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''' 
-" '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 " >>> limelight
 " ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''' 
-" ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''' 
-
 nmap <Leader>; :Limelight<CR> 
 nmap <Leader>' :Limelight!<CR> 
 let g:limelight_default_coefficient = 0.7
 
-
-
-" ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''' 
-" '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 " >>> vim-markdown-toc
 " ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''' 
-" ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''' 
-
 "let g:vmt_auto_update_on_save = 0
 "let g:vmt_dont_insert_fence = 1
 let g:vmt_cycle_list_item_markers = 1
 let g:vmt_fence_text = 'TOC'
 let g:vmt_fence_closing_text = '/TOC'
 
-" ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''' 
-" '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-" >>> indentline
-" ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''' 
-" ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''' 
-
-" let g:indentLine_char_list = ['|', '¦', '┆', '┊']
-
-
-
-" ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''' 
-" '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 " >>> fzf-gitignore
 " ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''' 
-" ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''' 
-
 noremap <LEADER>gi :FzfGitignore<CR>
 
-
-
-" ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''' 
-" '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-" >>> vim-git
-" ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''' 
+" >>> vim-gitgutter
 " ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''' 
 let g:gitgutter_sign_allow_clobber = 0
 let g:gitgutter_map_keys = 0
@@ -597,11 +323,7 @@ nnoremap H :GitGutterPreviewHunk<CR>
 nnoremap <LEADER>g- :GitGutterPrevHunk<CR>
 nnoremap <LEADER>g= :GitGutterNextHunk<CR>
 
-
-" ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''' 
-" '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 " >>> nvim-lazygit
-" ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''' 
 " ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''' 
 let g:lazygit_floating_window_winblend = 0 " transparency of floating window
 let g:lazygit_floating_window_scaling_factor = 0.9 " scaling factor for floating window
