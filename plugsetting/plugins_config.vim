@@ -21,12 +21,12 @@ let g:airline_symbols.notexists = ' ﴻ'
 let g:airline_symbols.linenr = ''
 let g:airline#extensions#default#layout = [
     \ ['a', 'b', 'error',  'c'],
-    \ ['warning', 'y', 'z', 'x']
+    \ ['x', 'y', 'z', 'warning']
     \ ]
-let g:airline_section_x = '%{ScrollStatus()}'
+let g:airline_section_warning = '%{ScrollStatus()}'
 function! AirlineInit()
   let g:airline_section_error = airline#section#create(['hunks' ])
-  let g:airline_section_warning = airline#section#create(['[', 'filetype',']'])
+  let g:airline_section_x = airline#section#create(['[', 'filetype',']'])
   let g:airline_section_b= airline#section#create(['branch'])
 endfunction
 autocmd User AirlineAfterInit call AirlineInit()
