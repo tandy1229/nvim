@@ -208,8 +208,8 @@ noremap <LEADER>/ :set splitbelow<CR>:split<CR>:res +10<CR>:term<CR>
 
 
 " Compile function
-noremap \r :call CompileRunGcc()<CR>
-func! CompileRunGcc()
+noremap \r :call CompileRun()<CR>
+func! CompileRun()
 	exec "w"
 	if &filetype == 'c'
     set splitbelow
@@ -242,6 +242,10 @@ func! CompileRunGcc()
 	elseif &filetype == 'dart'
 		exec "CocCommand flutter.run -d ".g:flutter_default_device." ".g:fltter_run_args
 		silent! exec "CocCommand flutter.dev.openDevLog"
+  elseif &filetype == 'perl'
+		set splitbelow
+		:sp
+		:term perl -w %
 	elseif &filetype == 'javascript'
 		set splitbelow
 		:sp

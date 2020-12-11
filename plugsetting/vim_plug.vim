@@ -54,6 +54,10 @@ Plug 'tweekmonster/braceless.vim', { 'for' :['python', 'vim-plug'] }
 " go
 Plug 'fatih/vim-go' , { 'for': ['go', 'vim-plug'], 'tag': '*' }
 
+
+" perl
+Plug 'vim-perl/vim-perl', { 'for': 'perl', 'do': 'make clean carp dancer highlight-all-pragmas moose test-more try-tiny' }
+
 " html && css && js
 Plug 'elzr/vim-json'
 Plug 'neoclide/jsonc.vim'
