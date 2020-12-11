@@ -14,7 +14,7 @@ Plug 'Yggdroot/LeaderF', { 'do': ':LeaderfInstallCExtension', 'on': 'LeaderfFile
 Plug 'brooth/far.vim', { 'on': ['F', 'Far', 'Fardo'] }
 
 " Treesitter
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSpdate'}
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-treesitter/playground'
 
 " markdown
@@ -27,11 +27,12 @@ Plug 'mzlogin/vim-markdown-toc', { 'for': ['gitignore', 'markdown', 'vim-plug'] 
 " 超好看的状态栏
 " now I use airline, it has the great-capability on many platflot
 Plug 'vim-airline/vim-airline'
-Plug 'tandy1229/vim-airline-themes'
+Plug 'tandy1229/airline-deus'
 Plug 'ojroques/vim-scrollstatus'
 
 " 代码主题
 Plug 'tandy1229/nvim-deus'
+" Plug 'tandy1229/nvim-deus2'
 " Plug 'Iron-E/nvim-highlite'
 " Plug 'ajmwagar/vim-deus'
 
@@ -129,5 +130,5 @@ Plug 'skywind3000/asynctasks.vim'
 Plug 'honza/vim-snippets'
 
 " Chinese vim document
-Plug 'yianwillis/vimcdoc'
+" Plug 'yianwillis/vimcdoc'
 call plug#end()

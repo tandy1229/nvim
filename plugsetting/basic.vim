@@ -20,11 +20,10 @@ set linebreak         " 折行时不会将单词分开
 set ttimeoutlen=0     " 无延迟
 set notimeout
 set foldenable        " 折叠
-set foldmethod=indent " 代码折叠
+" set foldmethod=indent " 代码折叠
 set foldlevel=99      " 相当于默认不折叠
 set indentexpr=       " 禁用vim缩进indent
 set autoindent        " 换行时自动缩进
-set history=200       " 存储的历史记录
 set viewoptions=cursor,folds,slash,unix " viminfo 记录的内容
 set scrolloff=5
 set completeopt=longest,noinsert,menuone,noselect,preview
