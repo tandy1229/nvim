@@ -16,18 +16,18 @@ let g:airline_left_sep=''
 let g:airline_left_alt_sep='|'
 let g:airline_right_sep=''
 let g:airline_right_alt_sep='|'
-let g:airline_symbols.dirty=' 🍀'
-let g:airline_symbols.notexists = ' 🌺'
+let g:airline_symbols.dirty=''
+let g:airline_symbols.notexists = ' ﴻ'
 let g:airline_symbols.linenr = ''
 let g:airline#extensions#default#layout = [
-    \ ['a', 'error', 'b', 'c'],
+    \ ['a', 'b', 'error',  'c'],
     \ ['warning', 'y', 'z', 'x']
     \ ]
 let g:airline_section_x = '%{ScrollStatus()}'
 function! AirlineInit()
-  let g:airline_section_b = airline#section#create(['hunks' ])
+  let g:airline_section_error = airline#section#create(['hunks' ])
   let g:airline_section_warning = airline#section#create(['[', 'filetype',']'])
-  let g:airline_section_error= airline#section#create(['branch'])
+  let g:airline_section_b= airline#section#create(['branch'])
 endfunction
 autocmd User AirlineAfterInit call AirlineInit()
 " use powerline font
@@ -181,7 +181,7 @@ noremap <silent> <C-h> :History<CR>
 "noremap <C-t> :BTags<CR>
 noremap <silent> <C-l> :Lines<CR>
 noremap <silent> <C-b> :Buffers<CR>
-noremap <leader>; :History:<CR>
+noremap ,; :History:<CR>
 
 let g:fzf_preview_window = 'right:60%'
 let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6 } }
@@ -243,9 +243,20 @@ require'nvim-treesitter.configs'.setup {
   },
   indent = {
     enable = true
-  }
+  },
+  incremental_selection = {
+    enable = true,
+    keymaps = {
+      init_selection = "gnn",
+      node_incremental = "grn",
+      scope_incremental = "grc",
+      node_decremental = "grm",
+    },
+  },
 }
 EOF
+set foldmethod=expr
+set foldexpr=nvim_treesitter#foldexpr()
 
 " >>> goyo.vim
 " ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''' 
