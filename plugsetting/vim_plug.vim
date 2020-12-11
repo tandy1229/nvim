@@ -28,8 +28,8 @@ Plug 'brooth/far.vim', { 'on': ['F', 'Far', 'Fardo'] }
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-treesitter/playground'
 
-Plug 'google/vim-maktaba'
-Plug 'google/vim-codefmt'
+Plug 'google/vim-maktaba', {'on': 'FormatCode'}
+Plug 'google/vim-codefmt', {'on': 'FormatCode'}
 
 " markdown
 Plug 'tpope/vim-markdown', {'for': 'markdown'}
