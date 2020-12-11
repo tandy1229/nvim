@@ -4,11 +4,22 @@ call plug#begin('~/.vim/plugged')
 " to test the neovim open time
 Plug 'tweekmonster/startuptime.vim', { 'on': 'StartupTime' }
 
+" 超好看的状态栏
+" now I use airline, it has the great-capability on many platflot
+Plug 'vim-airline/vim-airline'
+Plug 'tandy1229/airline-deus'
+Plug 'ojroques/vim-scrollstatus'
+
 " FZF
 " the plug I love best!!!
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'Yggdroot/LeaderF', { 'do': ':LeaderfInstallCExtension', 'on': 'LeaderfFile' } " 模糊搜索
+
+" coc awesome complete
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'antoinemadec/coc-fzf'
+Plug 'rafcamlet/coc-nvim-lua', { 'for': 'lua' }
 
 " Find & Replace
 Plug 'brooth/far.vim', { 'on': ['F', 'Far', 'Fardo'] }
@@ -17,6 +28,9 @@ Plug 'brooth/far.vim', { 'on': ['F', 'Far', 'Fardo'] }
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-treesitter/playground'
 
+Plug 'google/vim-maktaba'
+Plug 'google/vim-codefmt'
+
 " markdown
 Plug 'tpope/vim-markdown', {'for': 'markdown'}
 Plug 'suan/vim-instant-markdown', {'for': 'markdown'}
@@ -24,22 +38,11 @@ Plug 'dhruvasagar/vim-table-mode', { 'on': 'TableModeToggle', 'for': ['text', 'm
 Plug 'dkarter/bullets.vim' " 自动化插件
 Plug 'mzlogin/vim-markdown-toc', { 'for': ['gitignore', 'markdown', 'vim-plug'] }
 
-" 超好看的状态栏
-" now I use airline, it has the great-capability on many platflot
-Plug 'vim-airline/vim-airline'
-Plug 'tandy1229/airline-deus'
-Plug 'ojroques/vim-scrollstatus'
-
 " 代码主题
 Plug 'tandy1229/nvim-deus'
 " Plug 'tandy1229/nvim-deus2'
 " Plug 'Iron-E/nvim-highlite'
 " Plug 'ajmwagar/vim-deus'
-
-" coc awesome complete
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'antoinemadec/coc-fzf'
-Plug 'rafcamlet/coc-nvim-lua', { 'for': 'lua' }
 
 " rager: the document arragement
 Plug 'kevinhwang91/rnvimr', { 'on': 'RnvimrToggle' }

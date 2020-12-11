@@ -8,7 +8,9 @@ hi NonText ctermfg=gray guifg=grey10
 " ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''' 
 " beautify
 let g:airline_theme="deus" 
-let g:airline_extensions = [ 'branch', 'hunks', 'tabline' ] " make it fast
+" let g:airline_extensions = [ 'branch', 'hunks', 'tabline', 'coc', 'fzf', 'undotree' ] " make it fast
+let g:airline#extensions#wordcount#enabled=0
+let g:airline#extensions#whitespace#enabled=0
 if !exists('g:airline_symbols')
   let g:airline_symbols = {}
 endif
@@ -26,7 +28,7 @@ let g:airline#extensions#default#layout = [
 let g:airline_section_warning = '%{ScrollStatus()}'
 function! AirlineInit()
   let g:airline_section_error = airline#section#create(['hunks' ])
-  let g:airline_section_x = airline#section#create(['[', 'filetype',']'])
+  let g:airline_section_x = airline#section#create([''])
   let g:airline_section_b= airline#section#create(['branch'])
 endfunction
 autocmd User AirlineAfterInit call AirlineInit()
@@ -283,7 +285,22 @@ let g:rnvimr_draw_border = 0
 let g:rnvim_shadow_winblend = 70
 " let g:rnvimr_bw_enable = 1
 highlight link RnvimrNormal CursorLine
-nnoremap <silent> R :RnvimrToggle<CR>
+" nnoremap <silent> R :RnvimrToggle<CR>
+nnoremap <silent> R :RnvimrToggle<CR><C-\><C-n>:RnvimrResize 0<CR>
+let g:rnvimr_action = {
+            \ '<C-t>': 'NvimEdit tabedit',
+            \ '<C-x>': 'NvimEdit split',
+            \ '<C-v>': 'NvimEdit vsplit',
+            \ 'gw': 'JumpNvimCwd',
+            \ 'yw': 'EmitRangerCwd'
+            \ }
+let g:rnvimr_layout = { 'relative': 'editor',
+            \ 'width': &columns,
+            \ 'height': &lines,
+            \ 'col': 0,
+            \ 'row': 0,
+            \ 'style': 'minimal' }
+let g:rnvimr_presets = [{'width': 1.0, 'height': 1.0}]
 
 " >>> vim-illuminate
 " ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''' 
