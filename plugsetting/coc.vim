@@ -2,7 +2,9 @@
 let g:coc_global_extensions = [
 	\ 'coc-actions',
 	\ 'coc-css',
+  \ 'coc-stylelintplus',
   \ 'coc-texlab',
+  \ 'coc-markdownlint',
   \ 'coc-eslint',
 	\ 'coc-diagnostic',
 	\ 'coc-explorer',
