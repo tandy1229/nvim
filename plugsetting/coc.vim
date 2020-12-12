@@ -4,6 +4,7 @@ let g:coc_global_extensions = [
 	\ 'coc-css',
 	\ 'coc-diagnostic',
 	\ 'coc-explorer',
+	\ 'coc-flutter-tools',
 	\ 'coc-gitignore',
 	\ 'coc-html',
 	\ 'coc-json',
@@ -21,8 +22,8 @@ let g:coc_global_extensions = [
 	\ 'coc-tslint-plugin',
 	\ 'coc-tsserver',
 	\ 'coc-vetur',
-	\ 'coc-vimlsp',
   \ 'coc-spell-checker',
+	\ 'coc-vimlsp',
 	\ 'coc-yaml',
 	\ 'coc-yank']
 inoremap <silent><expr> <TAB>

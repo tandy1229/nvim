@@ -17,7 +17,8 @@ Plug 'junegunn/fzf.vim'
 Plug 'Yggdroot/LeaderF', { 'do': ':LeaderfInstallCExtension', 'on': 'LeaderfFile' } " 模糊搜索
 
 " coc awesome complete
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'tandy1229/coc.nvim' " the version can use coc-actions
 Plug 'antoinemadec/coc-fzf'
 Plug 'rafcamlet/coc-nvim-lua', { 'for': 'lua' }
 
@@ -137,5 +138,5 @@ Plug 'skywind3000/asynctasks.vim'
 Plug 'honza/vim-snippets'
 
 " Chinese vim document
-" Plug 'yianwillis/vimcdoc'
+Plug 'yianwillis/vimcdoc'
 call plug#end()

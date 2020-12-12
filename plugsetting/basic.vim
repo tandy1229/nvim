@@ -1,7 +1,4 @@
-" ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''' 
-" '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 " >>> EDITER SETUP
-" ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''' 
 " ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''' 
 set ttyfast      " 滚动快？？？？！
 set nocompatible      " 不兼容vi
@@ -56,13 +53,8 @@ set autowrite
 " 记住前一次退出的位置
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 
-
-" ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''' 
-" '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 " >>> termial settings
 " ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''' 
-" ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''' 
-
 " 渲染百万色
 set termguicolors
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
@@ -139,10 +131,7 @@ noremap s <nop>
 
 
 
-" ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''' 
-" '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 " >>> cursor
-" ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''' 
 " ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''' 
 
 " K/J keys for 5 times u/e (faster navigation)
@@ -153,9 +142,6 @@ noremap <silent> J 5j
 noremap W 5w
 noremap B 5b
 
-
-
-
 " auto spell in markdown
 autocmd BufRead,BufNewFile *.md setlocal spell
 
@@ -165,8 +151,6 @@ noremap <LEADER>sc :set spell!<CR>
 
 " Press ` to change case (instead of ~)
 noremap ` ~
-
-noremap <C-c> zz
 
 " Auto change directory to current dir
 autocmd BufEnter * silent! lcd %:p:h
