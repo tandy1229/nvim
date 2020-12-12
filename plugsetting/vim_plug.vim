@@ -1,6 +1,6 @@
 " - For Neovim: stdpath('data') . '/plugged'
 " - Avoid using standard Vim directory names like 'plugin'
-call plug#begin('~/.vim/plugged')
+call plug#begin('~/.config/nvim/plugged')
 " to test the neovim open time
 Plug 'tweekmonster/startuptime.vim', { 'on': 'StartupTime' }
 
@@ -17,8 +17,8 @@ Plug 'junegunn/fzf.vim'
 Plug 'Yggdroot/LeaderF', { 'do': ':LeaderfInstallCExtension', 'on': 'LeaderfFile' } " 模糊搜索
 
 " coc awesome complete
-" Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'tandy1229/coc.nvim' " the version can use coc-actions
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" Plug 'tandy1229/coc.nvim' " the version can use coc-actions
 Plug 'antoinemadec/coc-fzf'
 
 " Find & Replace
