@@ -4,6 +4,7 @@ let g:coc_global_extensions = [
 	\ 'coc-css',
   \ 'coc-stylelintplus',
   \ 'coc-texlab',
+  \ 'coc-tabnine',
   \ 'coc-markdownlint',
   \ 'coc-eslint',
 	\ 'coc-diagnostic',
