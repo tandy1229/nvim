@@ -20,7 +20,6 @@ Plug 'Yggdroot/LeaderF', { 'do': ':LeaderfInstallCExtension', 'on': 'LeaderfFile
 " Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'tandy1229/coc.nvim' " the version can use coc-actions
 Plug 'antoinemadec/coc-fzf'
-Plug 'rafcamlet/coc-nvim-lua', { 'for': 'lua' }
 
 " Find & Replace
 Plug 'brooth/far.vim', { 'on': ['F', 'Far', 'Fardo'] }
@@ -68,6 +67,7 @@ Plug 'neoclide/jsonc.vim'
 Plug 'othree/html5.vim'
 Plug 'alvan/vim-closetag'
 Plug 'yuezk/vim-js', { 'for': ['vim-plug', 'php', 'html', 'javascript', 'css', 'less'] }
+Plug 'mattn/emmet-vim'
 
 " beautiful vim 
 Plug 'ryanoasis/vim-devicons'
@@ -91,15 +91,14 @@ Plug 'mbbill/undotree', { 'on': 'UndotreeToggle' }
 Plug 'cohama/agit.vim', { 'on': 'Agit' }
 Plug 'tpope/vim-fugitive' " use in git
 Plug 'airblade/vim-gitgutter'
-Plug 'fszymanski/fzf-gitignore'
-Plug 'kdheepak/lazygit.nvim'
+Plug 'fszymanski/fzf-gitignore', { 'on': 'FzfGitignore' }
+Plug 'kdheepak/lazygit.nvim', { 'on': 'LazyGit' }
 
 " 对齐文本
 Plug 'godlygeek/tabular', { 'on': 'Tabularize' } " use visualmode ga 
 Plug 'junegunn/vim-easy-align' " I need to pratice
 
 " useful plug
-Plug 'itchyny/vim-cursorword'      " 高亮相同的单词
 Plug 'jiangmiao/auto-pairs'        " 补全括号
 Plug 'luochen1990/rainbow'         " 彩虹括号哦
 Plug 'tpope/vim-surround'          " 改括号
@@ -124,7 +123,7 @@ Plug 'tpope/vim-commentary'
 " Plug 'tomtom/tcomment_vim' " in <space>cn to comment a line
 
 " General Highlighter
-Plug 'RRethy/vim-hexokinase', { 'do': 'make hexokinase' }
+" Plug 'RRethy/vim-hexokinase', { 'do': 'make hexokinase' }
 Plug 'RRethy/vim-illuminate'
 
 " writting
