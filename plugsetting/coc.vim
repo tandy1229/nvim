@@ -2,6 +2,10 @@
 let g:coc_global_extensions = [
 	\ 'coc-actions',
 	\ 'coc-css',
+  \ 'coc-fzf-preview',
+  \ 'coc-spell-checker',
+  \ 'coc-cspell-dicts',
+  \ 'coc-marketplace',
   \ 'coc-stylelintplus',
   \ 'coc-texlab',
   \ 'coc-tabnine',
@@ -85,11 +89,17 @@ nmap tt :CocCommand explorer<CR>
 " coc-translator
 nmap ts <Plug>(coc-translator-p)
 " Remap for do codeAction of selected region
-function! s:cocActionsOpenFromSelected(type) abort
-  execute 'CocCommand actions.open ' . a:type
-endfunction
-xmap <silent> <leader>a :<C-u>execute 'CocCommand actions.open ' . visualmode()<CR>
-nmap <silent> <leader>a :<C-u>set operatorfunc=<SID>cocActionsOpenFromSelected<CR>g@
+
+" coc-actions is not supported in new versions of coc
+" function! s:cocActionsOpenFromSelected(type) abort
+"   execute 'CocCommand actions.open ' . a:type
+" endfunction
+" xmap <silent> <leader>a :<C-u>execute 'CocCommand actions.open ' . visualmode()<CR>
+" nmap <silent> <leader>a :<C-u>set operatorfunc=<SID>cocActionsOpenFromSelected<CR>g@
+
+vmap <leader>a <Plug>(coc-codeaction-selected)
+nmap <leader>a <Plug>(coc-codeaction-selected)
+
 " coctodolist
 nnoremap <leader>tn :CocCommand todolist.create<CR>
 nnoremap <leader>tl :CocList todolist<CR>
