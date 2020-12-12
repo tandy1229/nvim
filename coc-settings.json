@@ -190,6 +190,11 @@
 	"todolist.promptForReminder": false,
 	"coc-actions.hideCursor": false,
 	"coc-actions.showActionKind": true,
+	"css.validate": false,
+	"less.validate": false,
+	"scss.validate": false,
+	"wxss.validate": false,
+	// diagnostic-languageserver
 	"diagnostic-languageserver.filetypes": {
 		"vim": "vint",
 		"email": "languagetool",
@@ -200,8 +205,12 @@
 		"php": ["phpstan", "psalm"]
 	},
 	"diagnostic-languageserver.formatFiletypes": {
+		"dart": "dartfmt",
 		"elixir": "mix_format",
-		"eelixir": "mix_format"
+		"eelixir": "mix_format",
+		"lua": "lua-format",
+		"sh": "shfmt",
+		"blade": "blade-formatter"
 	},
 	"languageserver": {
 		"lua": {
