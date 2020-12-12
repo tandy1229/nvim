@@ -9,7 +9,8 @@ set hidden         " 切换文件不保存，隐藏
 set tabstop=2
 set shiftwidth=2
 set softtabstop=2
-set expandtab         " 将tab转为空格
+set noshowmode
+" set expandtab         " 将tab转为空格
 set ignorecase        " 设置忽略大小写
 set smartcase         " 设置智能识别大小写
 set wrap              " 自动折行
