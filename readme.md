@@ -1,4 +1,4 @@
-## AWESOME NEOVIM CONFIG
+# AWESOME NEOVIM CONFIG
 
 <center><img src="https://i.loli.net/2020/12/02/KdbP1m5t8Z2D4Xg.png"</center>
 
