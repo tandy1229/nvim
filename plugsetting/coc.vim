@@ -1,6 +1,15 @@
 " coc config
 let g:coc_global_extensions = [
 	\ 'coc-actions',
+  \ 'coc-xml',
+  \ 'coc-sql',
+  \ 'coc-terminal',
+	\ 'coc-cssmodules',
+	\ 'coc-browser',
+	\ 'coc-bookmark',
+	\ 'coc-cmake',
+	\ 'coc-julia',
+	\ 'coc-vimtex',
 	\ 'coc-css',
   \ 'coc-fzf-preview',
   \ 'coc-spell-checker',
@@ -66,6 +75,17 @@ nnoremap <silent><nowait> <LEADER>d :CocList diagnostics<cr>
 nmap <silent> <LEADER>- <Plug>(coc-diagnostic-prev)
 nmap <silent> <LEADER>= <Plug>(coc-diagnostic-next)
 nnoremap <C-c> :CocFzfList<CR>
+
+augroup mygroup
+  autocmd!
+  " Setup formatexpr specified filetype(s).
+  autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')
+  " Update signature help on jump placeholder.
+  autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
+augroup end
+
+autocmd CursorHold * silent call CocActionAsync('highlight')
+
 " Text Objects
 xmap if <Plug>(coc-funcobj-i)
 xmap af <Plug>(coc-funcobj-a)
@@ -75,6 +95,14 @@ xmap ic <Plug>(coc-classobj-i)
 omap ic <Plug>(coc-classobj-i)
 xmap ac <Plug>(coc-classobj-a)
 omap ac <Plug>(coc-classobj-a)
+
+" Apply AutoFix to problem on the current line.
+nmap <leader>qf  <Plug>(coc-fix-current)
+nmap <M-t> <Plug>(coc-terminal-toggle)
+nmap <Leader>bm <Plug>(coc-bookmark-toggle)
+nmap <Leader>bj <Plug>(coc-bookmark-next)
+nmap <Leader>bk <Plug>(coc-bookmark-prev)
+
 " Useful commands
 nnoremap <silent> <space>y :<C-u>CocList -A --normal yank<cr>
 nmap <silent> gm <Plug>(coc-codeaction)
