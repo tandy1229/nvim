@@ -1,9 +1,9 @@
 " coc config
 let g:coc_global_extensions = [
 	\ 'coc-actions',
-  \ 'coc-xml',
-  \ 'coc-sql',
-  \ 'coc-terminal',
+	\ 'coc-xml',
+	\ 'coc-sql',
+	\ 'coc-terminal',
 	\ 'coc-cssmodules',
 	\ 'coc-browser',
 	\ 'coc-bookmark',
@@ -11,24 +11,24 @@ let g:coc_global_extensions = [
 	\ 'coc-julia',
 	\ 'coc-vimtex',
 	\ 'coc-css',
-  \ 'coc-fzf-preview',
-  \ 'coc-spell-checker',
-  \ 'coc-cspell-dicts',
-  \ 'coc-marketplace',
-  \ 'coc-stylelintplus',
-  \ 'coc-texlab',
-  \ 'coc-tabnine',
-  \ 'coc-markdownlint',
-  \ 'coc-eslint',
+	\ 'coc-fzf-preview',
+	\ 'coc-spell-checker',
+	\ 'coc-cspell-dicts',
+	\ 'coc-marketplace',
+	\ 'coc-stylelintplus',
+	\ 'coc-texlab',
+	\ 'coc-tabnine',
+	\ 'coc-markdownlint',
+	\ 'coc-eslint',
 	\ 'coc-diagnostic',
 	\ 'coc-explorer',
-  \ 'coc-highlight',
+	\ 'coc-highlight',
 	\ 'coc-flutter-tools',
 	\ 'coc-gitignore',
 	\ 'coc-html',
-  \ 'coc-emmet',
+	\ 'coc-emmet',
 	\ 'coc-json',
-  \ 'coc-perl',
+	\ 'coc-perl',
 	\ 'coc-lists',
 	\ 'coc-prettier',
 	\ 'coc-pyright',
@@ -56,7 +56,7 @@ inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
 				\: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 function! s:check_back_space() abort
 	let col = col('.') - 1
-	return !col || getline('.')[col - 1]  =~# '\s'
+	return !col || getline('.')[col - 1]	=~# '\s'
 endfunction
 " use complete
 inoremap <silent><expr> <c-space> coc#refresh()
@@ -77,11 +77,11 @@ nmap <silent> <LEADER>= <Plug>(coc-diagnostic-next)
 nnoremap <C-c> :CocFzfList<CR>
 
 augroup mygroup
-  autocmd!
-  " Setup formatexpr specified filetype(s).
-  autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')
-  " Update signature help on jump placeholder.
-  autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
+	autocmd!
+	" Setup formatexpr specified filetype(s).
+	autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')
+	" Update signature help on jump placeholder.
+	autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
 augroup end
 
 autocmd CursorHold * silent call CocActionAsync('highlight')
@@ -97,7 +97,7 @@ xmap ac <Plug>(coc-classobj-a)
 omap ac <Plug>(coc-classobj-a)
 
 " Apply AutoFix to problem on the current line.
-nmap <leader>qf  <Plug>(coc-fix-current)
+nmap <leader>qf	<Plug>(coc-fix-current)
 nmap <M-t> <Plug>(coc-terminal-toggle)
 nmap <Leader>bm <Plug>(coc-bookmark-toggle)
 nmap <Leader>bj <Plug>(coc-bookmark-next)
@@ -120,7 +120,7 @@ nmap ts <Plug>(coc-translator-p)
 
 " coc-actions is not supported in new versions of coc
 " function! s:cocActionsOpenFromSelected(type) abort
-"   execute 'CocCommand actions.open ' . a:type
+"	 execute 'CocCommand actions.open ' . a:type
 " endfunction
 " xmap <silent> <leader>a :<C-u>execute 'CocCommand actions.open ' . visualmode()<CR>
 " nmap <silent> <leader>a :<C-u>set operatorfunc=<SID>cocActionsOpenFromSelected<CR>g@
