@@ -107,7 +107,12 @@ nmap <Leader>bk <Plug>(coc-bookmark-prev)
 nmap g= <Plug>(coc-git-nextchunk)
 nmap g- <Plug>(coc-git-prevchunk)
 nmap H <Plug>(coc-git-chunkinfo) " show the changing info
-nmap gt <Plug>(coc-git-commit) " show the commit message
+nmap gt <Plug>(coc-git-commit)   " show the commit message
+" create text object for git chunks
+omap ig <Plug>(coc-git-chunk-inner)
+xmap ig <Plug>(coc-git-chunk-inner)
+omap ag <Plug>(coc-git-chunk-outer)
+xmap ag <Plug>(coc-git-chunk-outer)
 
 " Useful commands
 nnoremap <silent> <space>y :<C-u>CocList -A --normal yank<cr>
