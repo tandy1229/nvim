@@ -25,7 +25,7 @@ let g:airline#extensions#default#layout = [
     \ ['a', 'b', 'error',  'c'],
     \ ['warning', 'y', 'z', 'x']
     \ ]
-let g:airline#extensions#hunks#coc_git = 1                                       " enable coc-git
+let g:airline#extensions#hunks#coc_git = 1            " enable coc-git
 function! AirlineInit()
   let g:airline_section_x = '%{ScrollStatus()}'
   let g:airline_section_error = airline#section#create([ 'hunks' ])
@@ -33,9 +33,9 @@ function! AirlineInit()
   let g:airline_section_b= airline#section#create(['branch'])
 endfunction
 autocmd User AirlineAfterInit call AirlineInit()
-let g:airline_powerline_fonts = 1                                                " use powerline font
-let g:airline#extensions#tabline#enabled = 1                                     " 打开tabline功能,方便查看Buffer和切换，这个功能比较不错
-let g:airline#extensions#tabline#buffer_nr_show = 1                              " 我还省去了minibufexpl插件，因为我习惯在1个Tab下用多个buffer
+let g:airline_powerline_fonts = 1                     " use powerline font
+let g:airline#extensions#tabline#enabled = 1          " 打开tabline功能,方便查看Buffer和切换，这个功能比较不错
+let g:airline#extensions#tabline#buffer_nr_show = 1   " 我还省去了minibufexpl插件，因为我习惯在1个Tab下用多个buffer
 "设置切换Buffer快捷键"
 nnoremap <M-k> :bn<CR>
 nnoremap <M-j> :bp<CR>
