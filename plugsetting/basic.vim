@@ -4,7 +4,6 @@ set ttyfast      " 滚动快？？？？！
 set nocompatible      " 不兼容vi
 set number         " 显示行号
 set relativenumber " 显示相对行号
-set cursorline     " 高亮光标所在的行和列
 set hidden         " 切换文件不保存，隐藏
 set tabstop=2
 set shiftwidth=2
@@ -35,6 +34,10 @@ set list         " 显示不可见字符
 set listchars=tab:\|\ ,trail:▫
 set lazyredraw
 set visualbell
+
+autocmd InsertLeave,WinEnter * set cursorline
+autocmd InsertEnter,WinLeave * set nocursorline
+autocmd BufWritePost $MYVIMRC source $MYVIMRC
 
 " 某种备份
 silent !mkdir -p ~/.config/nvim/tmp/backup
