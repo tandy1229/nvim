@@ -359,3 +359,10 @@ let g:lazygit_floating_window_corner_chars = ['╭', '╮', '╰', '╯'] " cust
 let g:lazygit_use_neovim_remote = 1 " for neovim-remote support
 
 nnoremap <silent> <leader>lg :LazyGit<CR>
+
+" >>> vimspecter
+" ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''' 
+let g:vimspector_enable_mappings = 'HUMAN'
+sign define vimspectorBP text=☛ texthl=Normal
+sign define vimspectorBPDisabled text=☞ texthl=Normal
+sign define vimspectorPC text=🔶 texthl=SpellBad
