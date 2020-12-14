@@ -17,7 +17,6 @@ set linebreak         " 折行时不会将单词分开
 set ttimeoutlen=0     " 无延迟
 set notimeout
 set foldenable        " 折叠
-" set foldmethod=indent " 代码折叠
 set foldlevel=99      " 相当于默认不折叠
 set indentexpr=       " 禁用vim缩进indent
 set autoindent        " 换行时自动缩进
@@ -68,19 +67,13 @@ autocmd TermOpen term://* startinsert
 tnoremap <C-N> <C-\><C-N>
 tnoremap <C-O> <C-\><C-N><C-O>
 
-
-" ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''' 
-" '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 " >>> 自定义按键布局
 " ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''' 
-" ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''' 
-
 
 " <leader>
 let mapleader=" "
 
 noremap ; :
-
 noremap S :w<CR>
 noremap Q :q<CR>
 
@@ -91,20 +84,17 @@ noremap ,j <C-w>j
 noremap ,k <C-w>k
 noremap ,l <C-w>l
 
-
 " 分屏
 noremap sl :set splitright<CR>:vsplit<CR>
 noremap sh :set nosplitright<CR>:vsplit<CR>
 noremap sk :set nosplitbelow<CR>:split<CR>
 noremap sj :set splitbelow<CR>:split<CR>
 
-
 " Resize splits with arrow keys
 noremap <up> :res +5<CR>
 noremap <down> :res -5<CR>
 noremap <left> :vertical resize-5<CR>
 noremap <right> :vertical resize+5<CR>
-
 
 " Create a new tab with tu
 noremap tj :tabe<CR>
@@ -114,7 +104,6 @@ noremap tl :+tabnext<CR>
 " Move the tabs with tmn and tmi
 noremap tmh :-tabmove<CR>
 noremap tml :+tabmove<CR>
-
 
 " Indentation
 nnoremap < <<
@@ -133,11 +122,8 @@ noremap = n
 " disable the default s key
 noremap s <nop>
 
-
-
 " >>> cursor
 " ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''' 
-
 " K/J keys for 5 times u/e (faster navigation)
 noremap <silent> K 5k
 noremap <silent> J 5j
@@ -164,6 +150,7 @@ noremap tx :r !figlet
 
 " find and replace
 noremap \s :%s//g<left><left>
+noremap \c :%s/\s\+$//g
 
 " press f10 to show hlgroup
 function! SynGroup()
@@ -187,13 +174,11 @@ noremap <c-g> :tabe<CR>:-tabmove<CR>:term lazygit<CR>
 " Folding
 noremap <silent> <LEADER>o za
 
-
 " Press space twice to jump to the next '<++>' and edit it
 noremap <LEADER><LEADER> <Esc>/<++><CR>:nohlsearch<CR>c4l
 
 " Opening a terminal window
 noremap <LEADER>/ :set splitbelow<CR>:split<CR>:res +10<CR>:term<CR>
-
 
 " Compile function
 noremap \r :call CompileRun()<CR>

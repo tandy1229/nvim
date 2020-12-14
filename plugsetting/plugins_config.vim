@@ -314,8 +314,8 @@ vmap ga :Tabularize /
 
 " >>> limelight
 " ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''' 
-nmap <Leader>; :Limelight<CR> 
-nmap <Leader>' :Limelight!<CR> 
+nmap <Leader>; :Limelight<CR>
+nmap <Leader>' :Limelight!<CR>
 let g:limelight_default_coefficient = 0.7
 
 " >>> vim-markdown-toc
