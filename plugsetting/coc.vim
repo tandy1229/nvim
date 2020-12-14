@@ -2,6 +2,7 @@
 let g:coc_global_extensions = [
 	\ 'coc-actions',
 	\ 'coc-xml',
+	\ 'coc-git',
 	\ 'coc-sql',
 	\ 'coc-terminal',
 	\ 'coc-cssmodules',
@@ -102,6 +103,11 @@ nmap <M-t> <Plug>(coc-terminal-toggle)
 nmap <Leader>bm <Plug>(coc-bookmark-toggle)
 nmap <Leader>bj <Plug>(coc-bookmark-next)
 nmap <Leader>bk <Plug>(coc-bookmark-prev)
+
+nmap g= <Plug>(coc-git-nextchunk)
+nmap g- <Plug>(coc-git-prevchunk)
+nmap H <Plug>(coc-git-chunkinfo) " show the changing info
+nmap gt <Plug>(coc-git-commit) " show the commit message
 
 " Useful commands
 nnoremap <silent> <space>y :<C-u>CocList -A --normal yank<cr>
