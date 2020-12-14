@@ -14,7 +14,7 @@ Plug 'ojroques/vim-scrollstatus'
 " the plug I love best!!!
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-Plug 'Yggdroot/LeaderF', { 'do': ':LeaderfInstallCExtension', 'on': 'LeaderfFile' } " 模糊搜索
+Plug 'Yggdroot/LeaderF', { 'do': ':LeaderfInstallCExtension' } " 模糊搜索
 
 " coc awesome complete
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -71,7 +71,8 @@ Plug 'neoclide/jsonc.vim'
 Plug 'othree/html5.vim'
 Plug 'alvan/vim-closetag'
 Plug 'yuezk/vim-js', { 'for': ['vim-plug', 'php', 'html', 'javascript', 'css', 'less'] }
-Plug 'mattn/emmet-vim'
+Plug 'mattn/emmet-vim', { 'for': ['html', 'css', 'less'] }
+
 
 " beautiful vim 
 Plug 'ryanoasis/vim-devicons'
@@ -94,7 +95,7 @@ Plug 'mbbill/undotree', { 'on': 'UndotreeToggle' }
 " git diff
 Plug 'cohama/agit.vim', { 'on': 'Agit' }
 Plug 'tpope/vim-fugitive' " use in git
-Plug 'airblade/vim-gitgutter'
+" Plug 'airblade/vim-gitgutter'
 Plug 'fszymanski/fzf-gitignore', { 'on': 'FzfGitignore' }
 Plug 'kdheepak/lazygit.nvim', { 'on': 'LazyGit' }
 

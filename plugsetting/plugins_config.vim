@@ -25,9 +25,11 @@ let g:airline#extensions#default#layout = [
     \ ['a', 'b', 'error',  'c'],
     \ ['warning', 'y', 'z', 'x']
     \ ]
+let g:airline#extensions#hunks#coc_git = 1
 function! AirlineInit()
   let g:airline_section_x = '%{ScrollStatus()}'
-  let g:airline_section_error = airline#section#create(['hunks' ])
+  let g:airline_section_error = airline#section#create([ 'hunks' ])
+	" let g:airline_section_error = "%{get(b:,'coc_git_status','')}"
   let g:airline_section_warning = airline#section#create(['[', 'filetype', ']'])
   let g:airline_section_b= airline#section#create(['branch'])
 endfunction
@@ -45,8 +47,14 @@ nnoremap <M-j> :bp<CR>
 " >>> LeaderF
 " ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''' 
 nnoremap <leader>F :LeaderfFile<CR>
-let g:Lf_WindowPosition = 'popup'
-let g:Lf_PreviewInPopup = 1
+nnoremap <M-h> :Leaderf help<CR>
+nnoremap ; :Leaderf command<CR>
+nnoremap <M-m> :Leaderf mru<CR>
+nnoremap <c-f> :Leaderf file<CR>
+" let g:Lf_WindowPosition = 'popup'
+" let g:Lf_PreviewInPopup = 1
+let g:Lf_StlSeparator = { 'left': "\ue0b0", 'right': "\ue0b2" }
+" let g:Lf_StlSeparator = { 'left': "", 'right': "" }
 let g:Lf_PreviewCode = 1
 let g:Lf_ShowHidden = 1
 let g:Lf_ShowDevIcons = 1
@@ -176,9 +184,8 @@ let g:scrollstatus_size = 15
 " >>> fzf
 " ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''' 
 set rtp+=/usr/local/opt/fzf
-map ff :FZF<CR>
 " noremap <silent> <C-p> :Files<CR>
-noremap <silent> <C-f> :Rg<CR>
+noremap <silent> <C-p> :Rg<CR>
 noremap <silent> <C-h> :History<CR>
 "noremap <C-t> :BTags<CR>
 noremap <silent> <C-l> :Lines<CR>
@@ -336,20 +343,20 @@ noremap <LEADER>gi :FzfGitignore<CR>
 
 " >>> vim-gitgutter
 " ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''' 
-let g:gitgutter_sign_allow_clobber = 0
-let g:gitgutter_map_keys = 0
-let g:gitgutter_override_sign_column_highlight = 0
-let g:gitgutter_preview_win_floating = 1
-let g:gitgutter_sign_added = '▎'
-let g:gitgutter_sign_modified = '░'
-let g:gitgutter_sign_removed = '▏'
-let g:gitgutter_sign_removed_first_line = '▔'
-let g:gitgutter_sign_modified_removed = '▒'
-" autocmd BufWritePost * GitGutter
-nnoremap <LEADER>gf :GitGutterFold<CR>
-nnoremap H :GitGutterPreviewHunk<CR>
-nnoremap <LEADER>g- :GitGutterPrevHunk<CR>
-nnoremap <LEADER>g= :GitGutterNextHunk<CR>
+" let g:gitgutter_sign_allow_clobber = 0
+" let g:gitgutter_map_keys = 0
+" let g:gitgutter_override_sign_column_highlight = 0
+" let g:gitgutter_preview_win_floating = 1
+" let g:gitgutter_sign_added = '▎'
+" let g:gitgutter_sign_modified = '░'
+" let g:gitgutter_sign_removed = '▏'
+" let g:gitgutter_sign_removed_first_line = '▔'
+" let g:gitgutter_sign_modified_removed = '▒'
+" " autocmd BufWritePost * GitGutter
+" nnoremap <LEADER>gf :GitGutterFold<CR>
+" nnoremap H :GitGutterPreviewHunk<CR>
+" nnoremap <LEADER>g- :GitGutterPrevHunk<CR>
+" nnoremap <LEADER>g= :GitGutterNextHunk<CR>
 
 " >>> nvim-lazygit
 " ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''' 
