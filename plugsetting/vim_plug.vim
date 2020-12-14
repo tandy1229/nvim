@@ -48,6 +48,8 @@ Plug 'tandy1229/nvim-deus'
 Plug 'kevinhwang91/rnvimr', { 'on': 'RnvimrToggle' }
 Plug 'pechorin/any-jump.vim'
 
+Plug 'puremourning/vimspector'
+
 " python
 Plug 'python-mode/python-mode', { 'for' :['python', 'vim-plug'] }
 Plug 'numirias/semshi', { 'do': ':UpdateRemotePlugins', 'for' :['python', 'vim-plug'] } " python高亮
@@ -57,6 +59,8 @@ Plug 'tweekmonster/braceless.vim', { 'for' :['python', 'vim-plug'] }
 " go
 Plug 'fatih/vim-go' , { 'for': ['go', 'vim-plug'], 'tag': '*' }
 
+" tex
+Plug 'lervag/vimtex'
 
 " perl
 Plug 'vim-perl/vim-perl', { 'for': 'perl', 'do': 'make clean carp dancer highlight-all-pragmas moose test-more try-tiny' }
