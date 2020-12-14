@@ -3,6 +3,7 @@ let g:coc_global_extensions = [
 	\ 'coc-actions',
 	\ 'coc-xml',
 	\ 'coc-git',
+	\ 'coc-pairs',
 	\ 'coc-sql',
 	\ 'coc-terminal',
 	\ 'coc-cssmodules',

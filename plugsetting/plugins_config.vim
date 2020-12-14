@@ -8,7 +8,6 @@ hi NonText ctermfg=gray guifg=grey10
 " ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''' 
 " beautify
 let g:airline_theme="deus" 
-" let g:airline_extensions = [ 'branch', 'hunks', 'tabline', 'coc', 'fzf', 'undotree' ] " make it fast
 let g:airline#extensions#wordcount#enabled=0
 let g:airline#extensions#whitespace#enabled=0
 if !exists('g:airline_symbols')
@@ -220,12 +219,6 @@ let g:far#mapping = {
 		\ "replace_undo" : ["l"],
 		\ }
 
-" >>> vim-table-mode
-" ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''' 
-noremap <LEADER>tm :TableModeToggle<CR>
-"let g:table_mode_disable_mappings = 1
-let g:table_mode_cell_text_object_i_map = 'k<Bar>'
-
 " >>> vim-instant-markdown
 " ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''' 
 let g:instant_markdown_slow = 0
@@ -337,23 +330,6 @@ let g:vmt_fence_closing_text = '/TOC'
 " ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''' 
 noremap <LEADER>gi :FzfGitignore<CR>
 
-" >>> vim-gitgutter
-" ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''' 
-" let g:gitgutter_sign_allow_clobber = 0
-" let g:gitgutter_map_keys = 0
-" let g:gitgutter_override_sign_column_highlight = 0
-" let g:gitgutter_preview_win_floating = 1
-" let g:gitgutter_sign_added = '▎'
-" let g:gitgutter_sign_modified = '░'
-" let g:gitgutter_sign_removed = '▏'
-" let g:gitgutter_sign_removed_first_line = '▔'
-" let g:gitgutter_sign_modified_removed = '▒'
-" " autocmd BufWritePost * GitGutter
-" nnoremap <LEADER>gf :GitGutterFold<CR>
-" nnoremap H :GitGutterPreviewHunk<CR>
-" nnoremap <LEADER>g- :GitGutterPrevHunk<CR>
-" nnoremap <LEADER>g= :GitGutterNextHunk<CR>
-
 " >>> nvim-lazygit
 " ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''' 
 let g:lazygit_floating_window_winblend = 0 " transparency of floating window
@@ -366,6 +342,3 @@ nnoremap <silent> <leader>lg :LazyGit<CR>
 " >>> vimspecter
 " ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''' 
 let g:vimspector_enable_mappings = 'HUMAN'
-sign define vimspectorBP text=☛ texthl=Normal
-sign define vimspectorBPDisabled text=☞ texthl=Normal
-sign define vimspectorPC text=🔶 texthl=SpellBad

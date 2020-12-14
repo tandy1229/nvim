@@ -1,33 +1,22 @@
-" - For Neovim: stdpath('data') . '/plugged'
-" - Avoid using standard Vim directory names like 'plugin'
 call plug#begin('~/.config/nvim/plugged')
-" to test the neovim open time
-Plug 'tweekmonster/startuptime.vim', { 'on': 'StartupTime' }
+Plug 'tweekmonster/startuptime.vim', { 'on': 'StartupTime' } " to test the neovim open time
 
-" 超好看的状态栏
-" now I use airline, it has the great-capability on many platflot
+" now I use airline, it has the great-capability with many plugin
 Plug 'vim-airline/vim-airline'
 Plug 'tandy1229/airline-deus'
 Plug 'ojroques/vim-scrollstatus'
 
-" FZF
-" the plug I love best!!!
+" FZF ---- the plug I love best!!!
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'Yggdroot/LeaderF', { 'do': ':LeaderfInstallCExtension' } " 模糊搜索
+Plug 'brooth/far.vim', { 'on': ['F', 'Far', 'Fardo'] }  " Find & Replace
 
 " coc awesome complete
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-" Plug 'tandy1229/coc.nvim' " the version can use coc-actions
 Plug 'antoinemadec/coc-fzf'
 
-" Find & Replace
-Plug 'brooth/far.vim', { 'on': ['F', 'Far', 'Fardo'] }
-
-" Treesitter
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-Plug 'nvim-treesitter/playground'
-
+" autoformat
 Plug 'google/vim-maktaba', {'on': 'FormatCode'}
 Plug 'google/vim-codefmt', {'on': 'FormatCode'}
 
@@ -40,15 +29,11 @@ Plug 'mzlogin/vim-markdown-toc', { 'for': ['gitignore', 'markdown', 'vim-plug'] 
 
 " 代码主题
 Plug 'tandy1229/nvim-deus'
-" Plug 'tandy1229/nvim-deus2'
-" Plug 'Iron-E/nvim-highlite'
-" Plug 'ajmwagar/vim-deus'
+Plug 'ryanoasis/vim-devicons'
+Plug 'luochen1990/rainbow'         " 彩虹括号哦
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'nvim-treesitter/playground'
 
-" rager: the document arragement
-Plug 'kevinhwang91/rnvimr', { 'on': 'RnvimrToggle' }
-Plug 'pechorin/any-jump.vim'
-
-Plug 'puremourning/vimspector'
 
 " python
 Plug 'python-mode/python-mode', { 'for' :['python', 'vim-plug'] }
@@ -62,9 +47,6 @@ Plug 'fatih/vim-go' , { 'for': ['go', 'vim-plug'], 'tag': '*' }
 " tex
 Plug 'lervag/vimtex'
 
-" perl
-Plug 'vim-perl/vim-perl', { 'for': 'perl', 'do': 'make clean carp dancer highlight-all-pragmas moose test-more try-tiny' }
-
 " html && css && js
 Plug 'elzr/vim-json'
 Plug 'neoclide/jsonc.vim'
@@ -73,63 +55,46 @@ Plug 'alvan/vim-closetag'
 Plug 'yuezk/vim-js', { 'for': ['vim-plug', 'php', 'html', 'javascript', 'css', 'less'] }
 Plug 'mattn/emmet-vim', { 'for': ['html', 'css', 'less'] }
 
-
-" beautiful vim 
-Plug 'ryanoasis/vim-devicons'
-
-" 语法树
-" see the funtion
-Plug 'liuchengxu/vista.vim'
+" snippets
+Plug 'honza/vim-snippets'
 
 " 进入动画？
 Plug 'mhinz/vim-startify'
-
-" 新式文件树
 Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'kristijanhusak/defx-icons', { 'on': 'Defx' }
 Plug 'kristijanhusak/defx-git', { 'on': 'Defx' }
-
-" undotree
 Plug 'mbbill/undotree', { 'on': 'UndotreeToggle' }
+Plug 'liuchengxu/vista.vim'
+Plug 'pechorin/any-jump.vim'
+Plug 'kevinhwang91/rnvimr', { 'on': 'RnvimrToggle' }
 
 " git diff
 Plug 'cohama/agit.vim', { 'on': 'Agit' }
 Plug 'tpope/vim-fugitive' " use in git
-" Plug 'airblade/vim-gitgutter'
 Plug 'fszymanski/fzf-gitignore', { 'on': 'FzfGitignore' }
 Plug 'kdheepak/lazygit.nvim', { 'on': 'LazyGit' }
 
 " 对齐文本
-Plug 'godlygeek/tabular', { 'on': 'Tabularize' } " use visualmode ga 
-Plug 'junegunn/vim-easy-align' " I need to pratice
+Plug 'godlygeek/tabular', { 'on': 'Tabularize' } " use visualmode ga
+Plug 'junegunn/vim-easy-align'                   " I need to pratice
 
 " useful plug
-Plug 'jiangmiao/auto-pairs'        " 补全括号
-Plug 'luochen1990/rainbow'         " 彩虹括号哦
-Plug 'tpope/vim-surround'          " 改括号
-Plug 'AndrewRadev/splitjoin.vim'   " 一行代码变多行
-Plug 'rhysd/clever-f.vim'          " f不能用；
-Plug 'wincent/terminus'            " 鼠标支持
-Plug 'airblade/vim-rooter'         " ???
-Plug 'svermeulen/vim-subversive'   " 替换:s/的升级版
-Plug 'mg979/vim-visual-multi'      " 多括号
-Plug 'gcmt/wildfire.vim'           " 超级回车
-Plug 'junegunn/vim-peekaboo'       " yank
-Plug 'theniceboy/antovim'          " gs to switch
-" Plug 'easymotion/vim-easymotion' " find
-" Plug 'Yggdroot/indentLine'       " 细线显示缩进
+Plug 'tpope/vim-surround'                        " 改括号
+Plug 'AndrewRadev/splitjoin.vim'                 " 一行代码变多行
+Plug 'rhysd/clever-f.vim'                        " f不能用；
+Plug 'wincent/terminus'                          " 鼠标支持
+Plug 'airblade/vim-rooter'                       " ???
+Plug 'svermeulen/vim-subversive'                 " 替换:s/的升级版
+Plug 'mg979/vim-visual-multi'                    " 多括号
+Plug 'gcmt/wildfire.vim'                         " 超级回车
+Plug 'junegunn/vim-peekaboo'                     " yank
+Plug 'theniceboy/antovim'                        " gs to switch
+Plug 'RRethy/vim-illuminate'                     " 高亮相同单词
+Plug 'tpope/vim-commentary'                      " 注释插件
 
 " focus mode
 Plug 'junegunn/goyo.vim', { 'on': 'Goyo' }
 Plug 'junegunn/limelight.vim', { 'on': 'Limelight' }
-
-" 注释插件
-Plug 'tpope/vim-commentary'
-" Plug 'tomtom/tcomment_vim' " in <space>cn to comment a line
-
-" General Highlighter
-" Plug 'RRethy/vim-hexokinase', { 'do': 'make hexokinase' }
-Plug 'RRethy/vim-illuminate'
 
 " writting
 Plug 'ron89/thesaurus_query.vim'
@@ -138,8 +103,8 @@ Plug 'ron89/thesaurus_query.vim'
 Plug 'skywind3000/asyncrun.vim', { 'on': 'AsyncRun' }
 Plug 'skywind3000/asynctasks.vim'
 
-" useful snnipets
-Plug 'honza/vim-snippets'
+" debugger
+Plug 'puremourning/vimspector'
 
 " Chinese vim document
 Plug 'yianwillis/vimcdoc'
