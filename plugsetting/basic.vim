@@ -1,5 +1,5 @@
 " >>> EDITER SETUP
-" ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''' 
+" '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 set ttyfast      " 滚动快？？？？！
 set nocompatible      " 不兼容vi
 set number         " 显示行号
@@ -57,7 +57,7 @@ set autowrite
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 
 " >>> termial settings
-" ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''' 
+" '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 " 渲染百万色
 set termguicolors
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
@@ -68,7 +68,7 @@ tnoremap <C-N> <C-\><C-N>
 tnoremap <C-O> <C-\><C-N><C-O>
 
 " >>> 自定义按键布局
-" ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''' 
+" '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
 " <leader>
 let mapleader=" "
@@ -123,7 +123,7 @@ noremap = n
 noremap s <nop>
 
 " >>> cursor
-" ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''' 
+" '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 " K/J keys for 5 times u/e (faster navigation)
 noremap <silent> K 5k
 noremap <silent> J 5j
@@ -146,11 +146,11 @@ noremap ` ~
 autocmd BufEnter * silent! lcd %:p:h
 
 " Call figlet
-noremap tx :r !figlet 
+noremap tx :r !figlet
 
 " find and replace
 noremap \s :%s//g<left><left>
-noremap \c :%s/\s\+$//g
+nnoremap <silent> \c :%s/\s\+$//g<CR>
 
 " press f10 to show hlgroup
 function! SynGroup()

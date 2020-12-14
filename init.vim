@@ -1,6 +1,6 @@
-"  author: @tandy1229 
+"  author: @tandy1229
 "  modifiy from @theniceboy
-"  
+"
 "  the awesome vimrc
 "
 source ~/.config/nvim/plugsetting/basic.vim

@@ -1,13 +1,13 @@
 " >>> colorscheme deus
-" ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''' 
+" '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 set rtp+=/Users/yitaimin/.vim/plugged/nvim-deus
 color deus
 hi NonText ctermfg=gray guifg=grey10
 
 " >>> airline
-" ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''' 
+" '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 " beautify
-let g:airline_theme="deus" 
+let g:airline_theme="deus"
 let g:airline#extensions#wordcount#enabled=0
 let g:airline#extensions#whitespace#enabled=0
 if !exists('g:airline_symbols')
@@ -40,7 +40,7 @@ nnoremap <M-k> :bn<CR>
 nnoremap <M-j> :bp<CR>
 
 " >>> LeaderF
-" ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''' 
+" '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 nnoremap <leader>F :LeaderfFile<CR>
 nnoremap <M-h> :Leaderf help<CR>
 nnoremap ; :Leaderf command<CR>
@@ -63,12 +63,12 @@ let g:Lf_UseMemoryCache = 0
 let g:Lf_UseCache = 0
 
 " >>> rainbow
-" ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''' 
+" '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 let g:rainbow_active = 1 "set to 0 if you want to enable it later via :RainbowToggle
 
 
 " >>> defx(新型异步文件管理器)
-" ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''' 
+" '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 call defx#custom#option('_', {
       \ 'winwidth': 35,
       \ 'split': 'vertical',
@@ -147,7 +147,7 @@ endfunction
 let g:defx_icons_enable_syntax_highlight = 1
 
 " >>> undotree
-" ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''' 
+" '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 nnoremap L :UndotreeToggle<cr>
 let g:undotree_DiffAutoOpen = 1
 let g:undotree_SetFocusWhenToggle = 1
@@ -163,7 +163,7 @@ function g:Undotree_CustomMap()
 endfunc
 
 " >>> vista.vim
-" ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''' 
+" '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 noremap <LEADER>v :Vista!!<CR>
 noremap <c-t> :silent! Vista finder coc<CR>
 let g:vista_icon_indent = ["╰─▸ ", "├─▸ "]
@@ -177,7 +177,7 @@ let g:vista#renderer#icons = {
 let g:scrollstatus_size = 15
 
 " >>> fzf
-" ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''' 
+" '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 set rtp+=/usr/local/opt/fzf
 " noremap <silent> <C-p> :Files<CR>
 noremap <silent> <C-p> :Rg<CR>
@@ -213,14 +213,14 @@ noremap <c-d> :BD<CR>
 let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.8 } }
 
 " >>> far.vim
-" ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''' 
+" '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 noremap <LEADER>f :F  **/*<left><left><left><left><left>
 let g:far#mapping = {
 		\ "replace_undo" : ["l"],
 		\ }
 
 " >>> vim-instant-markdown
-" ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''' 
+" '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 let g:instant_markdown_slow = 0
 let g:instant_markdown_autostart = 0
 " let g:instant_markdown_open_to_the_world = 1
@@ -230,7 +230,7 @@ let g:instant_markdown_autostart = 0
 let g:instant_markdown_autoscroll = 1
 
 " >>> nvim-treesitter
-" ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''' 
+" '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 " lua config
 lua <<EOF
 require'nvim-treesitter.configs'.setup {
@@ -257,24 +257,24 @@ set foldmethod=expr
 set foldexpr=nvim_treesitter#foldexpr()
 
 " >>> goyo.vim
-" ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''' 
+" '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 map <LEADER>gy :Goyo<CR>
 
 " >>> AsyncRun
-" ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''' 
+" '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 noremap gp :AsyncRun git push<CR>
 
 " >>> AsyncTask
-" ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''' 
+" '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 let g:asyncrun_open = 6
 
 " >>> vim-subversive
-" ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''' 
+" '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 nmap s <plug>(SubversiveSubstitute)
 nmap ss <plug>(SubversiveSubstituteLine)
 
 " >>> rnvimr
-" ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''' 
+" '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 let g:rnvimr_ex_enable = 1
 let g:rnvimr_pick_enable = 1
 let g:rnvimr_draw_border = 0
@@ -299,27 +299,27 @@ let g:rnvimr_layout = { 'relative': 'editor',
 let g:rnvimr_presets = [{'width': 1.0, 'height': 1.0}]
 
 " >>> vim-illuminate
-" ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''' 
+" '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 let g:Illuminate_delay = 750
 hi illuminatedWord cterm=undercurl gui=undercurl
 
 " >>> vim-rooter
-" ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''' 
+" '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 let g:rooter_patterns = ['__vim_project_root', '.git/']
 let g:rooter_silent_chdir = 1
 
 " >>> tabular
-" ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''' 
+" '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 vmap ga :Tabularize /
 
 " >>> limelight
-" ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''' 
+" '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 nmap <Leader>; :Limelight<CR>
 nmap <Leader>' :Limelight!<CR>
 let g:limelight_default_coefficient = 0.7
 
 " >>> vim-markdown-toc
-" ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''' 
+" '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 "let g:vmt_auto_update_on_save = 0
 "let g:vmt_dont_insert_fence = 1
 let g:vmt_cycle_list_item_markers = 1
@@ -327,11 +327,11 @@ let g:vmt_fence_text = 'TOC'
 let g:vmt_fence_closing_text = '/TOC'
 
 " >>> fzf-gitignore
-" ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''' 
+" '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 noremap <LEADER>gi :FzfGitignore<CR>
 
 " >>> nvim-lazygit
-" ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''' 
+" '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 let g:lazygit_floating_window_winblend = 0 " transparency of floating window
 let g:lazygit_floating_window_scaling_factor = 0.9 " scaling factor for floating window
 let g:lazygit_floating_window_corner_chars = ['╭', '╮', '╰', '╯'] " customize lazygit popup window corner characters
@@ -340,5 +340,5 @@ let g:lazygit_use_neovim_remote = 1 " for neovim-remote support
 nnoremap <silent> <leader>lg :LazyGit<CR>
 
 " >>> vimspecter
-" ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''' 
+" '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 let g:vimspector_enable_mappings = 'HUMAN'
