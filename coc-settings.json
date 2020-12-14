@@ -85,14 +85,15 @@
 	"diagnostic.refreshOnInsertMode": false,
 	"diagnostic.refreshAfterSave": false,
 	"diagnostic.checkCurrentLine": true,
-	"diagnostic.virtualTextPrefix": " ❯❯❯ ",
-	"diagnostic.virtualTextLines": 4,
 	"diagnostic.virtualText": true,
+	"diagnostic.virtualTextPrefix": " ❯❯❯ ",
+	"diagnostic.virtualTextLines": 3,
+	"diagnostic.virtualTextLineSeparator": " \\ ",
 	"codeLens.enable": true,
 	"list.previewHighlightGroup": "Statement",
 	"snippets.ultisnips.directories": [
 		"$HOME/.config/nvim/Ultisnips/",
-		"$HOME/.vim/plugged/vim-snippets/UltiSnips"
+		"$HOME/.config/nvim/plugged/vim-snippets/UltiSnips"
 	],
 	"yaml.format.enable": true,
 	"signature.target": "float",
