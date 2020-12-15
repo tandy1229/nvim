@@ -5,17 +5,13 @@ This is my neovim configuration.
 
 Most of the configurations is inspired by @theniceboy.
 
-Anyway, it's **AWESOME** !!!
-
-Just enjoy~~~
-
 Pros
 ----
 
-- Nearly make vim like a IDE
-- extremely helpful
-- run fast with nearly 60 plugins
-- integrated with any useful command line tools like [fzf](https://github.com/junegunn/fzf)
+- Nearly make neovim like a IDE
+- helpful improvements
+- Run fast with nearly 60 plugins
+- Integrated with any useful command line tools like [fzf](https://github.com/junegunn/fzf)
 
 Table of contents
 -----------------
@@ -47,7 +43,7 @@ Table of contents
   * For using the smart completion of coc.nvim
   * After installation, you must do `npm install -g neovim`
 
-* languageserver ()
+* languageserver
 	* For smart completion of the files.
 
 		 ```shell
@@ -73,7 +69,7 @@ Table of contents
 
 	Check the error of bash
 
-	> You can install it with your package manager, if you use brew
+	> You can install it with your package manager, if you use brew:
 
 	```shell
 	brew install shellcheck
@@ -83,7 +79,7 @@ Table of contents
 
 	Autoformat the bash
 
-	> You can install it with your package manager, if you use brew
+	> You can install it with your package manager, if you use brew:
 
 	```shell
 	brew install shfmt
@@ -95,7 +91,7 @@ Table of contents
 
 * [nerd-font](https://github.com/ryanoasis/nerd-fonts)
 
-	Perform better
+	Make your neovim perform better
 
 * [lazygit](https://github.com/jesseduffield/lazygit)
 
