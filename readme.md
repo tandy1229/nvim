@@ -3,8 +3,6 @@
 
 This is my neovim configuration.
 
-Most of the configurations is inspired by @theniceboy.
-
 Pros
 ----
 
@@ -21,6 +19,7 @@ Table of contents
 - [Requirements](#requirements)
 - [Options](#options)
 - [Speed](#speed)
+- [References](#references)
 
 <!-- /TOC -->
 
@@ -112,3 +111,8 @@ Doing these makes my neovim run faster.
 **With these effects, its startup merely use 170ms with those plugins!!!**
 
 <center><img src="https://i.loli.net/2020/12/09/3uplEq2RFtzCg57.png"></center>
+
+
+### References
+
+- [ ] inspired by [nvim](https://github.com/theniceboy/nvim) .
