@@ -22,13 +22,13 @@ Table of contents
 
 <!-- TOC GFM -->
 
-+ [Requirements](#requirements)
-+ [Options](#options)
-+ [Speed](#speed)
+- [Requirements](#requirements)
+- [Options](#options)
+- [Speed](#speed)
 
 <!-- /TOC -->
 
-# Requirements
+### Requirements
 
 * Python 3
 
@@ -63,7 +63,7 @@ Table of contents
 	brew install the_silver_searcher
 	```
 
-# Options
+### Options
 
 * [textidote](https://github.com/sylvainhalle/textidote)
 
@@ -105,7 +105,7 @@ Table of contents
 
 
 
-# Speed
+### Speed
 
 Due to I use 60 plugins to make my nvim perform more effective. My neovim become dull sometimes.
 

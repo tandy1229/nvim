@@ -342,3 +342,8 @@ nnoremap <silent> <leader>lg :LazyGit<CR>
 " >>> vimspecter
 " '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 let g:vimspector_enable_mappings = 'HUMAN'
+
+" >>> vimtex
+" '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+nnoremap <C-l> <C-c>:w<CR>:AsyncRun pdflatex -synctex=1 --interaction=batchmode %<CR><C-L>
+inoremap <C-l> <C-c>:w<CR>:AsyncRun pdflatex -synctex=1 --interaction=batchmode %<CR><C-L>
