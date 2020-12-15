@@ -178,7 +178,7 @@
 		"go",
 		"javascript",
 		"javascriptreact",
-		"markdown",
+		/* "markdown", */
 		"php",
 		"plaintext",
 		"typescript",
@@ -196,7 +196,7 @@
 	// Words to be ignored and not suggested.
 	"cSpell.ignoreWords": ["behaviour"],
 	// User words to add to dictionary.  Should only be in the user settings.
-	"cSpell.userWords": [],
+	"cSpell.userWords": ["NEOVIM", "nvim", "theniceboy"],
 	// Specify paths/files to ignore.
 	"cSpell.ignorePaths": [
 		"node_modules", // this will ignore anything the node_modules directory
@@ -255,6 +255,7 @@
 		"vim": "vint",
 		"email": "languagetool",
 		"markdown": ["write-good", "markdownlint"],
+		/* "tex": ["write-good"], */
 		"sh": "shellcheck",
 		"elixir": ["mix_credo", "mix_credo_compile"],
 		"eelixir": ["mix_credo", "mix_credo_compile"],
@@ -312,6 +313,37 @@
 						"-I",
 						"/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/"
 					]
+				}
+			}
+		},
+		"dls": {
+			"command": "diagnostic-languageserver",
+			"args": ["--stdio"],
+			"filetypes": ["tex"],
+			"initializationOptions": {
+				"linters": {
+					"textidote": {
+						"command": "textidote",
+						"debounce": 500,
+						"args": ["--type", "tex", "--check", "en", "--output", "singleline", "--no-color"],
+						"offsetLine": 0,
+						"offsetColumn": 0,
+						"sourceName": "textidote",
+						"formatLines": 1,
+						"formatPattern": [
+							"\\(L(\\d+)C(\\d+)-L(\\d+)C(\\d+)\\):(.+)\".+\"$",
+							{
+								"line": 1,
+								"column": 2,
+								"endLine": 3,
+								"endColumn": 4,
+								"message": 5
+							}
+						]
+					}
+				},
+				"filetypes": {
+					"tex": "textidote"
 				}
 			}
 		}

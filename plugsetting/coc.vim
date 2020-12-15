@@ -20,7 +20,6 @@ let g:coc_global_extensions = [
 	\ 'coc-stylelintplus',
 	\ 'coc-texlab',
 	\ 'coc-tabnine',
-	\ 'coc-markdownlint',
 	\ 'coc-eslint',
 	\ 'coc-diagnostic',
 	\ 'coc-explorer',

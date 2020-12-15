@@ -1,7 +1,5 @@
 " >>> EDITER SETUP
 " '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-set ttyfast      " 滚动快？？？？！
-set nocompatible      " 不兼容vi
 set number         " 显示行号
 set relativenumber " 显示相对行号
 set hidden         " 切换文件不保存，隐藏
@@ -9,6 +7,7 @@ set tabstop=2
 set shiftwidth=2
 set softtabstop=2
 set noshowmode
+set encoding=utf-8
 " set expandtab         " 将tab转为空格
 set ignorecase        " 设置忽略大小写
 set smartcase         " 设置智能识别大小写
@@ -150,7 +149,10 @@ noremap tx :r !figlet
 
 " find and replace
 noremap \s :%s//g<left><left>
-nnoremap <silent> \c :%s/\s\+$//g<CR>
+
+" Automatically deletes all trailing whitespace and newlines at end of file on save.
+autocmd BufWritePre * %s/\s\+$//e
+autocmd BufWritePre * %s/\n\+\%$//e
 
 " press f10 to show hlgroup
 function! SynGroup()
@@ -160,8 +162,8 @@ endfun
 map <F10> :call SynGroup()<CR>
 
 " Space to Tab
-nnoremap <LEADER>tt :%s/    /\t/g
-vnoremap <LEADER>tt :s/    /\t/g
+nnoremap <LEADER>tt :%s/  /\t/g
+vnoremap <LEADER>tt :s/  /\t/g
 
 cnoremap <expr> %% getcmdtype( ) == ':' ? expand('%:h').'/' : '%%'
 
