@@ -16,12 +16,27 @@ Table of contents
 
 <!-- TOC GFM -->
 
+- [Installation](#installation)
+	+ [using git](#using-git)
 - [Requirements](#requirements)
 - [Options](#options)
 - [Speed](#speed)
 - [References](#references)
 
 <!-- /TOC -->
+
+### Installation
+
+#### using git
+
+You can use git to install these configuration files.
+
+```shell
+git clone https://github.com/tandy1229/nvim ~/.config
+
+# if you want it downloads faster you can run
+git clone --depth=1 https://github.com/tandy1229/nvim ~/.config
+```
 
 ### Requirements
 
