@@ -171,7 +171,7 @@ cnoremap <expr> %% getcmdtype( ) == ':' ? expand('%:h').'/' : '%%'
 noremap <LEADER>rc :e ~/.config/nvim/plugsetting/plugins_config.vim<CR>
 
 " open lazygit
-noremap <c-g> :tabe<CR>:-tabmove<CR>:term lazygit<CR>
+" noremap <c-g> :tabe<CR>:-tabmove<CR>:term lazygit<CR>
 
 " Folding
 noremap <silent> <LEADER>o za

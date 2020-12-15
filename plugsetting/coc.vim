@@ -107,7 +107,7 @@ nmap <Leader>bk <Plug>(coc-bookmark-prev)
 nmap g= <Plug>(coc-git-nextchunk)
 nmap g- <Plug>(coc-git-prevchunk)
 nmap H <Plug>(coc-git-chunkinfo) " show the changing info
-nmap gt <Plug>(coc-git-commit)   " show the commit message
+nmap <C-g> <Plug>(coc-git-commit)   " show the commit message
 " create text object for git chunks
 omap ig <Plug>(coc-git-chunk-inner)
 xmap ig <Plug>(coc-git-chunk-inner)
