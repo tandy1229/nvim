@@ -32,10 +32,10 @@ Table of contents
 You can use git to install these configuration files.
 
 ```shell
-git clone https://github.com/tandy1229/nvim ~/.config
+git clone https://github.com/tandy1229/nvim ~/.config/nvim
 
 # if you want it downloads faster you can run
-git clone --depth=1 https://github.com/tandy1229/nvim ~/.config
+git clone --depth=1 https://github.com/tandy1229/nvim ~/.config/nvim
 ```
 
 ### Requirements
