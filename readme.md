@@ -17,7 +17,7 @@ Table of contents
 <!-- TOC GFM -->
 
 - [Installation](#installation)
-	+ [using git](#using-git)
+	+ [Using git](#using-git)
 - [Requirements](#requirements)
 - [Options](#options)
 - [Speed](#speed)
@@ -27,7 +27,7 @@ Table of contents
 
 ### Installation
 
-#### using git
+#### Using git
 
 You can use git to install these configuration files.
 
