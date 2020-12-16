@@ -33,19 +33,16 @@ function! AirlineInit()
 endfunction
 autocmd User AirlineAfterInit call AirlineInit()
 let g:airline_powerline_fonts = 1                     " use powerline font
-let g:airline#extensions#tabline#enabled = 1          " 打开tabline功能,方便查看Buffer和切换，这个功能比较不错
-let g:airline#extensions#tabline#buffer_nr_show = 1   " 我还省去了minibufexpl插件，因为我习惯在1个Tab下用多个buffer
+" let g:airline#extensions#tabline#enabled = 1          " 打开tabline功能,方便查看Buffer和切换，这个功能比较不错
+" let g:airline#extensions#tabline#buffer_nr_show = 1   " 我还省去了minibufexpl插件，因为我习惯在1个Tab下用多个buffer
 "设置切换Buffer快捷键"
-nnoremap <M-k> :bn<CR>
-nnoremap <M-j> :bp<CR>
 
 " >>> LeaderF
 " '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-nnoremap <leader>F :LeaderfFile<CR>
-nnoremap <M-h> :Leaderf help<CR>
+nnoremap <leader>lf :LeaderfFile<CR>
+nnoremap <LEADER>lh :Leaderf help<CR>
 nnoremap ; :Leaderf command<CR>
-nnoremap <M-m> :Leaderf mru<CR>
-nnoremap <c-f> :Leaderf file<CR>
+nnoremap <LEADER>lm :Leaderf mru<CR>
 " let g:Lf_WindowPosition = 'popup'
 " let g:Lf_PreviewInPopup = 1
 let g:Lf_StlSeparator = { 'left': "\ue0b0", 'right': "\ue0b2" }
@@ -143,8 +140,6 @@ function! s:defx_my_settings() abort
   nnoremap <silent><buffer><expr> cd
   \ defx#do_action('change_vim_cwd')
 endfunction
-" use icon
-let g:defx_icons_enable_syntax_highlight = 1
 
 " >>> undotree
 " '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
@@ -179,17 +174,67 @@ let g:scrollstatus_size = 15
 " >>> fzf
 " '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 set rtp+=/usr/local/opt/fzf
-" noremap <silent> <C-p> :Files<CR>
-noremap <silent> <C-p> :Rg<CR>
-noremap <silent> <C-h> :History<CR>
-"noremap <C-t> :BTags<CR>
-noremap <silent> <C-l> :Lines<CR>
-noremap <silent> <C-b> :Buffers<CR>
-noremap ,; :History:<CR>
 
-let g:fzf_preview_window = 'right:60%'
-let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6 } }
-let g:fzf_commits_log_options = '--graph --color=always --format="%C(auto)%h%d %s %C(black)%C(bold)%cr"'
+let $FZF_DEFAULT_OPTS .= ' --inline-info'
+
+" All files
+command! -nargs=? -complete=dir AF
+  \ call fzf#run(fzf#wrap(fzf#vim#with_preview({
+  \   'source': 'fd --type f --hidden --follow --exclude .git --no-ignore . '.expand(<q-args>)
+  \ })))
+
+let g:fzf_colors =
+\ { 'fg':      ['fg', 'Normal'],
+  \ 'bg':      ['bg', 'Normal'],
+  \ 'hl':      ['fg', 'Comment'],
+  \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
+  \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
+  \ 'hl+':     ['fg', 'Statement'],
+  \ 'info':    ['fg', 'PreProc'],
+  \ 'border':  ['fg', 'Ignore'],
+  \ 'prompt':  ['fg', 'Conditional'],
+  \ 'pointer': ['fg', 'Exception'],
+  \ 'marker':  ['fg', 'Keyword'],
+  \ 'spinner': ['fg', 'Label'],
+  \ 'header':  ['fg', 'Comment'] }
+
+" Terminal buffer options for fzf
+autocmd! FileType fzf
+autocmd  FileType fzf set noshowmode noruler nonu
+
+if exists('$TMUX')
+  let g:fzf_layout = { 'tmux': '-p90%,60%' }
+else
+  let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6 } }
+endif
+
+function! s:plug_help_sink(line)
+  let dir = g:plugs[a:line].dir
+  for pat in ['doc/*.txt', 'README.md']
+    let match = get(split(globpath(dir, pat), "\n"), 0, '')
+    if len(match)
+      execute 'tabedit' match
+      return
+    endif
+  endfor
+  tabnew
+  execute 'Explore' dir
+endfunction
+
+command! PlugHelp call fzf#run(fzf#wrap({
+  \ 'source': sort(keys(g:plugs)),
+  \ 'sink':   function('s:plug_help_sink')}))
+
+function! RipgrepFzf(query, fullscreen)
+  let command_fmt = 'rg --column --line-number --no-heading --color=always --smart-case %s || true'
+  let initial_command = printf(command_fmt, shellescape(a:query))
+  let reload_command = printf(command_fmt, '{q}')
+  let options = {'options': ['--phony', '--query', a:query, '--bind', 'change:reload:'.reload_command]}
+  let options = fzf#vim#with_preview(options, 'right', 'ctrl-/')
+  call fzf#vim#grep(initial_command, 1, options, a:fullscreen)
+endfunction
+
+command! -nargs=* -bang RG call RipgrepFzf(<q-args>, <bang>0)
 
 function! s:list_buffers()
   redir => list
@@ -209,25 +254,32 @@ command! BD call fzf#run(fzf#wrap({
 \ }))
 
 noremap <c-d> :BD<CR>
+nnoremap <silent> <c-f>            :Files<CR>
+nnoremap <silent> <Leader>fc       :Colors<CR>
+nnoremap <silent> <Leader><Enter>  :Buffers<CR>
+nnoremap <silent> <Leader>fl       :Lines<CR>
+nnoremap <silent> <Leader>fh       :History:<CR>
+nnoremap <silent> <Leader>fH       :History/<CR>
+nnoremap <silent> <Leader>H        :PlugHelp<CR>
+nnoremap <silent> <Leader>ag       :Ag <C-R><C-W><CR>
+nnoremap <silent> <Leader>AG       :Ag <C-R><C-A><CR>
+nnoremap <silent> <Leader>rg       :RG<CR>
+nnoremap <silent> <Leader>RG       :Rg<CR>
+nnoremap <silent> <Leader>fm       :Marks<CR>
 
-let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.8 } }
+imap <c-x><c-k> <plug>(fzf-complete-word)
+imap <c-x><c-f> <plug>(fzf-complete-path)
+inoremap <expr> <c-x><c-d> fzf#vim#complete#path('blsd')
+imap <c-x><c-j> <plug>(fzf-complete-file-ag)
+imap <c-x><c-l> <plug>(fzf-complete-line)
+
 
 " >>> far.vim
 " '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-noremap <LEADER>f :F  **/*<left><left><left><left><left>
+noremap <LEADER>ff :F  **/*<left><left><left><left><left>
 let g:far#mapping = {
 		\ "replace_undo" : ["l"],
 		\ }
-
-" >>> vim-instant-markdown
-" '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-let g:instant_markdown_slow = 0
-let g:instant_markdown_autostart = 0
-" let g:instant_markdown_open_to_the_world = 1
-" let g:instant_markdown_allow_unsafe_content = 1
-" let g:instant_markdown_allow_external_content = 0
-" let g:instant_markdown_mathjax = 1
-let g:instant_markdown_autoscroll = 1
 
 " >>> nvim-treesitter
 " '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
@@ -258,7 +310,38 @@ set foldexpr=nvim_treesitter#foldexpr()
 
 " >>> goyo.vim
 " '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-map <LEADER>gy :Goyo<CR>
+
+let g:limelight_paragraph_span = 1
+let g:limelight_priority = -1
+
+function! s:goyo_enter()
+  if has('gui_running')
+    set fullscreen
+    set background=light
+    set linespace=7
+  elseif exists('$TMUX')
+    silent !tmux set status off
+  endif
+  Limelight
+  let &l:statusline = '%M'
+  hi StatusLine ctermfg=red guifg=red cterm=NONE gui=NONE
+endfunction
+
+function! s:goyo_leave()
+  if has('gui_running')
+    set nofullscreen
+    set background=dark
+    set linespace=0
+  elseif exists('$TMUX')
+    silent !tmux set status on
+  endif
+  Limelight!
+endfunction
+
+autocmd! User GoyoEnter nested call <SID>goyo_enter()
+autocmd! User GoyoLeave nested call <SID>goyo_leave()
+
+nnoremap <Leader>gy :Goyo<CR>
 
 " >>> AsyncRun
 " '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
@@ -320,8 +403,6 @@ let g:limelight_default_coefficient = 0.7
 
 " >>> vim-markdown-toc
 " '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-"let g:vmt_auto_update_on_save = 0
-"let g:vmt_dont_insert_fence = 1
 let g:vmt_cycle_list_item_markers = 1
 let g:vmt_fence_text = 'TOC'
 let g:vmt_fence_closing_text = '/TOC'
@@ -339,11 +420,7 @@ let g:lazygit_use_neovim_remote = 1 " for neovim-remote support
 
 nnoremap <silent> <leader>lg :LazyGit<CR>
 
+
 " >>> vimspecter
 " '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 let g:vimspector_enable_mappings = 'HUMAN'
-
-" >>> vimtex
-" '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-nnoremap <C-l> <C-c>:w<CR>:AsyncRun pdflatex -synctex=1 --interaction=batchmode %<CR><C-L>
-inoremap <C-l> <C-c>:w<CR>:AsyncRun pdflatex -synctex=1 --interaction=batchmode %<CR><C-L>
