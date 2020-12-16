@@ -1,56 +1,54 @@
 " >>> EDITER SETUP
 " '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-set number         " 显示行号
-set relativenumber " 显示相对行号
-set hidden         " 切换文件不保存，隐藏
+set number           " 显示行号
+set notimeout
+set ttimeoutlen=0    " 无延迟
+set encoding=utf-8
+set visualbell
+set relativenumber   " 显示相对行号
+set noshowmode
+set showcmd          " 显示输入的命令
 set tabstop=2
 set shiftwidth=2
 set softtabstop=2
-set noshowmode
-set encoding=utf-8
-" set expandtab         " 将tab转为空格
-set ignorecase        " 设置忽略大小写
-set smartcase         " 设置智能识别大小写
-set wrap              " 自动折行
-set linebreak         " 折行时不会将单词分开
-set ttimeoutlen=0     " 无延迟
-set notimeout
-set foldenable        " 折叠
-set foldlevel=99      " 相当于默认不折叠
-set indentexpr=       " 禁用vim缩进indent
-set autoindent        " 换行时自动缩进
-set viewoptions=cursor,folds,slash,unix " viminfo 记录的内容
+set hidden           " 切换文件不保存，隐藏
+set autoindent       " 换行时自动缩进
+set smartindent
+" set expandtab        " 将tab转为空格
+set smarttab
+set ignorecase       " 设置忽略大小写
+set smartcase        " 设置智能识别大小写
+set wildmenu         " 命令行补全
+set wildmode=full
+set wrap             " 自动折行
+set linebreak        " 折行时不会将单词分开
+set foldenable       " 折叠
+set foldlevel=99     " 相当于默认不折叠
+set indentexpr=      " 禁用vim缩进indent
 set scrolloff=5
-set completeopt=longest,noinsert,menuone,noselect,preview
-set showcmd      " 显示输入的命令
-set wildmenu     " 命令行补全
-set splitright
-set splitbelow
-set shortmess+=c " 减少错误信息
-set inccommand=split
-set list         " 显示不可见字符
+set shortmess+=c     " 减少错误信息
+set inccommand=split " Also shows partial off-screen results in a preview window.
+set list             " 显示不可见字符
 set listchars=tab:\|\ ,trail:▫
 set lazyredraw
-set visualbell
-
-autocmd InsertLeave,WinEnter * set cursorline
-autocmd InsertEnter,WinLeave * set nocursorline
-autocmd BufWritePost $MYVIMRC source $MYVIMRC
+set updatetime=100
+set virtualedit=block
+set autowrite
+set autoread
+set colorcolumn=100
+set viewoptions=cursor,folds,slash,unix " viminfo 记录的内容
+set completeopt=longest,noinsert,menuone,noselect,preview
+" set clipboard=unnamed
 
 " 某种备份
 silent !mkdir -p ~/.config/nvim/tmp/backup
 silent !mkdir -p ~/.config/nvim/tmp/undo
-"silent !mkdir -p ~/.onfig/nvim/tmp/sessions
 set backupdir=~/.config/nvim/tmp/backup,.
 set directory=~/.config/nvim/tmp/backup,.
 if has('persistent_undo')
 	set undofile
 	set undodir=~/.config/nvim/tmp/undo,.
 endif
-set colorcolumn=100
-set updatetime=100
-set virtualedit=block
-set autowrite
 
 " 记住前一次退出的位置
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
@@ -72,9 +70,18 @@ tnoremap <C-O> <C-\><C-N><C-O>
 " <leader>
 let mapleader=" "
 
-noremap ; :
-noremap S :w<CR>
+" Quit
+noremap S :update<CR>
 noremap Q :q<CR>
+nnoremap <Leader>q :q<cr>
+nnoremap <Leader>Q :qa!<cr>
+inoremap <C-Q> <esc>:q<cr>
+nnoremap <C-Q> :q<cr>
+vnoremap <C-Q> <esc>
+
+" Faster in-line navigation
+noremap W 5w
+noremap B 5b
 
 " 切屏
 noremap ,w <C-w>w
@@ -95,86 +102,42 @@ noremap <down> :res -5<CR>
 noremap <left> :vertical resize-5<CR>
 noremap <right> :vertical resize+5<CR>
 
-" Create a new tab with tu
-noremap tj :tabe<CR>
-" Move around tabs with tn and ti
-noremap th :-tabnext<CR>
-noremap tl :+tabnext<CR>
-" Move the tabs with tmn and tmi
-noremap tmh :-tabmove<CR>
-noremap tml :+tabmove<CR>
+" buffer
+nnoremap <M-k> :bn<CR>
+nnoremap <M-j> :bp<CR>
+nnoremap ]b :bn<CR>
+nnoremap [b :bp<CR>
+
+noremap tn :tabe<CR>
+nnoremap ]t :tabn<CR>
+nnoremap [t :tabp<CR>
 
 " Indentation
 nnoremap < <<
 nnoremap > >>
-
-" make Y to copy till the end of the line
-nnoremap Y y$
-
-" Copy to system clipboard
-vnoremap Y "+y
-
-" some personable
 noremap - N
 noremap = n
 
-" disable the default s key
+" yank
+nnoremap Y y$  " make Y to copy till the end of the line
+vnoremap Y "+y " Copy to system clipboard
+
 noremap s <nop>
-
-" >>> cursor
-" '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-" K/J keys for 5 times u/e (faster navigation)
-noremap <silent> K 5k
-noremap <silent> J 5j
-
-" Faster in-line navigation
-noremap W 5w
-noremap B 5b
-
-" auto spell in markdown
-autocmd BufRead,BufNewFile *.md setlocal spell
-
-
-" Spelling Check with <space>sc
-noremap <LEADER>sc :set spell!<CR>
-
-" Press ` to change case (instead of ~)
-noremap ` ~
-
-" Auto change directory to current dir
-autocmd BufEnter * silent! lcd %:p:h
-
-" Call figlet
-noremap tx :r !figlet
-
-" find and replace
-noremap \s :%s//g<left><left>
-
-" Automatically deletes all trailing whitespace and newlines at end of file on save.
-autocmd BufWritePre * %s/\s\+$//e
-autocmd BufWritePre * %s/\n\+\%$//e
-
-" press f10 to show hlgroup
-function! SynGroup()
-	let l:s = synID(line('.'), col('.'), 1)
-	echo synIDattr(l:s, 'name') . ' -> ' . synIDattr(synIDtrans(l:s), 'name')
-endfun
-map <F10> :call SynGroup()<CR>
+noremap ` ~       " Press ` to change case (instead of ~)
 
 " Space to Tab
 nnoremap <LEADER>tt :%s/  /\t/g
 vnoremap <LEADER>tt :s/  /\t/g
 
-cnoremap <expr> %% getcmdtype( ) == ':' ? expand('%:h').'/' : '%%'
+" K/J keys for 5 times u/e (faster navigation)
+noremap <silent> K 5k
+noremap <silent> J 5j
 
-" open init.vim anytime
-noremap <LEADER>rc :e ~/.config/nvim/plugsetting/plugins_config.vim<CR>
+noremap <LEADER>sc :set spell!<CR> " Spelling Check with <space>sc
 
-" open lazygit
-" noremap <c-g> :tabe<CR>:-tabmove<CR>:term lazygit<CR>
+noremap \s :%s//g<left><left> " find and replace
 
-" Folding
-noremap <silent> <LEADER>o za
+noremap <silent> <LEADER>o za  " Folding
 
 " Press space twice to jump to the next '<++>' and edit it
 noremap <LEADER><LEADER> <Esc>/<++><CR>:nohlsearch<CR>c4l
@@ -185,24 +148,24 @@ noremap <LEADER>/ :set splitbelow<CR>:split<CR>:res +10<CR>:term<CR>
 " Compile function
 noremap \r :call CompileRun()<CR>
 func! CompileRun()
-	exec "w"
+	silent! exec "update"
 	if &filetype == 'c'
     set splitbelow
     :sp
-    :term gcc % -o %< && ./%<
-		" exec "!gcc % -o %<"
-		" exec "!time ./%<"
+    :term gcc % -Wall -o %< && time ./%<
 	elseif &filetype == 'cpp'
 		set splitbelow
-		exec "!gcc -std=c++11 % -Wall -o %<"
 		:sp
-		:res -15
-		:term ./%<
+		:res -5
+		:term gcc -std=c++11 % -Wall -o %< && time ./%<
 	elseif &filetype == 'java'
 		exec "!javac %"
 		exec "!time java %<"
 	elseif &filetype == 'sh'
-		:!time bash %
+		set splitbelow
+		:sp
+		:res -5
+		:term time bash %
 	elseif &filetype == 'python'
 		set splitbelow
 		:sp
@@ -210,7 +173,7 @@ func! CompileRun()
 	elseif &filetype == 'html'
 		silent! exec "!".g:mkdp_browser." % &"
 	elseif &filetype == 'markdown'
-		exec "InstantMarkdownPreview"
+    silent! exec "MarkdownPreview"
 	elseif &filetype == 'tex'
 		silent! exec "VimtexStop"
 		silent! exec "VimtexCompile"
@@ -231,3 +194,30 @@ func! CompileRun()
 		:term go run .
 	endif
 endfunc
+
+" >>> autocmd
+" '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+
+autocmd BufRead,BufNewFile *.md setlocal spell  " set spell in markdown
+autocmd InsertLeave,WinEnter * set cursorline   " perform beautifully
+autocmd InsertEnter,WinLeave * set nocursorline
+autocmd BufWritePost $MYVIMRC source $MYVIMRC
+autocmd BufEnter * silent! lcd %:p:h            " Auto change directory to current dir
+
+" Automatically deletes all trailing whitespace and newlines at end of file on save.
+autocmd BufWritePre * %s/\s\+$//e
+autocmd BufWritePre * %s/\n\+\%$//e
+
+" press f10 to show hlgroup
+function! SynGroup()
+	let l:s = synID(line('.'), col('.'), 1)
+	echo synIDattr(l:s, 'name') . ' -> ' . synIDattr(synIDtrans(l:s), 'name')
+endfun
+map <F10> :call SynGroup()<CR>
+
+" open init.vim anytime
+noremap <LEADER>rc :e ~/.config/nvim/plugsetting/plugins_config.vim<CR>
+
+" in case you forgot to sudo
+cnoremap w!! %!sudo tee > /dev/null %
+cnoremap <expr> %% getcmdtype( ) == ':' ? expand('%:h').'/' : '%%'
