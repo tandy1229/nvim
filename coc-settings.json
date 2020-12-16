@@ -38,7 +38,7 @@
 	"coc.source.buffer.firstMatch": false,
 	"coc.source.syntax.firstMatch": false,
 	"git.enableGutters": true,
-	"git.addGBlameToVirtualText": true,
+	/* "git.addGBlameToVirtualText": true, */
 	"git.virtualTextPrefix": "       ",
 	"suggest.detailMaxLength": 60,
 	"suggest.noselect": true,

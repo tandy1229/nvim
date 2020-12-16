@@ -3,6 +3,7 @@ let g:coc_global_extensions = [
 	\ 'coc-actions',
 	\ 'coc-xml',
 	\ 'coc-git',
+	\ 'coc-ecdict',
 	\ 'coc-pairs',
 	\ 'coc-sql',
 	\ 'coc-terminal',
@@ -52,16 +53,12 @@ inoremap <silent><expr> <TAB>
 	\ <SID>check_back_space() ? "\<TAB>" :
 	\ coc#refresh()
 inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
-" inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
 inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
 				\: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 function! s:check_back_space() abort
 	let col = col('.') - 1
 	return !col || getline('.')[col - 1]	=~# '\s'
 endfunction
-" use complete
-inoremap <silent><expr> <c-space> coc#refresh()
-inoremap <silent><expr> <c-o> coc#refresh()
 " help document
 function! Show_documentation()
 	call CocActionAsync('highlight')
@@ -76,6 +73,7 @@ nnoremap <silent><nowait> <LEADER>d :CocList diagnostics<cr>
 nmap <silent> <LEADER>- <Plug>(coc-diagnostic-prev)
 nmap <silent> <LEADER>= <Plug>(coc-diagnostic-next)
 nnoremap <C-c> :CocFzfList<CR>
+nnoremap <silent> tw :call CocActionAsync('doHover')<CR>
 
 augroup mygroup
 	autocmd!
@@ -127,14 +125,6 @@ nmap <leader>rn <Plug>(coc-rename)
 nmap tt :CocCommand explorer<CR>
 " coc-translator
 nmap ts <Plug>(coc-translator-p)
-" Remap for do codeAction of selected region
-
-" coc-actions is not supported in new versions of coc
-" function! s:cocActionsOpenFromSelected(type) abort
-"	 execute 'CocCommand actions.open ' . a:type
-" endfunction
-" xmap <silent> <leader>a :<C-u>execute 'CocCommand actions.open ' . visualmode()<CR>
-" nmap <silent> <leader>a :<C-u>set operatorfunc=<SID>cocActionsOpenFromSelected<CR>g@
 
 vmap <leader>a <Plug>(coc-codeaction-selected)
 nmap <leader>a <Plug>(coc-codeaction-selected)
