@@ -4,6 +4,7 @@ set number           " 显示行号
 set notimeout
 set ttimeoutlen=0    " 无延迟
 set encoding=utf-8
+set ff=unix
 set visualbell
 set relativenumber   " 显示相对行号
 set noshowmode
