@@ -4,4 +4,5 @@ tmp/
 plugsetting/tags
 plugsetting/coc.vimback
 plugsetting/deus.vim
+autoload/plug.vim.old
 .netrwhist
