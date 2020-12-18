@@ -61,7 +61,6 @@ Plug 'honza/vim-snippets'
 
 " 进入动画？
 Plug 'mhinz/vim-startify'
-Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'mbbill/undotree', { 'on': 'UndotreeToggle' }
 Plug 'liuchengxu/vista.vim'
 Plug 'pechorin/any-jump.vim'
@@ -92,6 +91,7 @@ Plug 'junegunn/vim-peekaboo'                     " yank
 Plug 'theniceboy/antovim'                        " gs to switch
 Plug 'RRethy/vim-illuminate'                     " 高亮相同单词
 Plug 'tpope/vim-commentary'                      " 注释插件
+Plug 'tpope/vim-abolish'
 
 " focus mode
 Plug 'junegunn/goyo.vim', { 'on': 'Goyo' }
