@@ -131,10 +131,6 @@ noremap ` ~       " Press ` to change case (instead of ~)
 nnoremap <LEADER>tt :%s/  /\t/g
 vnoremap <LEADER>tt :s/  /\t/g
 
-" K/J keys for 5 times u/e (faster navigation)
-noremap <silent> K 5k
-noremap <silent> J 5j
-
 noremap <LEADER>sc :set spell!<CR> " Spelling Check with <space>sc
 
 noremap \s :%s//g<left><left> " find and replace

@@ -175,7 +175,6 @@ command! BD call fzf#run(fzf#wrap({
   \ 'options': '--multi --reverse --bind ctrl-a:select-all+accept'
 \ }))
 
-noremap <c-d> :BD<CR>
 nnoremap <silent> <c-f>            :Files<CR>
 nnoremap <silent> <Leader>fc       :Commands<CR>
 nnoremap <silent> <Leader><Enter>  :Buffers<CR>
@@ -358,3 +357,9 @@ noremap <leader>\ :Calendar -view=clock -position=here<CR>
 " >>> vim-after-object
 " '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 autocmd VimEnter * call after_object#enable('=', ':', '-', '#', ' ')
+
+" >>> vim-smoothie
+" '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+let g:smoothie_no_default_mappings = 1
+silent! map  J      <Plug>(SmoothieDownwards)
+silent! map  K      <Plug>(SmoothieUpwards)

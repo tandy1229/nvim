@@ -94,6 +94,7 @@ Plug 'RRethy/vim-illuminate'                     " 高亮相同单词
 Plug 'tpope/vim-commentary'                      " 注释插件
 Plug 'tpope/vim-abolish'
 Plug 'junegunn/vim-after-object'
+Plug 'psliwka/vim-smoothie'
 
 " focus mode
 Plug 'junegunn/goyo.vim', { 'on': 'Goyo' }
