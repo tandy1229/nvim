@@ -36,6 +36,7 @@ set updatetime=100
 set virtualedit=block
 set autowrite
 set autoread
+set splitbelow
 set colorcolumn=100
 set viewoptions=cursor,folds,slash,unix " viminfo 记录的内容
 set completeopt=longest,noinsert,menuone,noselect,preview
@@ -139,6 +140,8 @@ noremap <LEADER>sc :set spell!<CR> " Spelling Check with <space>sc
 noremap \s :%s//g<left><left> " find and replace
 
 noremap <silent> <LEADER>o za  " Folding
+
+noremap <LEADER>n :nohlsearch<CR>
 
 " Press space twice to jump to the next '<++>' and edit it
 noremap <LEADER><LEADER> <Esc>/<++><CR>:nohlsearch<CR>c4l
