@@ -15,8 +15,6 @@ let g:coc_global_extensions = [
 	\ 'coc-vimtex',
 	\ 'coc-css',
 	\ 'coc-fzf-preview',
-	\ 'coc-spell-checker',
-	\ 'coc-cspell-dicts',
 	\ 'coc-marketplace',
 	\ 'coc-stylelintplus',
 	\ 'coc-texlab',
