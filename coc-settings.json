@@ -59,7 +59,7 @@
 	"suggest.enablePreview": true,
 	"suggest.floatEnable": true,
 	"suggest.detailField": "preview",
-	"suggest.snippetIndicator": "",
+	"suggest.snippetIndicator": "⌬",
 	"suggest.triggerCompletionWait": 100,
 	"suggest.echodocSupport": true,
 	"suggest.completionItemKindLabels": {
