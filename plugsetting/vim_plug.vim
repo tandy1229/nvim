@@ -34,7 +34,7 @@ Plug 'tandy1229/nvim-deus'
 Plug 'luochen1990/rainbow'         " 彩虹括号哦
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-treesitter/playground'
-
+Plug 'itchyny/calendar.vim'
 
 " python
 Plug 'python-mode/python-mode', { 'for' :[ 'python', 'vim-plug' ] }
@@ -73,6 +73,7 @@ Plug 'fszymanski/fzf-gitignore', { 'on': 'FzfGitignore' }
 Plug 'kdheepak/lazygit.nvim', { 'on': 'LazyGit' }
 Plug 'tpope/vim-rhubarb'
 Plug 'rhysd/git-messenger.vim'
+Plug 'theniceboy/vim-gitignore', { 'for': ['gitignore', 'vim-plug'] }
 
 " 对齐文本
 Plug 'godlygeek/tabular', { 'on': 'Tabularize' } " use visualmode ga
@@ -92,6 +93,7 @@ Plug 'theniceboy/antovim'                        " gs to switch
 Plug 'RRethy/vim-illuminate'                     " 高亮相同单词
 Plug 'tpope/vim-commentary'                      " 注释插件
 Plug 'tpope/vim-abolish'
+Plug 'junegunn/vim-after-object'
 
 " focus mode
 Plug 'junegunn/goyo.vim', { 'on': 'Goyo' }
