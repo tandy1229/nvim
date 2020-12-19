@@ -136,6 +136,8 @@ noremap <silent> <leader>ts :CocList tasks<CR>
 " coc-snippets
 imap <C-l> <Plug>(coc-snippets-expand)
 vmap <C-j> <Plug>(coc-snippets-select)
+let g:coc_snippet_next = '<c-j>'
+let g:coc_snippet_prev = '<c-k>'
 imap <C-j> <Plug>(coc-snippets-expand-jump)
 autocmd BufRead,BufNewFile tsconfig.json set filetype=jsonc
 let g:node_client_debug = 1
