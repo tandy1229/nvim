@@ -82,6 +82,7 @@ endfunc
 " '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 noremap <LEADER>v :Vista!!<CR>
 noremap <c-t> :silent! Vista finder coc<CR>
+noremap <c-6> :silent! Vista finder ctags<CR>
 let g:vista_icon_indent = ["╰─▸ ", "├─▸ "]
 let g:vista_default_executive = 'coc'
 let g:vista_fzf_preview = ['right:50%']
@@ -176,7 +177,7 @@ command! BD call fzf#run(fzf#wrap({
 
 noremap <c-d> :BD<CR>
 nnoremap <silent> <c-f>            :Files<CR>
-nnoremap <silent> <Leader>fc       :Colors<CR>
+nnoremap <silent> <Leader>fc       :Commands<CR>
 nnoremap <silent> <Leader><Enter>  :Buffers<CR>
 nnoremap <silent> <Leader>fl       :Lines<CR>
 nnoremap <silent> <Leader>fh       :History:<CR>
@@ -187,6 +188,9 @@ nnoremap <silent> <Leader>AG       :Ag <C-R><C-A><CR>
 nnoremap <silent> <Leader>rg       :RG<CR>
 nnoremap <silent> <Leader>RG       :Rg<CR>
 nnoremap <silent> <Leader>fm       :Marks<CR>
+nnoremap <silent> <Leader>ft       :Tags<CR>
+nnoremap <silent> <Leader>m        :Maps<CR>
+nnoremap <silent> <c-h>            :Helptags<CR>
 
 imap <c-x><c-k> <plug>(fzf-complete-word)
 imap <c-x><c-f> <plug>(fzf-complete-path)
@@ -276,6 +280,9 @@ let g:asyncrun_open = 6
 " '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 nmap s <plug>(SubversiveSubstitute)
 nmap ss <plug>(SubversiveSubstituteLine)
+nmap <leader>s <plug>(SubversiveSubstituteRange)
+xmap <leader>s <plug>(SubversiveSubstituteRange)
+nmap <leader>ss <plug>(SubversiveSubstituteWordRange)
 
 " >>> rnvimr
 " '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
@@ -283,9 +290,7 @@ let g:rnvimr_ex_enable = 1
 let g:rnvimr_pick_enable = 1
 let g:rnvimr_draw_border = 0
 let g:rnvim_shadow_winblend = 70
-" let g:rnvimr_bw_enable = 1
 highlight link RnvimrNormal CursorLine
-" nnoremap <silent> R :RnvimrToggle<CR>
 nnoremap <silent> R :RnvimrToggle<CR><C-\><C-n>:RnvimrResize 0<CR>
 let g:rnvimr_action = {
             \ '<C-t>': 'NvimEdit tabedit',
@@ -334,10 +339,10 @@ noremap <LEADER>gi :FzfGitignore<CR>
 
 " >>> nvim-lazygit
 " '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-let g:lazygit_floating_window_winblend = 0 " transparency of floating window
-let g:lazygit_floating_window_scaling_factor = 0.9 " scaling factor for floating window
+let g:lazygit_floating_window_winblend = 0                        " transparency of floating window
+let g:lazygit_floating_window_scaling_factor = 0.9                " scaling factor for floating window
 let g:lazygit_floating_window_corner_chars = ['╭', '╮', '╰', '╯'] " customize lazygit popup window corner characters
-let g:lazygit_use_neovim_remote = 1 " for neovim-remote support
+let g:lazygit_use_neovim_remote = 1                               " for neovim-remote support
 
 nnoremap <silent> <leader>lg :LazyGit<CR>
 
@@ -345,3 +350,11 @@ nnoremap <silent> <leader>lg :LazyGit<CR>
 " >>> vimspecter
 " '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 let g:vimspector_enable_mappings = 'HUMAN'
+
+" >>> calendar
+" '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+noremap <leader>\ :Calendar -view=clock -position=here<CR>
+
+" >>> vim-after-object
+" '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+autocmd VimEnter * call after_object#enable('=', ':', '-', '#', ' ')
