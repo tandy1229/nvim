@@ -28,7 +28,6 @@ Plug 'mzlogin/vim-markdown-toc', { 'for': ['gitignore', 'markdown', 'vim-plug'] 
 
 " 代码主题
 Plug 'tandy1229/nvim-deus'
-Plug 'luochen1990/rainbow'         " 彩虹括号哦
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-treesitter/playground'
 Plug 'itchyny/calendar.vim'
@@ -100,11 +99,15 @@ Plug 'junegunn/goyo.vim', { 'on': 'Goyo' }
 Plug 'junegunn/limelight.vim', { 'on': 'Limelight' }
 
 " writting
-Plug 'ron89/thesaurus_query.vim'
+" Plug 'ron89/thesaurus_query.vim'
 
 " async
 Plug 'skywind3000/asyncrun.vim', { 'on': 'AsyncRun' }
 Plug 'skywind3000/asynctasks.vim'
+
+" rainbow
+Plug 'junegunn/rainbow_parentheses.vim'
+" Plug 'luochen1990/rainbow'         " 彩虹括号哦
 
 " debugger
 Plug 'puremourning/vimspector'

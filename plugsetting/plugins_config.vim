@@ -58,10 +58,6 @@ let g:Lf_WildIgnore = {
 let g:Lf_UseMemoryCache = 0
 let g:Lf_UseCache = 0
 
-" >>> rainbow
-" '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-let g:rainbow_active = 1 "set to 0 if you want to enable it later via :RainbowToggle
-
 " >>> undotree
 " '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 nnoremap L :UndotreeToggle<cr>
@@ -82,7 +78,8 @@ endfunc
 " '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 noremap <LEADER>v :Vista!!<CR>
 noremap <c-t> :silent! Vista finder coc<CR>
-noremap <c-6> :silent! Vista finder ctags<CR>
+noremap <leader>c :silent! Vista finder coc<CR>
+noremap ,c :silent! Vista finder ctags<CR>
 let g:vista_icon_indent = ["╰─▸ ", "├─▸ "]
 let g:vista_default_executive = 'coc'
 let g:vista_fzf_preview = ['right:50%']
@@ -264,7 +261,6 @@ set foldexpr=nvim_treesitter#foldexpr()
 
 " >>> goyo.vim
 " '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-
 let g:limelight_paragraph_span = 1
 let g:limelight_priority = -1
 
@@ -372,9 +368,7 @@ let g:lazygit_floating_window_winblend = 0                        " transparency
 let g:lazygit_floating_window_scaling_factor = 0.9                " scaling factor for floating window
 let g:lazygit_floating_window_corner_chars = ['╭', '╮', '╰', '╯'] " customize lazygit popup window corner characters
 let g:lazygit_use_neovim_remote = 1                               " for neovim-remote support
-
 nnoremap <silent> <leader>lg :LazyGit<CR>
-
 
 " >>> vimspecter
 " '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
@@ -393,3 +387,12 @@ autocmd VimEnter * call after_object#enable('=', ':', '-', '#', ' ')
 let g:smoothie_no_default_mappings = 1
 silent! map  J      <Plug>(SmoothieDownwards)
 silent! map  K      <Plug>(SmoothieUpwards)
+
+" >>> rainbow parentheses
+" '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+let g:rainbow#max_level = 16
+let g:rainbow#pairs = [['(', ')'], ['[', ']'], ['{', '}']]
+augroup rainbow_lisp
+  autocmd!
+  autocmd FileType c,cpp,sh,zsh,vim,python,lisp,clojure,scheme RainbowParentheses
+augroup END
