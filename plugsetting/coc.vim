@@ -4,7 +4,6 @@ let g:coc_global_extensions = [
 	\ 'coc-xml',
 	\ 'coc-git',
 	\ 'coc-ecdict',
-	\ 'coc-pairs',
 	\ 'coc-sql',
 	\ 'coc-terminal',
 	\ 'coc-cssmodules',
@@ -82,6 +81,7 @@ augroup mygroup
 augroup end
 
 autocmd CursorHold * silent call CocActionAsync('highlight')
+command! -nargs=0 Prettier :CocCommand prettier.formatFile
 
 " Text Objects
 xmap if <Plug>(coc-funcobj-i)

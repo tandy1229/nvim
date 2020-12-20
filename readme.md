@@ -17,7 +17,7 @@ Table of contents
 <!-- TOC GFM -->
 
 - [Installation](#installation)
-  + [Using git](#using-git)
+	+ [Using git](#using-git)
 - [Requirements](#requirements)
 - [Options](#options)
 - [Speed](#speed)
