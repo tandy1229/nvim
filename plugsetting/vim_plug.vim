@@ -21,8 +21,6 @@ Plug 'google/vim-maktaba', {'on': 'FormatCode'}
 Plug 'google/vim-codefmt', {'on': 'FormatCode'}
 
 " markdown
-Plug 'tpope/vim-markdown', {'for': 'markdown'}
-" Plug 'suan/vim-instant-markdown', {'for': 'markdown'}
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 Plug 'dhruvasagar/vim-table-mode', { 'on': 'TableModeToggle', 'for': ['text', 'markdown', 'vim-plug'] }
 Plug 'dkarter/bullets.vim' " 自动化插件
@@ -30,7 +28,6 @@ Plug 'mzlogin/vim-markdown-toc', { 'for': ['gitignore', 'markdown', 'vim-plug'] 
 
 " 代码主题
 Plug 'tandy1229/nvim-deus'
-" Plug 'ryanoasis/vim-devicons'
 Plug 'luochen1990/rainbow'         " 彩虹括号哦
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-treesitter/playground'
@@ -55,6 +52,7 @@ Plug 'othree/html5.vim'
 Plug 'alvan/vim-closetag'
 Plug 'yuezk/vim-js', { 'for': [ 'vim-plug', 'php', 'html', 'javascript', 'css', 'less' ] }
 Plug 'mattn/emmet-vim', { 'for': [ 'vim-plug', 'html', 'css', 'less' ] }
+Plug 'cespare/vim-toml'
 
 " snippets
 Plug 'honza/vim-snippets'
@@ -95,6 +93,7 @@ Plug 'tpope/vim-commentary'                      " 注释插件
 Plug 'tpope/vim-abolish'
 Plug 'junegunn/vim-after-object'
 Plug 'psliwka/vim-smoothie'
+Plug 'jiangmiao/auto-pairs'
 
 " focus mode
 Plug 'junegunn/goyo.vim', { 'on': 'Goyo' }
