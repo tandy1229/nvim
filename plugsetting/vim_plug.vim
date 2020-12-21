@@ -21,7 +21,22 @@ Plug 'google/vim-maktaba', {'on': 'FormatCode'}
 Plug 'google/vim-codefmt', {'on': 'FormatCode'}
 
 " markdown
-Plug 'tpope/vim-markdown',
+Plug 'tpope/vim-markdown', { 'for': 'markdown' }
+	let g:markdown_fenced_languages = [
+				\ 'html',
+				\ 'c',
+				\ 'cpp',
+				\ 'python',
+				\ 'bash=sh',
+				\ 'zsh',
+				\ 'css',
+				\ 'shell',
+				\ 'javascript',
+				\ 'js=javascript',
+				\ 'typescript',
+				\ 'awk',
+				\ 'lua',
+				\]
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 Plug 'dhruvasagar/vim-table-mode', { 'on': 'TableModeToggle', 'for': ['text', 'markdown', 'vim-plug'] }
 Plug 'dkarter/bullets.vim' " 自动化插件
@@ -37,7 +52,7 @@ Plug 'nvim-treesitter/playground'
 Plug 'itchyny/calendar.vim'
 
 " python
-Plug 'python-mode/python-mode', { 'for' :[ 'python', 'vim-plug' ] }
+Plug 'python-mode/python-mode', { 'for': [ 'python', 'vim-plug' ], 'branch': 'develop' }
 Plug 'numirias/semshi', { 'do': ':UpdateRemotePlugins', 'for' :[ 'python', 'vim-plug' ] } " python高亮
 Plug 'Vimjas/vim-python-pep8-indent', { 'for' :[ 'python', 'vim-plug' ] }
 Plug 'tweekmonster/braceless.vim', { 'for' :[ 'python', 'vim-plug' ] }
@@ -52,7 +67,7 @@ Plug 'lervag/vimtex', { 'for': [ 'tex', 'vim-plug' ] }
 Plug 'elzr/vim-json'
 Plug 'neoclide/jsonc.vim'
 Plug 'othree/html5.vim'
-Plug 'alvan/vim-closetag'
+Plug 'alvan/vim-closetag', { 'for': [ 'vim-plug', 'html' ] }
 Plug 'yuezk/vim-js', { 'for': [ 'vim-plug', 'php', 'html', 'javascript', 'css', 'less' ] }
 Plug 'mattn/emmet-vim', { 'for': [ 'vim-plug', 'html', 'css', 'less' ] }
 Plug 'cespare/vim-toml'
@@ -96,14 +111,13 @@ Plug 'tpope/vim-commentary'                      " 注释插件
 Plug 'tpope/vim-abolish'
 Plug 'junegunn/vim-after-object'
 Plug 'psliwka/vim-smoothie'
-Plug 'Iron-E/nvim-libmodal'
 
 " focus mode
 Plug 'junegunn/goyo.vim', { 'on': 'Goyo' }
 Plug 'junegunn/limelight.vim', { 'on': 'Limelight' }
 
 " writting
-" Plug 'ron89/thesaurus_query.vim'
+Plug 'ron89/thesaurus_query.vim'
 
 " async
 Plug 'skywind3000/asyncrun.vim', { 'on': 'AsyncRun' }
@@ -140,7 +154,7 @@ Plug 'nightsense/cosmic_latte'
 Plug 'Iron-E/nvim-highlite'
 
 " debugger
-" Plug 'puremourning/vimspector'
+Plug 'puremourning/vimspector'
 
 " Chinese vim document
 Plug 'yianwillis/vimcdoc'

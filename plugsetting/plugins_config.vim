@@ -10,6 +10,7 @@ hi NonText ctermfg=gray guifg=grey10
 let g:airline_theme="deus"
 let g:airline#extensions#wordcount#enabled=0
 let g:airline#extensions#whitespace#enabled=0
+let g:airline#extensions#term#enabled=0
 if !exists('g:airline_symbols')
   let g:airline_symbols = {}
 endif
@@ -388,18 +389,3 @@ silent! map  K      <Plug>(SmoothieUpwards)
 " >>> editorconfig
 " '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 let g:EditorConfig_exclude_patterns = ['fugitive://.*']
-
-let g:markdown_fenced_languages = [
-      \ 'html',
-      \ 'bash=sh',
-      \ 'css',
-      \ 'javascript',
-      \ 'js=javascript',
-      \ 'typescript',
-      \ 'awk',
-      \ 'lua',
-      \ 'stylus',
-      \ 'vim',
-      \ 'help',
-      \ 'yaml'
-      \]
