@@ -120,6 +120,9 @@ nnoremap > >>
 noremap - N
 noremap = n
 
+" select all
+nnoremap <Leader>sa ggVG
+
 " yank
 nnoremap Y y$  " make Y to copy till the end of the line
 vnoremap Y "+y " Copy to system clipboard
