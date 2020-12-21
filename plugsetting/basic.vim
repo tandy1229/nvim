@@ -40,7 +40,7 @@ set splitbelow
 set colorcolumn=100
 set viewoptions=cursor,folds,slash,unix " viminfo 记录的内容
 set completeopt=longest,noinsert,menuone,noselect,preview
-" set clipboard=unnamed
+" set clipboard=unnamed " in macos it's unneeded
 
 " 某种备份
 silent !mkdir -p ~/.config/nvim/tmp/backup
@@ -197,7 +197,6 @@ endfunc
 
 " >>> autocmd
 " '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-
 autocmd BufRead,BufNewFile *.md setlocal spell  " set spell in markdown
 autocmd InsertLeave,WinEnter * set cursorline   " perform beautifully
 autocmd InsertEnter,WinLeave * set nocursorline
