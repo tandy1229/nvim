@@ -42,8 +42,9 @@
 
 	// coc git settings
 	"git.enableGutters": true,
-	/* "git.addGBlameToVirtualText": true, */
-	"git.virtualTextPrefix": "       ",
+	"git.addGBlameToVirtualText": true,
+	/* "git.virtualTextPrefix": "       ", */
+	"git.virtualTextPrefix": "        ",
 	"git.changedSign.text": "░",
 	"git.changeRemovedSign.text": "▒",
 	"git.addedSign.text": "▎",
@@ -203,29 +204,32 @@
 		">>": "gitUnstage"
 	},
 
-	// flutter
-	"flutter.outlineWidth": 40,
-	"flutter.outlineIconPadding": 0,
-	"flutter.UIPath": true,
-	"flutter.openDevLogSplitCommand": "botright 12split",
-	"flutter.lsp.initialization.onlyAnalyzeProjectsWithOpenFiles": false,
+	// pairs
+	"pairs.enableCharacters": ["(", "[", "{", "'", "\"", "`"],
+
+	// eslint
+	"eslint.filetypes": [
+		"javascript",
+		"javascript.jsx",
+		"javascriptreact",
+		"typescript",
+		"typescriptreact",
+		"typescript.tsx"
+	],
+	"eslint.autoFix": true,
+	"eslint.autoFixOnSave": true,
 
 	// typescript
-	"tslint.autoFixOnSave": false,
 	"typescript.suggestionActions.enabled": true,
 	"typescript.format.enabled": true,
 
-	// python
-	"python.autoComplete.addBrackets": true,
-	"python.jediEnabled": false,
-	"python.formatting.provider": "yapf",
-	"python.formatting.yapfArgs": [
-		"--style",
-		"{SPACES_AROUND_POWER_OPERATOR: True, SPACES_BEFORE_COMMENT: 1}"
-	],
+	// ement
+	"emmet.showAbbreviationSuggestions": true,
 
 	// html
 	"html.format.enable": true,
+	"html.suggest.angular1": false, // angular1 is outdate, coc-angular support better
+	"html.autoClosingTags": true,
 
 	// js
 	"javascript.referencesCodeLens.enable": true,
@@ -247,15 +251,33 @@
 	"todolist.autoUpload": true,
 	"todolist.promptForReminder": false,
 
-	// coc actions
-	"coc-actions.hideCursor": false,
-	"coc-actions.showActionKind": true,
-
 	// css
 	"css.validate": false,
 	"less.validate": false,
 	"scss.validate": false,
 	"wxss.validate": false,
+
+	// python
+	"python.autoComplete.addBrackets": true,
+	"python.jediEnabled": false,
+	"python.formatting.provider": "yapf",
+	"python.formatting.yapfArgs": [
+		"--style",
+		"{SPACES_AROUND_POWER_OPERATOR: True, SPACES_BEFORE_COMMENT: 1}"
+	],
+
+	// flutter
+	"flutter.outlineWidth": 40,
+	"flutter.outlineIconPadding": 0,
+	"flutter.UIPath": true,
+	"flutter.openDevLogSplitCommand": "botright 12split",
+	"flutter.lsp.initialization.onlyAnalyzeProjectsWithOpenFiles": false,
+
+	// vimlsp
+	"vimlsp.indexes.runtimepath": true,
+	"vimlsp.indexes.gap": 10,
+	"vimlsp.indexes.count": 3,
+	"vimlsp.suggest.fromVimruntime": true,
 
 	// diagnostic-languageserver
 	"diagnostic-languageserver.filetypes": {
@@ -354,5 +376,120 @@
 				}
 			}
 		}
-	}
+	},
+
+	// cspell
+	"cSpell.fixSpellingWithRenameProvider": true,
+	"cSpell.userWords": [
+		"Alessandro",
+		"Despacio",
+		"Fardo",
+		"Goyo",
+		"Nerdfont",
+		"Radev",
+		"Rethy",
+		"SDKs",
+		"Tabularize",
+		"Unstage",
+		"Vimruntime",
+		"Vsplit",
+		"Yorba",
+		"alvan",
+		"antoinemadec",
+		"antovim",
+		"blsd",
+		"botright",
+		"brooth",
+		"ccls",
+		"cocopon",
+		"cohama",
+		"cpos",
+		"dartfmt",
+		"dhruvasagar",
+		"dkarter",
+		"echodoc",
+		"eelixir",
+		"elzr",
+		"ement",
+		"fatih",
+		"fszymanski",
+		"funcobj",
+		"gcmt",
+		"gocode",
+		"golint",
+		"gopls",
+		"gruvbox",
+		"hlgroup",
+		"honza",
+		"iamcco",
+		"isystem",
+		"itchyny",
+		"kdheepak",
+		"kevinhwang",
+		"kyazdani",
+		"languagetool",
+		"linenr",
+		"liuchengxu",
+		"luarocks",
+		"maktaba",
+		"markdownlint",
+		"mattn",
+		"maxsize",
+		"mbbill",
+		"mhinz",
+		"minibufexpl",
+		"mkdp",
+		"morhetz",
+		"mygroup",
+		"mzlogin",
+		"neoclide",
+		"neovim",
+		"neovim's",
+		"nofullscreen",
+		"noinsert",
+		"nord",
+		"noselect",
+		"nosplit",
+		"numirias",
+		"nvim",
+		"objc",
+		"objcpp",
+		"ojroques",
+		"pechorin",
+		"phpstan",
+		"prevchunk",
+		"psliwka",
+		"require'nvim",
+		"rhysd",
+		"rnvimr",
+		"romgrk",
+		"runtimepath",
+		"semshi",
+		"shellcheck",
+		"shfmt",
+		"singleline",
+		"sourcekit",
+		"startify",
+		"struct",
+		"structs",
+		"svermeulen",
+		"tandy",
+		"todolist",
+		"tomasr",
+		"tpope",
+		"tweekmonster",
+		"ultisnips",
+		"vetur",
+		"vimcdoc",
+		"vimlsp",
+		"vint",
+		"wxss",
+		"xctoolchain",
+		"yapf",
+		"yianwillis",
+		"yitaimin",
+		"yuezk",
+		"yuttie"
+	]
 }
+
