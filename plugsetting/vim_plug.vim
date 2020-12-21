@@ -1,9 +1,9 @@
 silent! if plug#begin('~/.config/nvim/plugged')
 Plug 'tweekmonster/startuptime.vim', { 'on': 'StartupTime' } " to test the neovim open time
+Plug 'tweekmonster/helpful.vim', { 'on': 'HelpfulVersion' } " to test the neovim open time
 
 " now I use airline, it has the great-capability with many plugin
 Plug 'vim-airline/vim-airline'
-Plug 'tandy1229/airline-deus'
 Plug 'ojroques/vim-scrollstatus'
 
 " FZF ---- the plug I love best!!!
@@ -28,6 +28,7 @@ Plug 'mzlogin/vim-markdown-toc', { 'for': ['gitignore', 'markdown', 'vim-plug'] 
 
 " 代码主题
 Plug 'tandy1229/nvim-deus'
+Plug 'tandy1229/airline-deus'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-treesitter/playground'
 Plug 'itchyny/calendar.vim'
@@ -116,10 +117,30 @@ Plug 'junegunn/rainbow_parentheses.vim'
 	let g:rainbow#blacklist = [ '#4D4D4D' ]
 " Plug 'luochen1990/rainbow'         " 彩虹括号哦
 
+Plug 'editorconfig/editorconfig-vim'
+
+" color select
+Plug 'morhetz/gruvbox'
+  let g:gruvbox_contrast_dark = 'soft'
+Plug 'connorholyday/vim-snazzy'
+Plug 'junegunn/seoul256.vim'
+Plug 'tomasr/molokai'
+Plug 'chriskempson/vim-tomorrow-theme'
+Plug 'yuttie/hydrangea-vim'
+Plug 'tyrannicaltoucan/vim-deep-space'
+Plug 'AlessandroYorba/Despacio'
+Plug 'cocopon/iceberg.vim'
+Plug 'w0ng/vim-hybrid'
+Plug 'nightsense/snow'
+Plug 'nightsense/stellarized'
+Plug 'arcticicestudio/nord-vim'
+Plug 'nightsense/cosmic_latte'
+
 " debugger
 " Plug 'puremourning/vimspector'
 
 " Chinese vim document
 Plug 'yianwillis/vimcdoc'
+Plug 'nanotee/nvim-lua-guide'
 call plug#end()
 endif
