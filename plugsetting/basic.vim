@@ -1,4 +1,4 @@
-" >>> EDITER SETUP
+" >>> EDITED SETUP
 " '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 set number           " 显示行号
 set notimeout
@@ -55,7 +55,7 @@ endif
 " 记住前一次退出的位置
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 
-" >>> termial settings
+" >>> terminal settings
 " '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 " 渲染百万色
 set termguicolors

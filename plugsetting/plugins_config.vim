@@ -14,9 +14,9 @@ if !exists('g:airline_symbols')
   let g:airline_symbols = {}
 endif
 let g:airline_left_sep=''
-let g:airline_left_alt_sep='|'
+let g:airline_left_alt_sep='▎'
 let g:airline_right_sep=''
-let g:airline_right_alt_sep='|'
+let g:airline_right_alt_sep='▎'
 let g:airline_symbols.dirty=''
 let g:airline_symbols.notexists = ' ﴻ'
 let g:airline_symbols.linenr = ''
@@ -33,14 +33,11 @@ function! AirlineInit()
 endfunction
 autocmd User AirlineAfterInit call AirlineInit()
 let g:airline_powerline_fonts = 1                     " use powerline font
- " let g:airline#extensions#tabline#enabled = 1          " 打开tabline功能,方便查看Buffer和切换，这个功能比较不错
- " let g:airline#extensions#tabline#buffer_nr_show = 1   " 我还省去了minibufexpl插件，因为我习惯在1个Tab下用多个buffer
 
 " >>> LeaderF
 " '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 nnoremap <leader>lf :LeaderfFile<CR>
 nnoremap <LEADER>lh :Leaderf help<CR>
-nnoremap ; :Leaderf command<CR>
 nnoremap <LEADER>lm :Leaderf mru<CR>
 " let g:Lf_WindowPosition = 'popup'
 " let g:Lf_PreviewInPopup = 1
@@ -391,3 +388,18 @@ silent! map  K      <Plug>(SmoothieUpwards)
 " >>> editorconfig
 " '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 let g:EditorConfig_exclude_patterns = ['fugitive://.*']
+
+let g:markdown_fenced_languages = [
+      \ 'html',
+      \ 'bash=sh',
+      \ 'css',
+      \ 'javascript',
+      \ 'js=javascript',
+      \ 'typescript',
+      \ 'awk',
+      \ 'lua',
+      \ 'stylus',
+      \ 'vim',
+      \ 'help',
+      \ 'yaml'
+      \]

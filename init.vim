@@ -1,5 +1,5 @@
 "  author: @tandy1229
-"  modifiy from @theniceboy
+"  modify from @theniceboy
 "
 "  the awesome vimrc
 "
