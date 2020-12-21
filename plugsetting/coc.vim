@@ -127,6 +127,8 @@ nmap ts <Plug>(coc-translator-p)
 vmap <leader>a <Plug>(coc-codeaction-selected)
 nmap <leader>a <Plug>(coc-codeaction-selected)
 
+" open file in coc
+nnoremap <silent> <C-p> :<C-u>CocList files<CR>
 " coctodolist
 nnoremap <leader>tn :CocCommand todolist.create<CR>
 nnoremap <leader>tl :CocList todolist<CR>
@@ -143,3 +145,5 @@ autocmd BufRead,BufNewFile tsconfig.json set filetype=jsonc
 let g:node_client_debug = 1
 let g:coc_snippet_next = '<c-j>'
 let g:coc_snippet_prev = '<c-k>'
+" disable coc nodejs error
+let g:coc_disable_uncaught_error=1

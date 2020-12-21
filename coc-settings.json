@@ -1,4 +1,5 @@
 {
+	// coc settings
 	"coc.preferences.hoverTarget": "preview",
 	"coc.preferences.enableFloatHighlight": true,
 	"coc.preferences.snippetStatusText": "🌸",
@@ -38,6 +39,8 @@
 	"coc.source.around.firstMatch": false,
 	"coc.source.buffer.firstMatch": false,
 	"coc.source.syntax.firstMatch": false,
+
+	// coc git settings
 	"git.enableGutters": true,
 	/* "git.addGBlameToVirtualText": true, */
 	"git.virtualTextPrefix": "       ",
@@ -51,6 +54,8 @@
 	"git.removedSign.hlGroup": "GitGutterDelete",
 	"git.topRemovedSign.hlGroup": "GitGutterDelete",
 	"git.changeRemovedSign.hlGroup": "GitGutterChangeDelete",
+
+	// coc suggest
 	"suggest.detailMaxLength": 60,
 	"suggest.noselect": true,
 	"suggest.enablePreselect": false,
@@ -60,7 +65,7 @@
 	"suggest.enablePreview": true,
 	"suggest.floatEnable": true,
 	"suggest.detailField": "preview",
-	"suggest.snippetIndicator": "⌬",
+	"suggest.snippetIndicator": "»»»",
 	"suggest.triggerCompletionWait": 100,
 	"suggest.echodocSupport": true,
 	"suggest.completionItemKindLabels": {
@@ -91,29 +96,52 @@
 		"typeParameter": "\uf728",
 		"default": "\uf29c"
 	},
+
+	// coc diagnostic
+	/* unicode support */
 	"diagnostic.errorSign": "\uf467",
 	"diagnostic.warningSign": "\uf071",
 	"diagnostic.infoSign": "\uf129",
 	"diagnostic.hintSign": "\uf864",
+	/* ascii symbols support */
+	/* "diagnostic.infoSign": "ღ", */
+	/* "diagnostic.hintSign": "ஐ", */
+	/* "diagnostic.warningSign": "»", */
+	/* "diagnostic.errorSign": "×", */
 	"diagnostic.displayByAle": false,
-	"diagnostic.refreshOnInsertMode": false,
+	"diagnostic.refreshOnInsertMode": true,
 	"diagnostic.signPriority": 1,
 	"diagnostic.checkCurrentLine": true,
 	"diagnostic.virtualText": true,
 	"diagnostic.virtualTextPrefix": " ❯❯❯ ",
 	"diagnostic.virtualTextLines": 3,
 	"diagnostic.virtualTextLineSeparator": " \\ ",
+
+	// coc codelens
 	"codeLens.enable": true,
+
+	// coc list
 	"list.previewHighlightGroup": "Statement",
+
+	// coc snippets
 	"snippets.ultisnips.directories": [
 		"$HOME/.config/nvim/Ultisnips/",
 		"$HOME/.config/nvim/plugged/vim-snippets/UltiSnips"
 	],
-	"yaml.format.enable": true,
+
+	// coc signature
 	"signature.target": "float",
+
+	// coc-yank
+	"yank.priority": 10,
+	"yaml.format.enable": true,
 	"yank.enableCompletion": false,
-	"typescript.suggestionActions.enabled": true,
-	"typescript.format.enabled": true,
+	"yank.highlight.enable": false, // use neovim's built-in instead
+	"yank.highlight.duration": 200,
+	"yank.limit": 2,
+	"yank.list.maxsize": 100,
+
+	// coc explorer
 	"explorer.width": 38,
 	"explorer.quitOnOpen": true,
 	"explorer.sources": [
@@ -174,12 +202,20 @@
 		"<<": "gitStage",
 		">>": "gitUnstage"
 	},
+
+	// flutter
 	"flutter.outlineWidth": 40,
 	"flutter.outlineIconPadding": 0,
 	"flutter.UIPath": true,
 	"flutter.openDevLogSplitCommand": "botright 12split",
 	"flutter.lsp.initialization.onlyAnalyzeProjectsWithOpenFiles": false,
+
+	// typescript
 	"tslint.autoFixOnSave": false,
+	"typescript.suggestionActions.enabled": true,
+	"typescript.format.enabled": true,
+
+	// python
 	"python.autoComplete.addBrackets": true,
 	"python.jediEnabled": false,
 	"python.formatting.provider": "yapf",
@@ -187,13 +223,18 @@
 		"--style",
 		"{SPACES_AROUND_POWER_OPERATOR: True, SPACES_BEFORE_COMMENT: 1}"
 	],
+
+	// html
 	"html.format.enable": true,
+
+	// js
 	"javascript.referencesCodeLens.enable": true,
 	"javascript.showUnused": true,
 	"javascript.suggest.names": true,
 	"javascript.suggestionActions.enabled": true,
 	"json.format.enable": true,
 
+	// prettier
 	"prettier.printWidth": 100,
 	"prettier.eslintIntegration": true,
 	"prettier.disableLanguages": [],
@@ -201,14 +242,21 @@
 	"prettier.useTabs": true,
 	"prettier.trailingComma": "all",
 	"prettier.singleQuote": false,
+
+	// todolist
 	"todolist.autoUpload": true,
 	"todolist.promptForReminder": false,
+
+	// coc actions
 	"coc-actions.hideCursor": false,
 	"coc-actions.showActionKind": true,
+
+	// css
 	"css.validate": false,
 	"less.validate": false,
 	"scss.validate": false,
 	"wxss.validate": false,
+
 	// diagnostic-languageserver
 	"diagnostic-languageserver.filetypes": {
 		"vim": "vint",
