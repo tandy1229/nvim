@@ -203,7 +203,7 @@ command! BD call fzf#run(fzf#wrap({
 \ }))
 
 nnoremap <silent> <c-f>            :Files<CR>
-nnoremap <silent> <Leader>fc       :Commands<CR>
+nnoremap <silent> <Leader>fc       :Colors<CR>
 nnoremap <silent> <Leader><Enter>  :Buffers<CR>
 nnoremap <silent> <Leader>fl       :Lines<CR>
 nnoremap <silent> <Leader>fh       :History:<CR>
@@ -387,3 +387,7 @@ autocmd VimEnter * call after_object#enable('=', ':', '-', '#', ' ')
 let g:smoothie_no_default_mappings = 1
 silent! map  J      <Plug>(SmoothieDownwards)
 silent! map  K      <Plug>(SmoothieUpwards)
+
+" >>> editorconfig
+" '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+let g:EditorConfig_exclude_patterns = ['fugitive://.*']
