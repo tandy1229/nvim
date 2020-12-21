@@ -107,10 +107,17 @@ Plug 'skywind3000/asynctasks.vim'
 
 " rainbow
 Plug 'junegunn/rainbow_parentheses.vim'
+	let g:rainbow#max_level = 16
+	let g:rainbow#pairs = [['(', ')'], ['[', ']'], ['{', '}']]
+	augroup rainbow_lisp
+		autocmd!
+		autocmd FileType c,perl,cpp,sh,zsh,vim,python,lisp,clojure,scheme RainbowParentheses
+	augroup END
+	let g:rainbow#blacklist = [ '#4D4D4D' ]
 " Plug 'luochen1990/rainbow'         " 彩虹括号哦
 
 " debugger
-Plug 'puremourning/vimspector'
+" Plug 'puremourning/vimspector'
 
 " Chinese vim document
 Plug 'yianwillis/vimcdoc'

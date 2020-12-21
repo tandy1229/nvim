@@ -387,12 +387,3 @@ autocmd VimEnter * call after_object#enable('=', ':', '-', '#', ' ')
 let g:smoothie_no_default_mappings = 1
 silent! map  J      <Plug>(SmoothieDownwards)
 silent! map  K      <Plug>(SmoothieUpwards)
-
-" >>> rainbow parentheses
-" '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-let g:rainbow#max_level = 16
-let g:rainbow#pairs = [['(', ')'], ['[', ']'], ['{', '}']]
-augroup rainbow_lisp
-  autocmd!
-  autocmd FileType c,cpp,sh,zsh,vim,python,lisp,clojure,scheme RainbowParentheses
-augroup END
