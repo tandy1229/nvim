@@ -125,7 +125,7 @@ Plug 'junegunn/goyo.vim', { 'on': 'Goyo' }
 Plug 'junegunn/limelight.vim', { 'on': 'Limelight' }
 
 " writting
-Plug 'ron89/thesaurus_query.vim'
+" Plug 'ron89/thesaurus_query.vim'
 
 " async
 Plug 'skywind3000/asyncrun.vim', { 'on': 'AsyncRun' }
@@ -163,7 +163,7 @@ Plug 'nightsense/cosmic_latte'
 Plug 'Iron-E/nvim-highlite'
 
 " debugger
-Plug 'puremourning/vimspector'
+" Plug 'puremourning/vimspector'
 
 " Chinese vim document
 Plug 'yianwillis/vimcdoc'
