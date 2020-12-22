@@ -46,7 +46,7 @@ Plug 'mzlogin/vim-markdown-toc', { 'for': ['gitignore', 'markdown', 'vim-plug'] 
 " 代码主题
 Plug 'tandy1229/nvim-deus'
 Plug 'romgrk/barbar.nvim'
-	let bufferline = {}
+    let bufferline = {}
 	" let bufferline.closable = v:false
 	" let bufferline.animation = v:false
 	let bufferline.maximum_padding = 1
@@ -55,6 +55,7 @@ Plug 'romgrk/barbar.nvim'
 Plug 'tandy1229/airline-deus'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'nvim-treesitter/nvim-treesitter-angular'
 Plug 'nvim-treesitter/playground'
 Plug 'itchyny/calendar.vim'
 
@@ -97,7 +98,8 @@ Plug 'kdheepak/lazygit.nvim', { 'on': 'LazyGit' }
 Plug 'tpope/vim-rhubarb'
 Plug 'rhysd/git-messenger.vim'
 Plug 'theniceboy/vim-gitignore', { 'for': ['gitignore', 'vim-plug'] }
-" Plug 'rhysd/conflict-marker.vim'
+Plug 'junegunn/gv.vim'
+Plug 'rhysd/conflict-marker.vim'
 
 " 对齐文本
 Plug 'godlygeek/tabular', { 'on': 'Tabularize' } " use visualmode ga
