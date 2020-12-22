@@ -149,12 +149,6 @@ let g:fzf_colors =
 autocmd! FileType fzf
 autocmd  FileType fzf set noshowmode noruler nonu
 
-if exists('$TMUX')
-  let g:fzf_layout = { 'tmux': '-p90%,60%' }
-else
-  let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6 } }
-endif
-
 function! s:plug_help_sink(line)
   let dir = g:plugs[a:line].dir
   for pat in ['doc/*.txt', 'README.md']
