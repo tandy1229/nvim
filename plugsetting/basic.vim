@@ -110,7 +110,9 @@ nnoremap <M-j> :bp<CR>
 nnoremap ]b :bn<CR>
 nnoremap [b :bp<CR>
 
+" tab
 noremap tn :tabe<CR>
+noremap tc :tabclose<CR>
 nnoremap ]t :tabn<CR>
 nnoremap [t :tabp<CR>
 
@@ -124,22 +126,28 @@ noremap = n
 nnoremap <Leader>sa ggVG
 
 " yank
-nnoremap Y y$  " make Y to copy till the end of the line
-vnoremap Y "+y " Copy to system clipboard
+" make Y to copy till the end of the line
+nnoremap Y y$
+" Copy to system clipboard
+vnoremap Y "+y
 
 noremap s <nop>
-noremap ` ~       " Press ` to change case (instead of ~)
+noremap ` ~
 
 " Space to Tab
 nnoremap <LEADER>tt :%s/  /\t/g
 vnoremap <LEADER>tt :s/  /\t/g
 
-noremap <LEADER>sc :set spell!<CR> " Spelling Check with <space>sc
+" Spelling Check with <space>sc
+noremap <LEADER>sc :set spell!<CR>
 
-noremap \s :%s//g<left><left> " find and replace
+" find and replace
+noremap \s :%s//g<left><left>
 
-noremap <silent> <LEADER>o za  " Folding
+" Folding
+noremap <silent> <LEADER>o za
 
+" set not hlsearch after '/'
 noremap <LEADER>n :nohlsearch<CR>
 
 " Press space twice to jump to the next '<++>' and edit it
@@ -200,7 +208,7 @@ endfunc
 
 " >>> autocmd
 " '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-autocmd BufRead,BufNewFile *.md setlocal spell  " set spell in markdown
+" autocmd BufRead,BufNewFile *.md setlocal spell  " set spell in markdown
 autocmd InsertLeave,WinEnter * set cursorline   " perform beautifully
 autocmd InsertEnter,WinLeave * set nocursorline
 autocmd BufWritePost $MYVIMRC source $MYVIMRC
