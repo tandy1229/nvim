@@ -79,7 +79,6 @@ noremap <c-t> :silent! Vista finder coc<CR>
 noremap <leader>c :silent! Vista finder coc<CR>
 noremap ,c :silent! Vista finder ctags<CR>
 let g:vista_icon_indent = ["╰─▸ ", "├─▸ "]
-let g:vista_default_executive = 'coc'
 let g:vista_fzf_preview = ['right:50%']
 let g:vista#renderer#enable_icon = 1
 let g:vista#renderer#icons = {
@@ -87,6 +86,7 @@ let g:vista#renderer#icons = {
 \   "variable": "\uf71b",
 \  }
 let g:scrollstatus_size = 15
+autocmd BufRead,BufNewFile *.json let g:vista_default_executive = 'coc'
 
 " >>> vim-go
 " '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
@@ -389,3 +389,7 @@ silent! map  K      <Plug>(SmoothieUpwards)
 " >>> editorconfig
 " '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 let g:EditorConfig_exclude_patterns = ['fugitive://.*']
+
+" >>> barbar.nvim
+" '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+nnoremap <silent> <M-c> :BufferClose<CR>
