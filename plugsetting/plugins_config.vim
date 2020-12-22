@@ -1,12 +1,11 @@
-" >>> colorscheme deus
+" >>> nvim-treesitter
 " '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-set rtp+=/Users/yitaimin/.vim/plugged/nvim-deus
-color deus
-hi NonText ctermfg=gray guifg=grey10
+lua require('treesitter')
+set foldmethod=expr
+set foldexpr=nvim_treesitter#foldexpr()
 
 " >>> airline
 " '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-" beautify
 let g:airline_theme="deus"
 let g:airline#extensions#wordcount#enabled=0
 let g:airline#extensions#whitespace#enabled=0
@@ -40,10 +39,7 @@ let g:airline_powerline_fonts = 1                     " use powerline font
 nnoremap <leader>lf :LeaderfFile<CR>
 nnoremap <LEADER>lh :Leaderf help<CR>
 nnoremap <LEADER>lm :Leaderf mru<CR>
-" let g:Lf_WindowPosition = 'popup'
-" let g:Lf_PreviewInPopup = 1
-" let g:Lf_StlSeparator = { 'left': "\ue0b0", 'right': "\ue0b2" }
-let g:Lf_StlSeparator = { 'left': "", 'right': "" }
+let g:Lf_StlSeparator = { 'left': "\ue0b0", 'right': "\ue0b2" }
 let g:Lf_PreviewCode = 1
 let g:Lf_ShowHidden = 1
 let g:Lf_ShowDevIcons = 1
@@ -216,51 +212,12 @@ inoremap <expr> <c-x><c-d> fzf#vim#complete#path('blsd')
 imap <c-x><c-j> <plug>(fzf-complete-file-ag)
 imap <c-x><c-l> <plug>(fzf-complete-line)
 
-
 " >>> far.vim
 " '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 noremap <LEADER>ff :F  **/*<left><left><left><left><left>
 let g:far#mapping = {
 		\ "replace_undo" : ["l"],
 		\ }
-
-" >>> nvim-treesitter
-" '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-" lua config
-lua <<EOF
-require'nvim-treesitter.configs'.setup {
-  ensure_installed = "all",     -- one of "all", "language", or a list of languages
-  highlight = {
-    enable = true,         -- false will disable the whole extension
-    disable = {},          -- list of language that will be disabled
-  },
-  indent = {
-    enable = true
-  },
-  incremental_selection = {
-    enable = true,
-    keymaps = {
-      init_selection = "gnn",
-      node_incremental = "grn",
-      scope_incremental = "grc",
-      node_decremental = "grm",
-    },
-  },
-	query_linter = {
-    enable = true,
-    use_virtual_text = true,
-    lint_events = {"BufWrite", "CursorHold"},
-  },
-  playground = {
-    enable = true,
-    disable = {},
-    updatetime = 25, -- Debounced time for highlighting nodes in the playground from source code
-    persist_queries = false -- Whether the query persists across vim sessions
-  }
-}
-EOF
-set foldmethod=expr
-set foldexpr=nvim_treesitter#foldexpr()
 
 " >>> goyo.vim
 " '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
@@ -394,7 +351,3 @@ silent! map  K      <Plug>(SmoothieUpwards)
 " >>> editorconfig
 " '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 let g:EditorConfig_exclude_patterns = ['fugitive://.*']
-
-" >>> barbar.nvim
-" '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-nnoremap <silent> <M-c> :BufferClose<CR>
