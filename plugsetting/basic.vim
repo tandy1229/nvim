@@ -37,6 +37,7 @@ set virtualedit=block
 set autowrite
 set autoread
 set splitbelow
+set splitright
 set colorcolumn=100
 set viewoptions=cursor,folds,slash,unix " viminfo 记录的内容
 set completeopt=longest,noinsert,menuone,noselect,preview
