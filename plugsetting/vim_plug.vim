@@ -45,22 +45,29 @@ Plug 'mzlogin/vim-markdown-toc', { 'for': ['gitignore', 'markdown', 'vim-plug'] 
 
 " 代码主题
 Plug 'tandy1229/nvim-deus'
+	set rtp+=/Users/yitaimin/.config/nvim/plugged/nvim-deus
+	color deus
+	hi NonText ctermfg=gray guifg=grey10
 Plug 'romgrk/barbar.nvim'
-    let bufferline = {}
-	" let bufferline.closable = v:false
-	" let bufferline.animation = v:false
+	let bufferline = {}
+	let bufferline.animation = v:false
 	let bufferline.maximum_padding = 1
 	let bufferline.icon_close_tab_modified = ''
-	" let bufferline.icons = v:false
-Plug 'tandy1229/airline-deus'
-Plug 'kyazdani42/nvim-web-devicons'
+	nnoremap <silent> <M-c> :BufferClose<CR>
+
+" treesitter
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-treesitter/nvim-treesitter-angular'
+Plug 'nvim-treesitter/nvim-treesitter-refactor'
+Plug 'romgrk/nvim-treesitter-context'
 Plug 'nvim-treesitter/playground'
+
+Plug 'tandy1229/airline-deus'
+Plug 'kyazdani42/nvim-web-devicons'
 Plug 'itchyny/calendar.vim'
 
 " python
-Plug 'python-mode/python-mode', { 'for': [ 'python', 'vim-plug' ], 'branch': 'develop' }
+" Plug 'python-mode/python-mode', { 'for': [ 'python', 'vim-plug' ], 'branch': 'develop' }
 Plug 'numirias/semshi', { 'do': ':UpdateRemotePlugins', 'for' :[ 'python', 'vim-plug' ] } " python高亮
 Plug 'Vimjas/vim-python-pep8-indent', { 'for' :[ 'python', 'vim-plug' ] }
 Plug 'tweekmonster/braceless.vim', { 'for' :[ 'python', 'vim-plug' ] }
@@ -141,7 +148,7 @@ Plug 'junegunn/rainbow_parentheses.vim'
 		autocmd!
 		autocmd FileType c,perl,cpp,sh,zsh,vim,python,lisp,clojure,scheme RainbowParentheses
 	augroup END
-	let g:rainbow#blacklist = [ '#4D4D4D' ]
+	let g:rainbow#blacklist = [ '#4D4D4D', '#eaeae1' ]
 
 Plug 'editorconfig/editorconfig-vim'
 
