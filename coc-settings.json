@@ -20,7 +20,8 @@
 		"svelte",
 		"c",
 		"cpp",
-		"sh"
+		"sh",
+		"markdown"
 	],
 	"coc.preferences.formatOnTypeFiletypes": [
 		"javascript",
@@ -228,7 +229,7 @@
 	"emmet.showAbbreviationSuggestions": true,
 
 	// leetcode
-	"leetcode.language": "golang",
+	"leetcode.language": "c",
 
 	// html
 	"html.format.enable": true,
@@ -406,12 +407,14 @@
 		"botright",
 		"brooth",
 		"ccls",
+		"cmake",
 		"cocopon",
 		"cohama",
 		"cpos",
 		"dartfmt",
 		"dhruvasagar",
 		"dkarter",
+		"ecdict",
 		"echodoc",
 		"eelixir",
 		"elzr",
@@ -467,6 +470,7 @@
 		"prevchunk",
 		"psliwka",
 		"pynvim",
+		"pyright",
 		"require'nvim",
 		"rhysd",
 		"rnvimr",
