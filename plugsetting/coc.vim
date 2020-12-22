@@ -6,6 +6,7 @@ let g:coc_global_extensions = [
 	\ 'coc-xml',
 	\ 'coc-git',
 	\ 'coc-ecdict',
+	\ 'coc-calc',
 	\ 'coc-sql',
 	\ 'coc-terminal',
 	\ 'coc-cssmodules',
@@ -117,7 +118,7 @@ noremap <silent> <leader>ts :CocList tasks<CR>
 " coc leetcode
 noremap <silent> ,r :CocCommand leetcode.run<CR>
 noremap <silent> ,s :CocCommand leetcode.submit<CR>
-noremap <silent> ,c :CocCommand leetcode.comments<CR>
+noremap <silent> ,p :CocCommand leetcode.comments<CR>
 
 " ;>>>>>>>
 noremap <silent> ; :CocList vimcommands<CR>
