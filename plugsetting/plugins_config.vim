@@ -27,9 +27,9 @@ let g:airline#extensions#default#layout = [
 let g:airline#extensions#hunks#coc_git = 1            " enable coc-git
 function! AirlineInit()
   let g:airline_section_x = '%{ScrollStatus()}'
-  let g:airline_section_error = airline#section#create([ 'hunks' ])
+  " let g:airline_section_error = airline#section#create([ 'hunks' ])
   let g:airline_section_warning = airline#section#create(['⌜', 'filetype', '⌟'])
-  let g:airline_section_b= airline#section#create(['branch'])
+  let g:airline_section_b= airline#section#create(['branch',' ', 'hunks'])
 endfunction
 autocmd User AirlineAfterInit call AirlineInit()
 let g:airline_powerline_fonts = 1                     " use powerline font
