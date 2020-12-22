@@ -136,7 +136,6 @@ imap <C-l> <Plug>(coc-snippets-expand)
 vmap <C-j> <Plug>(coc-snippets-select)
 imap <C-j> <Plug>(coc-snippets-expand-jump)
 
-let g:node_client_debug = 1
 let g:coc_disable_uncaught_error=1  " disable coc nodejs error
 
 " Text Objects
