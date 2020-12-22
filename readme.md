@@ -1,18 +1,15 @@
-![Screen Shot 2020-12-02 at 1.00.23 PM.png](https://i.loli.net/2020/12/02/KdbP1m5t8Z2D4Xg.png)
-===
+# ![Screen Shot 2020-12-02 at 1.00.23 PM.png](https://i.loli.net/2020/12/02/KdbP1m5t8Z2D4Xg.png)
 
 This is my neovim configuration.
 
-Pros
-----
+## Pros
 
 - Nearly make neovim like a IDE
 - helpful improvements
 - Run fast with nearly 60 plugins
 - Integrated with any useful command line tools like [fzf](https://github.com/junegunn/fzf)
 
-Table of contents
------------------
+## Table of contents
 
 <!-- TOC GFM -->
 
@@ -31,7 +28,7 @@ Table of contents
 
 You can use git to install these configuration files.
 
-```shell
+```bash
 git clone https://github.com/tandy1229/nvim ~/.config/nvim
 
 # if you want it downloads faster you can run
@@ -40,93 +37,93 @@ git clone --depth=1 https://github.com/tandy1229/nvim ~/.config/nvim
 
 ### Requirements
 
-* Python 3
+- Python 3
 
-* pynvim
+- pynvim
 
-	To install it, you need to run in your terminal
-	```shell
-	pip3 install pynvim
-	```
+  To install it, you need to run in your terminal
 
-* Neovim 0.5+ ( [Neovim nightly](https://github.com/neovim/neovim#install-from-source) )
-  * For compatability with `nvim-treesitter`, need Neovim 0.5+
-  * For using the colorscheme with `nvim-deus`, need Neovim 0.5+
+  ```bash
+  pip3 install pynvim
+  ```
 
-* Node.js 12.0+
-  * For using the smart completion of coc.nvim
-  * After installation, you must do `npm install -g neovim`
+- Neovim 0.5+ ( [Neovim nightly](https://github.com/neovim/neovim#install-from-source) )
 
-* languageserver
-	* For smart completion of the files.
+  - For compatibility with `nvim-treesitter`, need Neovim 0.5+
+  - For using the colorscheme with `nvim-deus`, need Neovim 0.5+
 
-		 ```shell
-		 npm i -g bash-language-server
-		 ```
-* [fzf](https://github.com/junegunn/fzf)
+- Node.js 12.0+
 
-* `ag` (`the_silver_searcher`)
+  - For using the smart completion of coc.nvim
+  - After installation, you must do `npm install -g neovim`
 
-	> You can install it with your package manager, if you use brew
+- languageserver
 
-	```shell
-	brew install the_silver_searcher
-	```
+  - For smart completion of the files.
+
+    ```bash
+    npm i -g bash-language-server
+    ```
+
+- [fzf](https://github.com/junegunn/fzf)
+
+- `ag` (`the_silver_searcher`)
+
+  > You can install it with your package manager, if you use brew
+
+  ```bash
+  brew install the_silver_searcher
+  ```
 
 ### Options
 
-* [textidote](https://github.com/sylvainhalle/textidote)
+- [textidote](https://github.com/sylvainhalle/textidote)
 
-	For users of tex to check the tex syntax
+  For users of tex to check the tex syntax
 
-* [shellcheck](https://github.com/koalaman/shellcheck)
+- [shellcheck](https://github.com/koalaman/shellcheck)
 
-	Check the error of bash
+  Check the error of bash
 
-	> You can install it with your package manager, if you use brew:
+  > You can install it with your package manager, if you use brew:
 
-	```shell
-	brew install shellcheck
-	```
+  ```bash
+  brew install shellcheck
+  ```
 
-* [shfmt](https://github.com/mvdan/sh)
+- [shfmt](https://github.com/mvdan/sh)
 
-	Autoformat the bash
+  AutoFormat the bash
 
-	> You can install it with your package manager, if you use brew:
+  > You can install it with your package manager, if you use brew:
 
-	```shell
-	brew install shfmt
-	```
+  ```bash
+  brew install shfmt
+  ```
 
-* [ranger](https://github.com/ranger/ranger)
+- [ranger](https://github.com/ranger/ranger)
 
-	Document arrangement
+  Document arrangement
 
-* [nerd-font](https://github.com/ryanoasis/nerd-fonts)
+- [nerd-font](https://github.com/ryanoasis/nerd-fonts)
 
-	Make your neovim perform better
+  Make your neovim perform better
 
-* [lazygit](https://github.com/jesseduffield/lazygit)
+- [lazygit](https://github.com/jesseduffield/lazygit)
 
-	Use git in a lazy way.
-
-
-
-
+  Use git in a lazy way.
 
 ### Speed
 
 Due to I use 60 plugins to make my nvim perform more effective. My neovim become dull sometimes.
 
-I try to make my vimrc file more simple to shortup its startup time, etc.
+I try to make my vimrc file more simple to shorten its startup time, etc.
 
 Doing these makes my neovim run faster.
 
 **With these effects, its startup merely use 170ms with those plugins!!!**
 
 <center><img src="https://i.loli.net/2020/12/09/3uplEq2RFtzCg57.png"></center>
-
 
 ### References
 
