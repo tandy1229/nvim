@@ -2,10 +2,6 @@ silent! if plug#begin('~/.config/nvim/plugged')
 Plug 'tweekmonster/startuptime.vim', { 'on': 'StartupTime' } " to test the neovim open time
 Plug 'tweekmonster/helpful.vim', { 'on': 'HelpfulVersion' } " to test the neovim open time
 
-" now I use airline, it has the great-capability with many plugin
-Plug 'vim-airline/vim-airline'
-Plug 'ojroques/vim-scrollstatus'
-
 " FZF ---- the plug I love best!!!
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
@@ -55,6 +51,10 @@ Plug 'romgrk/barbar.nvim'
 	let bufferline.icon_close_tab_modified = ''
 	nnoremap <silent> <M-c> :BufferClose<CR>
 
+" test new statusline
+Plug 'glepnir/galaxyline.nvim'
+Plug 'kyazdani42/nvim-web-devicons'
+
 " treesitter
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-treesitter/nvim-treesitter-angular'
@@ -62,8 +62,7 @@ Plug 'nvim-treesitter/nvim-treesitter-refactor'
 Plug 'romgrk/nvim-treesitter-context'
 Plug 'nvim-treesitter/playground'
 
-Plug 'tandy1229/airline-deus'
-Plug 'kyazdani42/nvim-web-devicons'
+" calendar
 Plug 'itchyny/calendar.vim'
 
 " python
