@@ -315,16 +315,6 @@
 			"initializationOptions": {},
 			"settings": {}
 		},
-		"golang": {
-			"command": "gopls",
-			"rootPatterns": ["go.mod"],
-			"filetypes": ["go"],
-			"initializationOptions": {
-				"gocodeCompletionEnabled": true,
-				"diagnosticsEnabled": true,
-				"lintTool": "golint"
-			}
-		},
 		"bash": {
 			"command": "bash-language-server",
 			"args": ["start"],
@@ -423,6 +413,7 @@
 		"fszymanski",
 		"funcobj",
 		"gcmt",
+		"glepnir",
 		"gocode",
 		"golint",
 		"gopls",
