@@ -22,22 +22,6 @@ Plug 'google/vim-codefmt', {'on': 'FormatCode'}
 
 " markdown
 Plug 'tpope/vim-markdown', { 'for': 'markdown' }
-	let g:markdown_fenced_languages = [
-				\ 'html',
-				\ 'c',
-				\ 'cpp',
-				\ 'python',
-				\ 'bash=sh',
-				\ 'css',
-				\ 'javascript',
-				\ 'js=javascript',
-				\ 'typescript',
-				\ 'awk',
-				\ 'lua',
-				\ 'vim',
-				\ 'help',
-				\ 'yaml'
-				\]
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 Plug 'dhruvasagar/vim-table-mode', { 'on': 'TableModeToggle', 'for': ['text', 'markdown', 'vim-plug'] }
 Plug 'dkarter/bullets.vim' " 自动化插件
@@ -45,15 +29,7 @@ Plug 'mzlogin/vim-markdown-toc', { 'for': ['gitignore', 'markdown', 'vim-plug'] 
 
 " 代码主题
 Plug 'tandy1229/nvim-deus'
-	set rtp+=/Users/yitaimin/.config/nvim/plugged/nvim-deus
-	color deus
-	hi NonText ctermfg=gray guifg=grey10
 Plug 'romgrk/barbar.nvim'
-	let bufferline = {}
-	let bufferline.animation = v:false
-	let bufferline.maximum_padding = 1
-	let bufferline.icon_close_tab_modified = ''
-	nnoremap <silent> <M-c> :BufferClose<CR>
 
 " treesitter
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
@@ -142,14 +118,8 @@ Plug 'skywind3000/asynctasks.vim'
 
 " rainbow
 Plug 'junegunn/rainbow_parentheses.vim'
-	let g:rainbow#max_level = 16
-	let g:rainbow#pairs = [['(', ')'], ['[', ']'], ['{', '}']]
-	augroup rainbow_lisp
-		autocmd!
-		autocmd FileType c,perl,cpp,sh,zsh,vim,python,lisp,clojure,scheme RainbowParentheses
-	augroup END
-	let g:rainbow#blacklist = [ '#4D4D4D', '#eaeae1' ]
 
+" editorconfig
 Plug 'editorconfig/editorconfig-vim'
 
 " color select

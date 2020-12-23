@@ -4,6 +4,19 @@ lua require('treesitter')
 set foldmethod=expr
 set foldexpr=nvim_treesitter#foldexpr()
 
+" >>> color
+" '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+color deus
+hi NonText ctermfg=gray guifg=grey10
+
+" >>> barbar.nvim
+" '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+let bufferline = {}
+let bufferline.animation = v:false
+let bufferline.maximum_padding = 1
+let bufferline.icon_close_tab_modified = ''
+nnoremap <silent> <M-c> :BufferClose<CR>
+
 " >>> airline
 " '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 let g:airline_theme="deus"
@@ -27,9 +40,9 @@ let g:airline#extensions#default#layout = [
 let g:airline#extensions#hunks#coc_git = 1            " enable coc-git
 function! AirlineInit()
   let g:airline_section_x = '%{ScrollStatus()}'
-  " let g:airline_section_error = airline#section#create([ 'hunks' ])
+  let g:airline_section_error = airline#section#create([ 'hunks' ])
   let g:airline_section_warning = airline#section#create(['⌜', 'filetype', '⌟'])
-  let g:airline_section_b= airline#section#create(['branch',' ', 'hunks'])
+  let g:airline_section_b= airline#section#create(['branch'])
 endfunction
 autocmd User AirlineAfterInit call AirlineInit()
 let g:airline_powerline_fonts = 1                     " use powerline font
@@ -351,3 +364,32 @@ silent! map  K      <Plug>(SmoothieUpwards)
 " >>> editorconfig
 " '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 let g:EditorConfig_exclude_patterns = ['fugitive://.*']
+
+" >>> vim-markdown
+" '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+let g:markdown_fenced_languages = [
+			\ 'html',
+			\ 'c',
+			\ 'cpp',
+			\ 'python',
+			\ 'bash=sh',
+			\ 'css',
+			\ 'javascript',
+			\ 'js=javascript',
+			\ 'typescript',
+			\ 'awk',
+			\ 'lua',
+			\ 'vim',
+			\ 'help',
+			\ 'yaml'
+			\]
+
+" >>> rainbow_parentheses
+" '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+let g:rainbow#max_level = 16
+let g:rainbow#pairs = [['(', ')'], ['[', ']'], ['{', '}']]
+augroup rainbow_lisp
+	autocmd!
+	autocmd FileType c,perl,cpp,sh,zsh,vim,python,lisp,clojure,scheme RainbowParentheses
+augroup END
+let g:rainbow#blacklist = [ '#4D4D4D', '#eaeae1' ]
