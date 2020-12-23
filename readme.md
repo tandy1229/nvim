@@ -57,12 +57,15 @@ git clone --depth=1 https://github.com/tandy1229/nvim ~/.config/nvim
   - For using the smart completion of coc.nvim
   - After installation, you must do `npm install -g neovim`
 
-- languageserver
+- coc completion
 
   - For smart completion of the files.
 
     ```bash
+    # for bash
     npm i -g bash-language-server
+    # for go
+    brew install gopls
     ```
 
 - [fzf](https://github.com/junegunn/fzf)
