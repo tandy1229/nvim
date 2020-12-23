@@ -204,6 +204,10 @@ func! CompileRun()
 		set splitbelow
 		:sp
 		:term go run .
+	elseif &filetype == 'php'
+		set splitbelow
+		:sp
+		:term php %
 	endif
 endfunc
 
