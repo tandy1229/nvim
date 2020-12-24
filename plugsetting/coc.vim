@@ -2,6 +2,7 @@
 let g:coc_global_extensions = [
 	\ 'coc-angular',
 	\ 'coc-emoji',
+	\ 'coc-go',
 	\ 'coc-pairs',
 	\ 'coc-phpls',
 	\ 'coc-rust-analyzer',
