@@ -38,9 +38,12 @@ Plug 'nvim-treesitter/nvim-treesitter-refactor'
 Plug 'romgrk/nvim-treesitter-context'
 Plug 'nvim-treesitter/playground'
 
+" dress
 Plug 'tandy1229/airline-deus'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'itchyny/calendar.vim'
+
+" Plug 'sheerun/vim-polyglot'
 
 " python
 " Plug 'python-mode/python-mode', { 'for': [ 'python', 'vim-plug' ], 'branch': 'develop' }
