@@ -1,4 +1,4 @@
-# ![Screen Shot 2020-12-02 at 1.00.23 PM.png](https://i.loli.net/2020/12/02/KdbP1m5t8Z2D4Xg.png)
+# ![Screen Shot 2020-12-02 at 1.00.23 PM.png](https://i.loli.net/2020/12/24/I7D2lfu8czGLKre.png)
 
 This is my neovim configuration.
 
