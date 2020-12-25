@@ -8,7 +8,10 @@ require'nvim-treesitter.configs'.setup {
     enable = true
   },
   refactor = {
-    highlight_definitions = { enable = true },
+    highlight_definitions = {
+    enable = true,
+    disable = {"python"},          -- list of language that will be disabled
+  },
     -- highlight_current_scope = { enable = true },
     smart_rename = {
       enable = true,
