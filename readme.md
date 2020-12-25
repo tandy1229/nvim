@@ -4,7 +4,7 @@ This is my neovim configuration.
 
 ## Pros
 
-- Nearly make neovim like a IDE
+- Nearly make neovim like an IDE
 - helpful improvements
 - Run fast with nearly 60 plugins
 - Integrated with any useful command line tools like [fzf](https://github.com/junegunn/fzf)
@@ -86,7 +86,7 @@ git clone --depth=1 https://github.com/tandy1229/nvim ~/.config/nvim
 
 - [shellcheck](https://github.com/koalaman/shellcheck)
 
-  Check the error of bash
+  Check the error of sh files
 
   > You can install it with your package manager, if you use brew:
 
@@ -96,7 +96,7 @@ git clone --depth=1 https://github.com/tandy1229/nvim ~/.config/nvim
 
 - [shfmt](https://github.com/mvdan/sh)
 
-  AutoFormat the bash
+  AutoFormat the sh file
 
   > You can install it with your package manager, if you use brew:
 
