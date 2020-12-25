@@ -1,6 +1,7 @@
 " coc config
 let g:coc_global_extensions = [
 	\ 'coc-angular',
+	\ 'coc-jedi',
 	\ 'coc-emoji',
 	\ 'coc-go',
 	\ 'coc-pairs',
