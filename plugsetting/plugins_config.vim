@@ -392,4 +392,4 @@ augroup rainbow_lisp
 	autocmd!
 	autocmd FileType c,perl,cpp,sh,zsh,vim,python,lisp,clojure,scheme RainbowParentheses
 augroup END
-let g:rainbow#blacklist = [ '#4D4D4D', '#eaeae1' ]
+let g:rainbow#blacklist = ['#F1FA8C', '#4D4D4D', '#eaeae1' ]
