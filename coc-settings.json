@@ -1,5 +1,5 @@
 {
-	// coc settings
+	// coc preferences
 	"coc.preferences.hoverTarget": "preview",
 	"coc.preferences.enableFloatHighlight": true,
 	"coc.preferences.snippetStatusText": "🌸",
@@ -38,25 +38,11 @@
 		"sh",
 		"markdown"
 	],
+
+	// coc source
 	"coc.source.around.firstMatch": false,
 	"coc.source.buffer.firstMatch": false,
 	"coc.source.syntax.firstMatch": false,
-
-	// coc git settings
-	"git.enableGutters": true,
-	/* "git.addGBlameToVirtualText": true, */
-	/* "git.virtualTextPrefix": "       ", */
-	/* "git.virtualTextPrefix": "        ", */
-	"git.changedSign.text": "░",
-	"git.changeRemovedSign.text": "▒",
-	"git.addedSign.text": "▎",
-	"git.removedSign.text": "▏",
-	"git.topRemovedSign.text": "▔",
-	"git.addedSign.hlGroup": "GitGutterAdd",
-	"git.changedSign.hlGroup": "GitGutterChange",
-	"git.removedSign.hlGroup": "GitGutterDelete",
-	"git.topRemovedSign.hlGroup": "GitGutterDelete",
-	"git.changeRemovedSign.hlGroup": "GitGutterChangeDelete",
 
 	// coc suggest
 	"suggest.detailMaxLength": 60,
@@ -134,6 +120,22 @@
 
 	// coc signature
 	"signature.target": "float",
+
+	// coc git settings
+	"git.enableGutters": true,
+	/* "git.addGBlameToVirtualText": true, */
+	/* "git.virtualTextPrefix": "       ", */
+	/* "git.virtualTextPrefix": "        ", */
+	"git.changedSign.text": "░",
+	"git.changeRemovedSign.text": "▒",
+	"git.addedSign.text": "▎",
+	"git.removedSign.text": "▏",
+	"git.topRemovedSign.text": "▔",
+	"git.addedSign.hlGroup": "GitGutterAdd",
+	"git.changedSign.hlGroup": "GitGutterChange",
+	"git.removedSign.hlGroup": "GitGutterDelete",
+	"git.topRemovedSign.hlGroup": "GitGutterDelete",
+	"git.changeRemovedSign.hlGroup": "GitGutterChangeDelete",
 
 	// coc-yank
 	"yank.priority": 10,
@@ -232,7 +234,6 @@
 	"leetcode.language": "c",
 
 	// html
-	"html.format.enable": true,
 	"html.suggest.angular1": false, // angular1 is outdate, coc-angular support better
 	"html.autoClosingTags": true,
 
