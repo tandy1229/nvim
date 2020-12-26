@@ -17,35 +17,7 @@ let bufferline.maximum_padding = 1
 let bufferline.icon_close_tab_modified = ''
 nnoremap <silent> <M-c> :BufferClose<CR>
 
-" >>> airline
-" '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-let g:airline_theme="deus"
-let g:airline#extensions#wordcount#enabled=0
-let g:airline#extensions#whitespace#enabled=0
-let g:airline#extensions#term#enabled=0
-if !exists('g:airline_symbols')
-  let g:airline_symbols = {}
-endif
-let g:airline_left_sep=''
-let g:airline_left_alt_sep='▎'
-let g:airline_right_sep=''
-let g:airline_right_alt_sep='▎'
-let g:airline_symbols.dirty=''
-let g:airline_symbols.notexists = ' ﴻ'
-let g:airline_symbols.linenr = ''
-let g:airline#extensions#default#layout = [
-    \ ['a', 'b', 'error',  'c'],
-    \ ['warning', 'y', 'z', 'x']
-    \ ]
-let g:airline#extensions#hunks#coc_git = 1            " enable coc-git
-function! AirlineInit()
-  let g:airline_section_x = '%{ScrollStatus()}'
-  let g:airline_section_error = airline#section#create([ 'hunks' ])
-  let g:airline_section_warning = airline#section#create(['⌜', 'filetype', '⌟'])
-  let g:airline_section_b= airline#section#create(['branch'])
-endfunction
-autocmd User AirlineAfterInit call AirlineInit()
-let g:airline_powerline_fonts = 1                     " use powerline font
+let g:airline_powerline_fonts = 1                    " use powerline font
 
 " >>> LeaderF
 " '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''

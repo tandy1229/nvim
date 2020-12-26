@@ -3,7 +3,8 @@ Plug 'tweekmonster/startuptime.vim', { 'on': 'StartupTime' } " to test the neovi
 Plug 'tweekmonster/helpful.vim', { 'on': 'HelpfulVersion' } " to test the neovim open time
 
 " now I use airline, it has the great-capability with many plugin
-Plug 'vim-airline/vim-airline'
+" Plug 'vim-airline/vim-airline'
+Plug 'theniceboy/eleline.vim'
 Plug 'ojroques/vim-scrollstatus'
 
 " FZF ---- the plug I love best!!!
