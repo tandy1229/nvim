@@ -17,7 +17,9 @@ let bufferline.maximum_padding = 1
 let bufferline.icon_close_tab_modified = ''
 nnoremap <silent> <M-c> :BufferClose<CR>
 
-let g:airline_powerline_fonts = 1                    " use powerline font
+" >>> eleline
+" '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+let g:airline_powerline_fonts = 0                    " use powerline font
 
 " >>> LeaderF
 " '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
