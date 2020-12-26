@@ -17,52 +17,9 @@ let bufferline.maximum_padding = 1
 let bufferline.icon_close_tab_modified = ''
 nnoremap <silent> <M-c> :BufferClose<CR>
 
-" >>> airline
+" >>> eleline
 " '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-function! ElelineFsize(f) abort
-	let l:size = getfsize(expand(a:f))
-	if l:size == 0 || l:size == -1 || l:size == -2
-		return ''
-	endif
-	if l:size < 1024
-		let size = l:size.' bytes'
-	elseif l:size < 1024*1024
-		let size = printf('%.1f', l:size/1024.0).'k'
-	elseif l:size < 1024*1024*1024
-		let size = printf('%.1f', l:size/1024.0/1024.0) . 'm'
-	else
-		let size = printf('%.1f', l:size/1024.0/1024.0/1024.0) . 'g'
-	endif
-	return ''.size.''
-endfunction
-let g:airline_theme="deus"
-let g:airline#extensions#wordcount#enabled=0
-let g:airline#extensions#whitespace#enabled=0
-let g:airline#extensions#term#enabled=0
-if !exists('g:airline_symbols')
-  let g:airline_symbols = {}
-endif
-let g:airline_left_sep=''
-let g:airline_left_alt_sep='▎'
-let g:airline_right_sep=''
-let g:airline_right_alt_sep='▎'
-let g:airline_symbols.dirty=''
-let g:airline_symbols.notexists = ' ﴻ'
-let g:airline_symbols.linenr = ''
-let g:airline#extensions#default#layout = [
-    \ ['a', 'b', 'error',  'c'],
-    \ ['warning', 'z', 'x', 'y']
-    \ ]
-let g:airline#extensions#hunks#coc_git = 1            " enable coc-git
-function! AirlineInit()
-  let g:airline_section_x = '%{ScrollStatus()}'
-	let g:airline_section_y = '%#ElelineFsize#%{ElelineFsize(@%)}'
-  let g:airline_section_error = airline#section#create([ 'hunks' ])
-  let g:airline_section_warning = airline#section#create(['⌜', 'filetype', '⌟'])
-  let g:airline_section_b= airline#section#create(['branch'])
-endfunction
-autocmd User AirlineAfterInit call AirlineInit()
-let g:airline_powerline_fonts = 1                     " use powerline font
+let g:airline_powerline_fonts = 0                     " use powerline font
 
 " >>> LeaderF
 " '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''

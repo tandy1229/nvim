@@ -2,9 +2,19 @@ silent! if plug#begin('~/.config/nvim/plugged')
 Plug 'tweekmonster/startuptime.vim', { 'on': 'StartupTime' } " to test the neovim open time
 Plug 'tweekmonster/helpful.vim', { 'on': 'HelpfulVersion' } " to test the neovim open time
 
-" now I use airline, it has the great-capability with many plugin
-Plug 'vim-airline/vim-airline'
+" now I use eleline, it is easy
+Plug 'kyazdani42/nvim-web-devicons'
 Plug 'ojroques/vim-scrollstatus'
+Plug 'tandy1229/nvim-deus'
+Plug 'romgrk/barbar.nvim'
+Plug 'tandy1229/eleline.vim'
+
+" treesitter
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'nvim-treesitter/nvim-treesitter-angular'
+Plug 'nvim-treesitter/nvim-treesitter-refactor'
+Plug 'romgrk/nvim-treesitter-context'
+Plug 'nvim-treesitter/playground'
 
 " FZF ---- the plug I love best!!!
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
@@ -27,23 +37,8 @@ Plug 'dhruvasagar/vim-table-mode', { 'on': 'TableModeToggle', 'for': ['text', 'm
 Plug 'dkarter/bullets.vim' " 自动化插件
 Plug 'mzlogin/vim-markdown-toc', { 'for': ['gitignore', 'markdown', 'vim-plug'] }
 
-" 代码主题
-Plug 'tandy1229/nvim-deus'
-Plug 'romgrk/barbar.nvim'
-
-" treesitter
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-Plug 'nvim-treesitter/nvim-treesitter-angular'
-Plug 'nvim-treesitter/nvim-treesitter-refactor'
-Plug 'romgrk/nvim-treesitter-context'
-Plug 'nvim-treesitter/playground'
-
 " dress
-Plug 'tandy1229/airline-deus'
-Plug 'kyazdani42/nvim-web-devicons'
 Plug 'itchyny/calendar.vim'
-
-" Plug 'sheerun/vim-polyglot'
 
 " python
 " Plug 'python-mode/python-mode', { 'for': [ 'python', 'vim-plug' ], 'branch': 'develop' }
@@ -102,7 +97,7 @@ Plug 'mg979/vim-visual-multi'                    " 多括号
 Plug 'gcmt/wildfire.vim'                         " 超级回车
 Plug 'junegunn/vim-peekaboo'                     " yank
 Plug 'theniceboy/antovim'                        " gs to switch
-" Plug 'RRethy/vim-illuminate'                     " 高亮相同单词
+" Plug 'RRethy/vim-illuminate'                   " 高亮相同单词
 Plug 'tpope/vim-commentary'                      " 注释插件
 Plug 'tpope/vim-abolish'
 Plug 'junegunn/vim-after-object'
