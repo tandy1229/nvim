@@ -25,6 +25,7 @@ Plug 'brooth/far.vim', { 'on': ['F', 'Far', 'Fardo'] }  " Find & Replace
 " coc awesome complete
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'antoinemadec/coc-fzf'
+Plug 'nvim-lua/lsp-status.nvim'
 
 " autoformat
 Plug 'google/vim-maktaba', {'on': 'FormatCode'}

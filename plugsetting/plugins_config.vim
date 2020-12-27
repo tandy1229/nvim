@@ -19,7 +19,7 @@ nnoremap <silent> <M-c> :BufferClose<CR>
 
 " >>> eleline
 " '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-let g:airline_powerline_fonts = 0                     " use powerline font
+let g:airline_powerline_fonts = 1                     " use powerline font
 
 " >>> LeaderF
 " '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''

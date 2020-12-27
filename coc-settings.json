@@ -90,7 +90,8 @@
 	/* unicode support */
 	"diagnostic.errorSign": "\uf467",
 	"diagnostic.warningSign": "\uf071",
-	"diagnostic.infoSign": "\uf129",
+	/* "diagnostic.infoSign": "\uf129", */
+	"diagnostic.infoSign": "»",
 	"diagnostic.hintSign": "\uf864",
 	/* ascii symbols support */
 	/* "diagnostic.infoSign": "ღ", */
