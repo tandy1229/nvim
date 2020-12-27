@@ -19,7 +19,7 @@ nnoremap <silent> <M-c> :BufferClose<CR>
 
 " >>> eleline
 " '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-let g:airline_powerline_fonts = 1                     " use powerline font
+let g:airline_powerline_fonts = 0                     " use powerline font
 
 " >>> LeaderF
 " '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
@@ -41,7 +41,7 @@ let g:Lf_UseCache = 0
 
 " >>> undotree
 " '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-nnoremap L :UndotreeToggle<cr>
+nnoremap U :UndotreeToggle<cr>
 let g:undotree_DiffAutoOpen = 1
 let g:undotree_SetFocusWhenToggle = 1
 let g:undotree_ShortIndicators = 1
