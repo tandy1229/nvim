@@ -360,7 +360,7 @@ let g:markdown_fenced_languages = [
 
 " >>> rainbow_parentheses
 " '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-let g:rainbow#max_level = 16
+let g:rainbow#max_level = 20
 let g:rainbow#pairs = [['(', ')'], ['[', ']'], ['{', '}']]
 augroup rainbow_lisp
 	autocmd!

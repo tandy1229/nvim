@@ -61,6 +61,8 @@ Plug 'alvan/vim-closetag', { 'for': [ 'vim-plug', 'html' ] }
 Plug 'yuezk/vim-js', { 'for': [ 'vim-plug', 'php', 'html', 'javascript', 'css', 'less' ] }
 Plug 'mattn/emmet-vim', { 'for': [ 'vim-plug', 'html', 'css', 'less' ] }
 Plug 'cespare/vim-toml'
+Plug 'leafgarland/typescript-vim'
+Plug 'chemzqm/vim-jsx-typescript'
 
 " snippets
 Plug 'honza/vim-snippets'
