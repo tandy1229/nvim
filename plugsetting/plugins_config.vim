@@ -49,10 +49,10 @@ let g:undotree_WindowLayout = 2
 let g:undotree_DiffpanelHeight = 8
 let g:undotree_SplitWidth = 24
 function g:Undotree_CustomMap()
-	nmap <buffer> k <plug>UndotreeNextState
-	nmap <buffer> j <plug>UndotreePreviousState
-	nmap <buffer> K 5<plug>UndotreeNextState
-	nmap <buffer> J 5<plug>UndotreePreviousState
+  nmap <buffer> k <plug>UndotreeNextState
+  nmap <buffer> j <plug>UndotreePreviousState
+  nmap <buffer> K 5<plug>UndotreeNextState
+  nmap <buffer> J 5<plug>UndotreePreviousState
 endfunc
 
 " >>> vista.vim
@@ -203,8 +203,8 @@ imap <c-x><c-l> <plug>(fzf-complete-line)
 " '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 noremap <LEADER>ff :F  **/*<left><left><left><left><left>
 let g:far#mapping = {
-		\ "replace_undo" : ["l"],
-		\ }
+    \ "replace_undo" : ["l"],
+    \ }
 
 " >>> goyo.vim
 " '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
@@ -342,28 +342,28 @@ let g:EditorConfig_exclude_patterns = ['fugitive://.*']
 " >>> vim-markdown
 " '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 let g:markdown_fenced_languages = [
-			\ 'html',
-			\ 'c',
-			\ 'cpp',
-			\ 'python',
-			\ 'bash=sh',
-			\ 'css',
-			\ 'javascript',
-			\ 'js=javascript',
-			\ 'typescript',
-			\ 'awk',
-			\ 'lua',
-			\ 'vim',
-			\ 'help',
-			\ 'yaml'
-			\]
+      \ 'html',
+      \ 'c',
+      \ 'cpp',
+      \ 'python',
+      \ 'bash=sh',
+      \ 'css',
+      \ 'javascript',
+      \ 'js=javascript',
+      \ 'typescript',
+      \ 'awk',
+      \ 'lua',
+      \ 'vim',
+      \ 'help',
+      \ 'yaml'
+      \]
 
 " >>> rainbow_parentheses
 " '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 let g:rainbow#max_level = 20
 let g:rainbow#pairs = [['(', ')'], ['[', ']'], ['{', '}']]
 augroup rainbow_lisp
-	autocmd!
-	autocmd FileType perl,sh,zsh,vim,python,lisp,clojure,scheme RainbowParentheses
+  autocmd!
+  autocmd FileType perl,sh,zsh,vim,python,lisp,clojure,scheme RainbowParentheses
 augroup END
 let g:rainbow#blacklist = ['#F1FA8C', '#4D4D4D', '#eaeae1' ]
