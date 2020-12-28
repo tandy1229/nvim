@@ -19,7 +19,7 @@ nnoremap <silent> <M-c> :BufferClose<CR>
 
 " >>> eleline
 " '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-let g:airline_powerline_fonts = 0                     " use powerline font
+let g:airline_powerline_fonts = 1                     " use powerline font
 
 " >>> LeaderF
 " '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
@@ -364,6 +364,6 @@ let g:rainbow#max_level = 20
 let g:rainbow#pairs = [['(', ')'], ['[', ']'], ['{', '}']]
 augroup rainbow_lisp
 	autocmd!
-	autocmd FileType c,perl,cpp,sh,zsh,vim,python,lisp,clojure,scheme RainbowParentheses
+	autocmd FileType perl,sh,zsh,vim,python,lisp,clojure,scheme RainbowParentheses
 augroup END
 let g:rainbow#blacklist = ['#F1FA8C', '#4D4D4D', '#eaeae1' ]
