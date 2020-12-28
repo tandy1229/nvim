@@ -85,6 +85,8 @@ vnoremap <C-Q> <esc>
 " Faster in-line navigation
 noremap W 5w
 noremap B 5b
+noremap J 5j
+noremap K 5k
 
 " 切屏
 noremap ,w <C-w>w
@@ -184,14 +186,6 @@ func! CompileRun()
 		:term python3 %
 	elseif &filetype == 'html'
 		silent! exec "!".g:mkdp_browser." % &"
-	elseif &filetype == 'markdown'
-    silent! exec "MarkdownPreview"
-	elseif &filetype == 'tex'
-		silent! exec "VimtexStop"
-		silent! exec "VimtexCompile"
-	elseif &filetype == 'dart'
-		exec "CocCommand flutter.run -d ".g:flutter_default_device." ".g:fltter_run_args
-		silent! exec "CocCommand flutter.dev.openDevLog"
   elseif &filetype == 'perl'
 		set splitbelow
 		:sp
