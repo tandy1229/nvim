@@ -49,8 +49,8 @@ silent !mkdir -p ~/.config/nvim/tmp/undo
 set backupdir=~/.config/nvim/tmp/backup,.
 set directory=~/.config/nvim/tmp/backup,.
 if has('persistent_undo')
-	set undofile
-	set undodir=~/.config/nvim/tmp/undo,.
+  set undofile
+  set undodir=~/.config/nvim/tmp/undo,.
 endif
 
 " 记住前一次退出的位置
@@ -136,8 +136,9 @@ noremap s <nop>
 noremap ` ~
 
 " Space to Tab
-nnoremap <LEADER>tt :%s/  /\t/g
-vnoremap <LEADER>tt :s/  /\t/g
+nnoremap <LEADER>st :%s/  /\t/g
+vnoremap <LEADER>st :s/  /\t/g
+nnoremap <LEADER>tt :%s/\t/  /g
 
 " Spelling Check with <space>sc
 noremap <LEADER>sc :set spell!<CR>
@@ -160,55 +161,55 @@ noremap <LEADER>/ :set splitbelow<CR>:split<CR>:res +10<CR>:term<CR>
 " Compile function
 noremap \r :call CompileRun()<CR>
 func! CompileRun()
-	silent! exec "update"
-	if &filetype == 'c'
+  silent! exec "update"
+  if &filetype == 'c'
     set splitbelow
     :sp
     :term gcc % -Wall -o %< && time ./%<
-	elseif &filetype == 'cpp'
-		set splitbelow
-		:sp
-		:res -5
-		:term gcc -std=c++11 % -Wall -o %< && time ./%<
-	elseif &filetype == 'java'
-		exec "!javac %"
-		exec "!time java %<"
-	elseif &filetype == 'sh'
-		set splitbelow
-		:sp
-		:res -5
-		:term time bash %
-	elseif &filetype == 'python'
-		set splitbelow
-		:sp
-		:term python3 %
-	elseif &filetype == 'html'
-		silent! exec "!".g:mkdp_browser." % &"
-	elseif &filetype == 'markdown'
+  elseif &filetype == 'cpp'
+    set splitbelow
+    :sp
+    :res -5
+    :term gcc -std=c++11 % -Wall -o %< && time ./%<
+  elseif &filetype == 'java'
+    exec "!javac %"
+    exec "!time java %<"
+  elseif &filetype == 'sh'
+    set splitbelow
+    :sp
+    :res -5
+    :term time bash %
+  elseif &filetype == 'python'
+    set splitbelow
+    :sp
+    :term python3 %
+  elseif &filetype == 'html'
+    silent! exec "!".g:mkdp_browser." % &"
+  elseif &filetype == 'markdown'
     silent! exec "MarkdownPreview"
-	elseif &filetype == 'tex'
-		silent! exec "VimtexStop"
-		silent! exec "VimtexCompile"
-	elseif &filetype == 'dart'
-		exec "CocCommand flutter.run -d ".g:flutter_default_device." ".g:fltter_run_args
-		silent! exec "CocCommand flutter.dev.openDevLog"
+  elseif &filetype == 'tex'
+    silent! exec "VimtexStop"
+    silent! exec "VimtexCompile"
+  elseif &filetype == 'dart'
+    exec "CocCommand flutter.run -d ".g:flutter_default_device." ".g:fltter_run_args
+    silent! exec "CocCommand flutter.dev.openDevLog"
   elseif &filetype == 'perl'
-		set splitbelow
-		:sp
-		:term perl -w %
-	elseif &filetype == 'javascript'
-		set splitbelow
-		:sp
-		:term export DEBUG="INFO,ERROR,WARNING"; node --trace-warnings .
-	elseif &filetype == 'go'
-		set splitbelow
-		:sp
-		:term go run .
-	elseif &filetype == 'php'
-		set splitbelow
-		:sp
-		:term php %
-	endif
+    set splitbelow
+    :sp
+    :term perl -w %
+  elseif &filetype == 'javascript'
+    set splitbelow
+    :sp
+    :term export DEBUG="INFO,ERROR,WARNING"; node --trace-warnings .
+  elseif &filetype == 'go'
+    set splitbelow
+    :sp
+    :term go run .
+  elseif &filetype == 'php'
+    set splitbelow
+    :sp
+    :term php %
+  endif
 endfunc
 
 " >>> autocmd
@@ -225,8 +226,8 @@ autocmd BufWritePre * %s/\n\+\%$//e
 
 " press f10 to show hlgroup
 function! SynGroup()
-	let l:s = synID(line('.'), col('.'), 1)
-	echo synIDattr(l:s, 'name') . ' -> ' . synIDattr(synIDtrans(l:s), 'name')
+  let l:s = synID(line('.'), col('.'), 1)
+  echo synIDattr(l:s, 'name') . ' -> ' . synIDattr(synIDtrans(l:s), 'name')
 endfun
 map <F10> :call SynGroup()<CR>
 
