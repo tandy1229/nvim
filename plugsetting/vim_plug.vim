@@ -3,11 +3,11 @@ Plug 'tweekmonster/startuptime.vim', { 'on': 'StartupTime' } " to test the neovi
 Plug 'tweekmonster/helpful.vim', { 'on': 'HelpfulVersion' } " to test the neovim open time
 
 " now I use eleline, it is easy
-Plug 'kyazdani42/nvim-web-devicons'
-Plug 'ojroques/vim-scrollstatus'
-Plug 'tandy1229/nvim-deus'
 Plug 'romgrk/barbar.nvim'
+Plug 'tandy1229/nvim-deus'
 Plug 'tandy1229/eleline.vim'
+Plug 'ojroques/vim-scrollstatus'
+Plug 'kyazdani42/nvim-web-devicons'
 
 " treesitter
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
@@ -50,6 +50,17 @@ Plug 'tweekmonster/braceless.vim', { 'for' :[ 'python', 'vim-plug' ] }
 " go
 Plug 'fatih/vim-go' , { 'for': [ 'go', 'vim-plug' ], 'tag': '*' }
 
+" dart
+Plug 'dart-lang/dart-vim-plugin'
+Plug 'f-person/pubspec-assist-nvim'
+
+" Swift
+Plug 'keith/swift.vim'
+Plug 'arzg/vim-swift'
+
+" docker files
+Plug 'ekalinin/Dockerfile.vim'
+
 " tex
 Plug 'lervag/vimtex', { 'for': [ 'tex', 'vim-plug' ] }
 
@@ -62,7 +73,18 @@ Plug 'yuezk/vim-js', { 'for': [ 'vim-plug', 'php', 'html', 'javascript', 'css', 
 Plug 'mattn/emmet-vim', { 'for': [ 'vim-plug', 'html', 'css', 'less' ] }
 Plug 'cespare/vim-toml'
 Plug 'leafgarland/typescript-vim'
-Plug 'chemzqm/vim-jsx-typescript'
+Plug 'peitalin/vim-jsx-typescript'
+Plug 'heavenshell/vim-jsdoc'
+Plug 'dag/vim-fish'
+Plug 'Yggdroot/indentLine', { 'on': 'IndentLinesEnable' }
+  autocmd! User indentLine doautocmd indentLine Syntax
+  let g:indentLine_fileTypeExclude = ['json', 'markdown']
+  let g:indentLine_bufTypeExclude = ['help', 'terminal', 'nofile']
+  let g:indentLine_setColors = 0
+  let g:indentLine_char = '|'
+
+" macos
+Plug 'rizzatti/dash.vim'
 
 " snippets
 Plug 'honza/vim-snippets'
@@ -77,20 +99,27 @@ Plug 'kevinhwang91/rnvimr', { 'on': 'RnvimrToggle' }
 " git diff
 Plug 'cohama/agit.vim', { 'on': 'Agit' }
 Plug 'tpope/vim-fugitive' " use in git
-Plug 'fszymanski/fzf-gitignore', { 'on': 'FzfGitignore' }
+Plug 'fszymanski/fzf-gitignore', {'do': ':UpdateRemotePlugins'}
 Plug 'kdheepak/lazygit.nvim', { 'on': 'LazyGit' }
 Plug 'tpope/vim-rhubarb'
 Plug 'rhysd/git-messenger.vim'
 Plug 'theniceboy/vim-gitignore', { 'for': ['gitignore', 'vim-plug'] }
 Plug 'junegunn/gv.vim'
+  function! s:gv_expand()
+    let line = getline('.')
+    GV --name-status
+    call search('\V'.line, 'c')
+    normal! zz
+  endfunction
+  autocmd! FileType GV nnoremap <buffer> <silent> = :call <sid>gv_expand()<cr>
 Plug 'rhysd/conflict-marker.vim'
+Plug 'whiteinge/diffconflicts'
 
 " 对齐文本
 Plug 'godlygeek/tabular', { 'on': 'Tabularize' } " use visualmode ga
 Plug 'junegunn/vim-easy-align'                   " I need to pratice
 
 " useful plug
-Plug 'tpope/vim-surround'                        " 改括号
 Plug 'AndrewRadev/splitjoin.vim'                 " 一行代码变多行
 Plug 'rhysd/clever-f.vim'                        " f不能用；
 Plug 'wincent/terminus'                          " 鼠标支持
@@ -101,8 +130,10 @@ Plug 'gcmt/wildfire.vim'                         " 超级回车
 Plug 'junegunn/vim-peekaboo'                     " yank
 Plug 'theniceboy/antovim'                        " gs to switch
 " Plug 'RRethy/vim-illuminate'                   " 高亮相同单词
+Plug 'tpope/vim-surround'                        " 改括号
 Plug 'tpope/vim-commentary'                      " 注释插件
 Plug 'tpope/vim-abolish'
+Plug 'tpope/vim-repeat'
 Plug 'junegunn/vim-after-object'
 Plug 'psliwka/vim-smoothie'
 
