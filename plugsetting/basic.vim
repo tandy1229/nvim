@@ -165,12 +165,12 @@ func! CompileRun()
   if &filetype == 'c'
     set splitbelow
     :sp
-    :term gcc % -Wall -o %< && time ./%<
+    :term g++ % -Wall -o %< && time ./%<
   elseif &filetype == 'cpp'
     set splitbelow
     :sp
     :res -5
-    :term gcc -std=c++11 % -Wall -o %< && time ./%<
+    :term g++ -std=c++11 % -Wall -o %< && time ./%<
   elseif &filetype == 'java'
     exec "!javac %"
     exec "!time java %<"
