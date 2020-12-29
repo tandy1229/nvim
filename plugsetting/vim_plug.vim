@@ -6,6 +6,10 @@ Plug 'tandy1229/eleline.vim'
 Plug 'ojroques/vim-scrollstatus'
 Plug 'kyazdani42/nvim-web-devicons'
 
+" show
+Plug 'mhinz/vim-startify'
+Plug 'itchyny/calendar.vim'
+
 " treesitter
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-treesitter/nvim-treesitter-angular'
@@ -17,9 +21,6 @@ Plug 'nvim-treesitter/playground'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'antoinemadec/coc-fzf'
 Plug 'nvim-lua/lsp-status.nvim'
-
-" show
-Plug 'mhinz/vim-startify'
 
 " FZF ---- the plug I love best!!!
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
@@ -38,8 +39,8 @@ Plug 'dhruvasagar/vim-table-mode', { 'on': 'TableModeToggle', 'for': ['text', 'm
 Plug 'dkarter/bullets.vim' " 自动化插件
 Plug 'mzlogin/vim-markdown-toc', { 'for': ['gitignore', 'markdown', 'vim-plug'] }
 
-" dress
-Plug 'itchyny/calendar.vim'
+" R
+Plug 'jalvesaq/Nvim-R', {'branch': 'stable'}
 
 " python
 " Plug 'python-mode/python-mode', { 'for': [ 'python', 'vim-plug' ], 'branch': 'develop' }

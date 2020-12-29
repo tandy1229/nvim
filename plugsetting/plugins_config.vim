@@ -384,3 +384,7 @@ function! s:autosave(enable)
 endfunction
 
 command! -bang AutoSave call s:autosave(<bang>1)
+
+" >>> markdown clipboard
+" '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+autocmd FileType markdown nmap <buffer><silent> <leader>p :call mdip#MarkdownClipboardImage()<CR>
