@@ -118,16 +118,17 @@ git clone --depth=1 https://github.com/tandy1229/nvim ~/.config/nvim
 
 ### Speed
 
-Due to I use 60 plugins to make my nvim perform more effective. My neovim become dull sometimes.
+Due to I use 100 plugins to make my nvim perform more effective. My neovim become dull sometimes.
 
 I try to make my vimrc file more simple to shorten its startup time, etc.
 
 Doing these makes my neovim run faster.
 
-**With these effects, its startup merely use 170ms with those plugins!!!**
+**With these effects, its startup merely use 150ms with those plugins!!!**
 
-<center><img src="https://i.loli.net/2020/12/09/3uplEq2RFtzCg57.png"></center>
+<center><img src="https://i.loli.net/2020/12/29/keovWDZJLiCUEBT.png"></center>
 
 ### References
 
 - [ ] inspired by [nvim](https://github.com/theniceboy/nvim) .
+- [ ] inspired by [dotfiles](https://github.com/junegunn/dotfiles) .
