@@ -1,7 +1,4 @@
 silent! if plug#begin('~/.config/nvim/plugged')
-Plug 'tweekmonster/startuptime.vim', { 'on': 'StartupTime' } " to test the neovim open time
-Plug 'tweekmonster/helpful.vim', { 'on': 'HelpfulVersion' } " to test the neovim open time
-
 " now I use eleline, it is easy
 Plug 'romgrk/barbar.nvim'
 Plug 'tandy1229/nvim-deus'
@@ -16,16 +13,19 @@ Plug 'nvim-treesitter/nvim-treesitter-refactor'
 Plug 'romgrk/nvim-treesitter-context'
 Plug 'nvim-treesitter/playground'
 
+" coc awesome complete
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'antoinemadec/coc-fzf'
+Plug 'nvim-lua/lsp-status.nvim'
+
+" show
+Plug 'mhinz/vim-startify'
+
 " FZF ---- the plug I love best!!!
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'Yggdroot/LeaderF', { 'do': ':LeaderfInstallCExtension' } " 模糊搜索
 Plug 'brooth/far.vim', { 'on': ['F', 'Far', 'Fardo'] }  " Find & Replace
-
-" coc awesome complete
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'antoinemadec/coc-fzf'
-Plug 'nvim-lua/lsp-status.nvim'
 
 " autoformat
 Plug 'google/vim-maktaba', {'on': 'FormatCode'}
@@ -78,8 +78,6 @@ Plug 'heavenshell/vim-jsdoc'
 Plug 'dag/vim-fish'
 Plug 'Yggdroot/indentLine', { 'on': 'IndentLinesEnable' }
   autocmd! User indentLine doautocmd indentLine Syntax
-  let g:indentLine_fileTypeExclude = ['json', 'markdown']
-  let g:indentLine_bufTypeExclude = ['help', 'terminal', 'nofile']
   let g:indentLine_setColors = 0
   let g:indentLine_char = '|'
 
@@ -90,7 +88,6 @@ Plug 'rizzatti/dash.vim'
 Plug 'honza/vim-snippets'
 
 " 进入动画？
-Plug 'mhinz/vim-startify'
 Plug 'mbbill/undotree', { 'on': 'UndotreeToggle' }
 Plug 'liuchengxu/vista.vim'
 Plug 'pechorin/any-jump.vim'
@@ -138,11 +135,11 @@ Plug 'junegunn/vim-after-object'
 Plug 'psliwka/vim-smoothie'
 
 " focus mode
-Plug 'junegunn/goyo.vim', { 'on': 'Goyo' }
-Plug 'junegunn/limelight.vim', { 'on': 'Limelight' }
+Plug 'junegunn/goyo.vim'
+Plug 'junegunn/limelight.vim'
 
 " writting
-" Plug 'ron89/thesaurus_query.vim'
+Plug 'ron89/thesaurus_query.vim'
 
 " async
 Plug 'skywind3000/asyncrun.vim', { 'on': 'AsyncRun' }
@@ -179,5 +176,10 @@ Plug 'Iron-E/nvim-highlite'
 " Chinese vim document
 Plug 'yianwillis/vimcdoc'
 Plug 'nanotee/nvim-lua-guide'
+
+" test nvim
+Plug 'tweekmonster/startuptime.vim', { 'on': 'StartupTime' } " to test the neovim open time
+Plug 'tweekmonster/helpful.vim', { 'on': 'HelpfulVersion' } " to test the neovim open time
+
 call plug#end()
 endif

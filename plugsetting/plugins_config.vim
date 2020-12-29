@@ -367,3 +367,20 @@ augroup rainbow_lisp
   autocmd FileType perl,sh,zsh,vim,python,lisp,clojure,scheme RainbowParentheses
 augroup END
 let g:rainbow#blacklist = ['#F1FA8C', '#4D4D4D', '#eaeae1' ]
+
+" >>> autosave
+" '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+" inspired by https://github.com/junegunn/dotfiles/blob/master/vimrc
+function! s:autosave(enable)
+  augroup autosave
+    autocmd!
+    if a:enable
+      autocmd TextChanged,InsertLeave <buffer>
+            \  if empty(&buftype) && !empty(bufname(''))
+            \|   silent! update
+            \| endif
+    endif
+  augroup END
+endfunction
+
+command! -bang AutoSave call s:autosave(<bang>1)
