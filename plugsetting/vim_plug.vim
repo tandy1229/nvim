@@ -110,7 +110,6 @@ Plug 'junegunn/gv.vim'
     normal! zz
   endfunction
   autocmd! FileType GV nnoremap <buffer> <silent> = :call <sid>gv_expand()<cr>
-Plug 'rhysd/conflict-marker.vim'
 Plug 'whiteinge/diffconflicts'
 
 " 对齐文本

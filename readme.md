@@ -47,6 +47,14 @@ git clone --depth=1 https://github.com/tandy1229/nvim ~/.config/nvim
   pip3 install pynvim
   ```
 
+- neovim-remote
+
+  To install it, you need to run in your terminal
+
+  ```bash
+  pip3 install neovim-remote
+  ```
+
 - Neovim 0.5+ ( [Neovim nightly](https://github.com/neovim/neovim#install-from-source) )
 
   - For compatibility with `nvim-treesitter`, need Neovim 0.5+
