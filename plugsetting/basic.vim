@@ -36,12 +36,16 @@ set updatetime=100
 set virtualedit=block
 set autowrite
 set autoread
+au FocusGained,BufEnter * checktime
 set splitbelow
 set splitright
 set colorcolumn=100
 set viewoptions=cursor,folds,slash,unix " viminfo 记录的内容
 set completeopt=longest,noinsert,menuone,noselect,preview
 " set clipboard=unnamed " in macos it's unneeded
+
+let $LANG='en'
+set langmenu=en
 
 " 某种备份
 silent !mkdir -p ~/.config/nvim/tmp/backup
@@ -112,8 +116,8 @@ nnoremap ]b :bn<CR>
 nnoremap [b :bp<CR>
 
 " tab
-noremap tn :tabe<CR>
-noremap tc :tabclose<CR>
+map <leader>tn :tabnew<cr>
+map <leader>tc :tabclose<cr>
 nnoremap ]t :tabn<CR>
 nnoremap [t :tabp<CR>
 
@@ -221,8 +225,25 @@ autocmd BufWritePost $MYVIMRC source $MYVIMRC
 autocmd BufEnter * silent! lcd %:p:h            " Auto change directory to current dir
 
 " Automatically deletes all trailing whitespace and newlines at end of file on save.
-autocmd BufWritePre * %s/\s\+$//e
-autocmd BufWritePre * %s/\n\+\%$//e
+" >>>>>>>>> now I use a function to do this. Due to some file actually needs whitespace in the end of the line.
+" autocmd BufWritePre * %s/\s\+$//e
+" autocmd BufWritePre * %s/\n\+\%$//e
+
+" del extra whitespace
+fun! CleanExtraSpaces()
+    let save_cursor = getpos(".")
+    let old_query = getreg('/')
+    silent! %s/\s\+$//e
+    silent! %s/\n\+\%$//e
+    call setpos('.', save_cursor)
+    call setreg('/', old_query)
+endfun
+
+command! -nargs=0 CleanExtraSpaces :call CleanExtraSpaces()
+
+if has("autocmd")
+    autocmd BufWritePre *.txt,*.js,*.py,*.wiki,*.sh,*.coffee :call CleanExtraSpaces()
+endif
 
 " press f10 to show hlgroup
 function! SynGroup()
