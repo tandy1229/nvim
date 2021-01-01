@@ -142,6 +142,9 @@ vmap <C-j> <Plug>(coc-snippets-select)
 imap <C-j> <Plug>(coc-snippets-expand-jump)
 
 let g:coc_disable_uncaught_error=1  " disable coc nodejs error
+let g:python_host_prog = '/usr/bin/python'
+let g:python3_host_prog = '/usr/local/bin/python3'
+let g:ruby_host_prog = exepath('neovim-ruby-host')
 
 " Text Objects
 xmap if <Plug>(coc-funcobj-i)

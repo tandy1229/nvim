@@ -83,7 +83,7 @@ Plug 'Yggdroot/indentLine', { 'on': 'IndentLinesEnable' }
   let g:indentLine_char = '|'
 
 " macos
-Plug 'rizzatti/dash.vim'
+Plug 'rizzatti/dash.vim', { 'on': ['Dash', 'DashKeywords'] }
 
 " snippets
 Plug 'honza/vim-snippets'
