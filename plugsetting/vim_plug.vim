@@ -133,6 +133,7 @@ Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-repeat'
 Plug 'junegunn/vim-after-object'
 Plug 'psliwka/vim-smoothie'
+Plug 'dyng/ctrlsf.vim'
 
 " focus mode
 Plug 'junegunn/goyo.vim'

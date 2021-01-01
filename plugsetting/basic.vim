@@ -15,7 +15,7 @@ set softtabstop=2
 set hidden           " 切换文件不保存，隐藏
 set autoindent       " 换行时自动缩进
 set smartindent
-" set expandtab        " 将tab转为空格
+set expandtab        " 将tab转为空格
 set smarttab
 set ignorecase       " 设置忽略大小写
 set smartcase        " 设置智能识别大小写
@@ -74,13 +74,13 @@ tnoremap <C-O> <C-\><C-N><C-O>
 let mapleader=" "
 
 " Quit
-noremap S :update<CR>
+noremap <silent> S :update<CR>
 noremap Q :q<CR>
-nnoremap <Leader>q :q<cr>
-nnoremap <Leader>Q :qa!<cr>
-inoremap <C-Q> <esc>:q<cr>
-nnoremap <C-Q> :q<cr>
-vnoremap <C-Q> <esc>
+nnoremap <silent><Leader>q :q<cr>
+nnoremap <silent><Leader>Q :qa!<cr>
+inoremap <silent><C-Q> <esc>:q<cr>
+nnoremap <silent><C-Q> :q<cr>
+vnoremap <silent><C-Q> <esc>
 
 " Faster in-line navigation
 noremap W 5w
