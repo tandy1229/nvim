@@ -79,7 +79,6 @@ Plug 'heavenshell/vim-jsdoc'
 Plug 'dag/vim-fish'
 Plug 'Yggdroot/indentLine', { 'on': 'IndentLinesEnable' }
   autocmd! User indentLine doautocmd indentLine Syntax
-  let g:indentLine_setColors = 0
   let g:indentLine_char = '|'
 
 " macos
@@ -90,6 +89,10 @@ Plug 'honza/vim-snippets'
 
 " 进入动画？
 Plug 'mbbill/undotree', { 'on': 'UndotreeToggle' }
+Plug 'simnalamburt/vim-mundo'
+  nnoremap <F5> :MundoToggle<CR>
+  let g:mundo_width = 30
+  let g:mundo_preview_bottom = 1
 Plug 'liuchengxu/vista.vim'
 Plug 'pechorin/any-jump.vim'
 Plug 'kevinhwang91/rnvimr', { 'on': 'RnvimrToggle' }
@@ -125,7 +128,7 @@ Plug 'svermeulen/vim-subversive'                 " 替换:s/的升级版
 Plug 'mg979/vim-visual-multi'                    " 多括号
 Plug 'gcmt/wildfire.vim'                         " 超级回车
 Plug 'junegunn/vim-peekaboo'                     " yank
-Plug 'theniceboy/antovim'                        " gs to switch
+Plug 'tandy1229/antovim'                        " gs to switch
 " Plug 'RRethy/vim-illuminate'                   " 高亮相同单词
 Plug 'tpope/vim-surround'                        " 改括号
 Plug 'tpope/vim-commentary'                      " 注释插件
@@ -134,6 +137,8 @@ Plug 'tpope/vim-repeat'
 Plug 'junegunn/vim-after-object'
 Plug 'psliwka/vim-smoothie'
 Plug 'dyng/ctrlsf.vim'
+Plug 'romainl/vim-cool'
+Plug 'dhruvasagar/vim-zoom'
 
 " focus mode
 Plug 'junegunn/goyo.vim'
