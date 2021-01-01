@@ -47,6 +47,7 @@ Plug 'jalvesaq/Nvim-R', {'branch': 'stable'}
 Plug 'numirias/semshi', { 'do': ':UpdateRemotePlugins', 'for' :[ 'python', 'vim-plug' ] } " python高亮
 Plug 'Vimjas/vim-python-pep8-indent', { 'for' :[ 'python', 'vim-plug' ] }
 Plug 'tweekmonster/braceless.vim', { 'for' :[ 'python', 'vim-plug' ] }
+Plug 'sillybun/vim-repl', { 'for' :[ 'python', 'vim-plug' ] }
 
 " go
 Plug 'fatih/vim-go' , { 'for': [ 'go', 'vim-plug' ], 'tag': '*' }
