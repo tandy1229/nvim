@@ -163,13 +163,13 @@ noremap <LEADER><LEADER> <Esc>/<++><CR>:nohlsearch<CR>c4l
 noremap <LEADER>/ :set splitbelow<CR>:split<CR>:res +10<CR>:term<CR>
 
 " Compile function
-noremap \r :call CompileRun()<CR>
+noremap <silent> \r :call CompileRun()<CR>
 func! CompileRun()
   silent! exec "update"
   if &filetype == 'c'
     set splitbelow
     :sp
-    :term g++ % -Wall -o %< && time ./%<
+    :term cc % -o %< && time ./%<
   elseif &filetype == 'cpp'
     set splitbelow
     :sp
