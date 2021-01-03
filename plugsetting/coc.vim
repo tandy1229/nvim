@@ -1,6 +1,7 @@
 " coc config
 let g:coc_global_extensions = [
 	\ 'coc-angular',
+	\ 'coc-ci',
 	\ 'coc-jedi',
 	\ 'coc-emoji',
 	\ 'coc-go',
@@ -25,7 +26,6 @@ let g:coc_global_extensions = [
 	\ 'coc-marketplace',
 	\ 'coc-stylelintplus',
 	\ 'coc-texlab',
-	\ 'coc-tabnine',
 	\ 'coc-eslint',
 	\ 'coc-diagnostic',
 	\ 'coc-explorer',
@@ -155,6 +155,9 @@ xmap ic <Plug>(coc-classobj-i)
 omap ic <Plug>(coc-classobj-i)
 xmap ac <Plug>(coc-classobj-a)
 omap ac <Plug>(coc-classobj-a)
+
+nmap <silent> w <Plug>(coc-ci-w)
+nmap <silent> b <Plug>(coc-ci-b)
 
 " create text object for git chunks
 omap ig <Plug>(coc-git-chunk-inner)
