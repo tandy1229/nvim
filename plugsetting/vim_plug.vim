@@ -48,6 +48,14 @@ Plug 'numirias/semshi', { 'do': ':UpdateRemotePlugins', 'for' :[ 'python', 'vim-
 Plug 'Vimjas/vim-python-pep8-indent', { 'for' :[ 'python', 'vim-plug' ] }
 Plug 'tweekmonster/braceless.vim', { 'for' :[ 'python', 'vim-plug' ] }
 
+" moonscript
+Plug 'leafo/moonscript-vim'
+
+Plug 'kchmck/vim-coffee-script'
+Plug 'slim-template/vim-slim'
+Plug 'Glench/Vim-Jinja2-Syntax'
+Plug 'rust-lang/rust.vim'
+
 " go
 Plug 'fatih/vim-go' , { 'for': [ 'go', 'vim-plug' ], 'tag': '*' }
 
@@ -139,6 +147,8 @@ Plug 'psliwka/vim-smoothie'
 Plug 'dyng/ctrlsf.vim'
 Plug 'romainl/vim-cool'
 Plug 'dhruvasagar/vim-zoom'
+Plug 'skywind3000/vim-cppman'
+Plug 'vimwiki/vimwiki'
 
 " focus mode
 Plug 'junegunn/goyo.vim'
