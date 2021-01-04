@@ -6,3 +6,32 @@ plugsetting/coc.vimback
 plugsetting/deus.vim
 autoload/plug.vim.old
 .netrwhist
+
+# create by https://github.com/iamcco/coc-gitignore (Mon Jan 04 2021 16:34:52 GMT+0800 (China Standard Time))
+# macOS.gitignore:
+# General
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Icon must end with two \r
+Icon
+
+# Thumbnails
+._*
+
+# Files that might appear in the root of a volume
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+
+# Directories potentially created on remote AFP share
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
