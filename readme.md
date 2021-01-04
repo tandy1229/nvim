@@ -1,4 +1,4 @@
-# ![Screen Shot 2020-12-02 at 1.00.23 PM.png](https://i.loli.net/2020/12/24/I7D2lfu8czGLKre.png)
+# ![Screen Shot 2020-12-02 at 1.00.23 PM.png](https://i.loli.net/2021/01/04/c4euXvyZa26LbxY.png)
 
 This is my neovim configuration.
 
@@ -14,7 +14,7 @@ This is my neovim configuration.
 <!-- TOC GFM -->
 
 - [Installation](#installation)
-	+ [Using git](#using-git)
+  + [Using git](#using-git)
 - [Requirements](#requirements)
 - [Options](#options)
 - [Speed](#speed)
