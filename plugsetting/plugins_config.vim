@@ -305,10 +305,6 @@ let g:vmt_cycle_list_item_markers = 1
 let g:vmt_fence_text = 'TOC'
 let g:vmt_fence_closing_text = '/TOC'
 
-" >>> fzf-gitignore
-" '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-noremap <LEADER>gi :FzfGitignore<CR>
-
 " >>> nvim-lazygit
 " '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 let g:lazygit_floating_window_winblend = 0                        " transparency of floating window

@@ -108,7 +108,6 @@ Plug 'kevinhwang91/rnvimr', { 'on': 'RnvimrToggle' }
 " git diff
 Plug 'cohama/agit.vim', { 'on': 'Agit' }
 Plug 'tpope/vim-fugitive' " use in git
-Plug 'fszymanski/fzf-gitignore', {'do': ':UpdateRemotePlugins'}
 Plug 'kdheepak/lazygit.nvim', { 'on': 'LazyGit' }
 Plug 'tpope/vim-rhubarb'
 Plug 'rhysd/git-messenger.vim'
@@ -149,6 +148,7 @@ Plug 'romainl/vim-cool'
 Plug 'dhruvasagar/vim-zoom'
 Plug 'skywind3000/vim-cppman'
 Plug 'vimwiki/vimwiki'
+Plug 'chrisbra/NrrwRgn'
 
 " focus mode
 Plug 'junegunn/goyo.vim'
@@ -185,6 +185,8 @@ Plug 'nightsense/stellarized'
 Plug 'arcticicestudio/nord-vim'
 Plug 'nightsense/cosmic_latte'
 Plug 'Iron-E/nvim-highlite'
+Plug 'ghifarit53/tokyonight-vim'
+Plug 'ayu-theme/ayu-vim'
 
 " debugger
 " Plug 'puremourning/vimspector'
