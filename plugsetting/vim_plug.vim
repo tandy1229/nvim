@@ -16,6 +16,8 @@ Plug 'nvim-treesitter/nvim-treesitter-angular'
 Plug 'nvim-treesitter/nvim-treesitter-refactor'
 Plug 'romgrk/nvim-treesitter-context'
 Plug 'nvim-treesitter/playground'
+  set foldmethod=expr
+  set foldexpr=nvim_treesitter#foldexpr()
 
 " coc awesome complete
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -147,7 +149,7 @@ Plug 'dyng/ctrlsf.vim'
 Plug 'romainl/vim-cool'
 Plug 'dhruvasagar/vim-zoom'
 Plug 'skywind3000/vim-cppman'
-Plug 'vimwiki/vimwiki'
+" Plug 'vimwiki/vimwiki'
 Plug 'chrisbra/NrrwRgn'
 
 " focus mode

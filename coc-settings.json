@@ -139,7 +139,7 @@
 	"yank.list.maxsize": 100,
 
 	// coc explorer
-	"explorer.width": 38,
+	"explorer.width": 28,
 	"explorer.quitOnOpen": true,
 	"explorer.sources": [
 		{
@@ -244,12 +244,6 @@
 	"prettier.useTabs": true,
 	"prettier.trailingComma": "all",
 	"prettier.singleQuote": false,
-
-	// css
-	"css.validate": false,
-	"less.validate": false,
-	"scss.validate": false,
-	"wxss.validate": false,
 
 	// python
 	"python.autoComplete.addBrackets": true,
