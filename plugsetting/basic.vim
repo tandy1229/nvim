@@ -1,5 +1,7 @@
 " >>> EDITED SETUP
 " '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+filetype plugin on
+filetype indent on
 set number           " 显示行号
 set notimeout
 set ttimeoutlen=0    " 无延迟
