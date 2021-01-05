@@ -38,7 +38,6 @@ set updatetime=100
 set virtualedit=block
 set autowrite
 set autoread
-au FocusGained,BufEnter * checktime
 set splitbelow
 set splitright
 set colorcolumn=100
@@ -58,6 +57,7 @@ if has('persistent_undo')
   set undofile
   set undodir=~/.config/nvim/tmp/undo,.
 endif
+au BufWritePre /tmp/* setlocal noundofile
 
 " 记住前一次退出的位置
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
