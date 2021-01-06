@@ -130,6 +130,9 @@ let g:coc_snippet_prev = '<c-k>'
 imap <C-l> <Plug>(coc-snippets-expand)
 vmap <C-j> <Plug>(coc-snippets-select)
 imap <C-j> <Plug>(coc-snippets-expand-jump)
+let g:coc_status_warning_sign = '❗'
+" let g:coc_status_warning_sign = '⭕'
+" let g:coc_status_error_sign = '✖'
 
 let g:coc_disable_uncaught_error=1  " disable coc nodejs error
 let g:python_host_prog = '/usr/bin/python'
