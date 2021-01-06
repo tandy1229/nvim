@@ -8,9 +8,7 @@ let g:coc_global_extensions = [
 	\ 'coc-emoji',
 	\ 'coc-pairs',
 	\ 'coc-tasks',
-	\ 'coc-ecdict',
 	\ 'coc-syntax',
-	\ 'coc-bookmark',
 	\ 'coc-snippets',
 	\ 'coc-todolist',
 	\ 'coc-leetcode',
@@ -95,12 +93,11 @@ nnoremap <C-c> :CocList commands<CR>
 nnoremap <silent><nowait> <LEADER>d :CocList diagnostics<cr>
 nmap <silent> <LEADER>- <Plug>(coc-diagnostic-prev)
 nmap <silent> <LEADER>= <Plug>(coc-diagnostic-next)
-nnoremap <silent> tw :call CocActionAsync('doHover')<CR>
 
 " open file in coc
 nnoremap <silent> <C-p> :<C-u>CocList files<CR>
 
-" coctodolist
+" coc todolist
 nnoremap <leader>tn :CocCommand todolist.create<CR>
 nnoremap <leader>tl :CocList todolist<CR>
 nnoremap <leader>tu :CocCommand todolist.download<CR>:CocCommand todolist.upload<CR>
@@ -120,12 +117,10 @@ noremap <silent> <leader>gi :CocList gitignore<CR>
 " commands
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
 command! -nargs=0 Format :call CocAction('format')
-command! -nargs=? Fold :call     CocAction('fold', <f-args>)  " Add `:Fold` command to fold current buffer.
-command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organizeImport')  " Add `:OR` command for organize imports of the current buffer.
+command! -nargs=? Fold :call CocAction('fold', <f-args>)  " Add `:Fold` command to fold current buffer.
+command! -nargs=0 OR   :call CocAction('runCommand', 'editor.action.organizeImport')  " Add `:OR` command for organize imports of the current buffer.
 
 " coc-snippets
-let g:coc_snippet_next = '<c-j>'
-let g:coc_snippet_prev = '<c-k>'
 imap <C-l> <Plug>(coc-snippets-expand)
 vmap <C-j> <Plug>(coc-snippets-select)
 imap <C-j> <Plug>(coc-snippets-expand-jump)
@@ -156,9 +151,9 @@ omap ig <Plug>(coc-git-chunk-inner)
 xmap ig <Plug>(coc-git-chunk-inner)
 omap ag <Plug>(coc-git-chunk-outer)
 xmap ag <Plug>(coc-git-chunk-outer)
+
 " Apply AutoFix to problem on the current line.
 nmap <leader>qf	<Plug>(coc-fix-current)
-nmap <M-t> <Plug>(coc-terminal-toggle)
 nmap <Leader>bm <Plug>(coc-bookmark-toggle)
 nmap <Leader>bj <Plug>(coc-bookmark-next)
 nmap <Leader>bk <Plug>(coc-bookmark-prev)

@@ -51,9 +51,8 @@ Plug 'numirias/semshi', { 'do': ':UpdateRemotePlugins', 'for' :[ 'python', 'vim-
 Plug 'Vimjas/vim-python-pep8-indent', { 'for' :[ 'python', 'vim-plug' ] }
 Plug 'tweekmonster/braceless.vim', { 'for' :[ 'python', 'vim-plug' ] }
 
-" moonscript
+" language
 Plug 'leafo/moonscript-vim'
-
 Plug 'kchmck/vim-coffee-script'
 Plug 'slim-template/vim-slim'
 Plug 'Glench/Vim-Jinja2-Syntax'
