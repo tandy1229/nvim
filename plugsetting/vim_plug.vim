@@ -5,6 +5,7 @@ Plug 'tandy1229/nvim-deus'
 Plug 'tandy1229/eleline.vim'
 Plug 'ojroques/vim-scrollstatus'
 Plug 'kyazdani42/nvim-web-devicons'
+Plug 'norcalli/nvim-colorizer.lua'
 
 " show
 Plug 'mhinz/vim-startify'

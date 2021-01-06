@@ -40,7 +40,6 @@ let g:coc_global_extensions = [
 	\ 'coc-tsserver',
 	\ 'coc-prettier',
 	\ 'coc-sourcekit',
-	\ 'coc-highlight',
 	\ 'coc-solargraph',
 	\ 'coc-flutter-tools',
 	\ 'coc-rust-analyzer',
