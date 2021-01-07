@@ -383,3 +383,8 @@ command! -bang AutoSave call s:autosave(<bang>1)
 " >>> markdown clipboard
 " '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 autocmd FileType markdown nmap <buffer><silent> <leader>p :call mdip#MarkdownClipboardImage()<CR>
+
+" >>> any-jump
+" '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+let g:any_jump_window_width_ratio  = 0.8
+let g:any_jump_window_height_ratio = 0.9

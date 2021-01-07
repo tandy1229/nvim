@@ -138,7 +138,6 @@ Plug 'mg979/vim-visual-multi'                    " 多括号
 Plug 'gcmt/wildfire.vim'                         " 超级回车
 Plug 'junegunn/vim-peekaboo'                     " yank
 Plug 'tandy1229/antovim'                        " gs to switch
-" Plug 'RRethy/vim-illuminate'                   " 高亮相同单词
 Plug 'tpope/vim-surround'                        " 改括号
 Plug 'tpope/vim-commentary'                      " 注释插件
 Plug 'tpope/vim-abolish'
