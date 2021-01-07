@@ -255,6 +255,7 @@ noremap <silent> <LEADER>o za
 
 " set not hlsearch after '/'
 noremap <LEADER>n :nohlsearch<CR>
+noremap <silent> gcl :cclose<CR>
 
 " Press space twice to jump to the next '<++>' and edit it
 noremap <LEADER><LEADER> <Esc>/<++><CR>:nohlsearch<CR>c4l
