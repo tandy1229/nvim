@@ -215,13 +215,10 @@ fun! s:MakePair()
 	endif
 endfun
 
-
-" press f10 to show hlgroup
 fun! SynGroup()
   let l:s = synID(line('.'), col('.'), 1)
   echo synIDattr(l:s, 'name') . ' -> ' . synIDattr(synIDtrans(l:s), 'name')
 endfun
-map <F10> :call SynGroup()<CR>
 
 " >>> features
 " '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
@@ -229,7 +226,11 @@ map <F10> :call SynGroup()<CR>
 command! -nargs=0 CleanExtraSpaces :call CleanExtraSpaces()
 command! -nargs=0 CompileRun :call CompileRun()
 
+" Move the next character to the end of the line
 inoremap <c-u> <ESC>:call <SID>MakePair()<CR> 
+
+" press f10 to show hlgroup
+map <F10> :call SynGroup()<CR>
 
 " open init.vim anytime
 noremap <LEADER>rc :e ~/.config/nvim/plugsetting/plugins_config.vim<CR>
