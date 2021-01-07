@@ -151,11 +151,9 @@ noremap ` ~
 fun! CompileRun()
   silent! exec "update"
   if &filetype == 'c'
-    set splitbelow
     :sp
     :term cc % -o %< && time ./%<
   elseif &filetype == 'cpp'
-    set splitbelow
     :sp
     :res -5
     :term g++ -std=c++11 % -Wall -o %< && time ./%<
@@ -163,12 +161,10 @@ fun! CompileRun()
     exec "!javac %"
     exec "!time java %<"
   elseif &filetype == 'sh'
-    set splitbelow
     :sp
     :res -5
     :term time bash %
   elseif &filetype == 'python'
-    set splitbelow
     :sp
     :term python3 %
   elseif &filetype == 'html'
@@ -182,19 +178,15 @@ fun! CompileRun()
     exec "CocCommand flutter.run -d ".g:flutter_default_device." ".g:fltter_run_args
     silent! exec "CocCommand flutter.dev.openDevLog"
   elseif &filetype == 'perl'
-    set splitbelow
     :sp
     :term perl -w %
   elseif &filetype == 'javascript'
-    set splitbelow
     :sp
     :term export DEBUG="INFO,ERROR,WARNING"; node --trace-warnings .
   elseif &filetype == 'go'
-    set splitbelow
     :sp
     :term go run .
   elseif &filetype == 'php'
-    set splitbelow
     :sp
     :term php %
   endif
@@ -268,7 +260,7 @@ noremap <LEADER>n :nohlsearch<CR>
 noremap <LEADER><LEADER> <Esc>/<++><CR>:nohlsearch<CR>c4l
 
 " Opening a terminal window
-noremap <silent> <LEADER>/ :split<CR>:term<CR>
+noremap <silent> <LEADER>/ :sp<CR>:term<CR>
 
 " >>> autocmd
 " '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
