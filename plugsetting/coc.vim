@@ -75,7 +75,8 @@ nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gr <Plug>(coc-references)
 nmap <silent> <leader>rn <Plug>(coc-rename)
 nmap tt :CocCommand explorer<CR>
-nmap ts <Plug>(coc-translator-p)   " coc-translator
+" coc-translator
+nmap ts <Plug>(coc-translator-p)
 
 " original action
 xmap <leader>a <Plug>(coc-codeaction-selected)
