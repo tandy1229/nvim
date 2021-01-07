@@ -30,7 +30,6 @@ set foldlevel=99     " 相当于默认不折叠
 set indentexpr=      " 禁用vim缩进indent
 set scrolloff=5
 set shortmess+=c     " 减少错误信息
-set inccommand=split " Also shows partial off-screen results in a preview window.
 set list             " 显示不可见字符
 set listchars=tab:\|\ ,trail:▫
 set lazyredraw
@@ -45,8 +44,14 @@ set viewoptions=cursor,folds,slash,unix " viminfo 记录的内容
 set completeopt=longest,noinsert,menuone,noselect,preview
 " set clipboard=unnamed " in macos it's unneeded
 
+" if you want to use english
 let $LANG='en'
 set langmenu=en
+
+" nvim feature
+if has('nvim')
+  set inccommand=split " Also shows partial off-screen results in a preview window.
+endif
 
 " 某种备份
 silent !mkdir -p ~/.config/nvim/tmp/backup
@@ -263,7 +268,7 @@ noremap <LEADER>n :nohlsearch<CR>
 noremap <LEADER><LEADER> <Esc>/<++><CR>:nohlsearch<CR>c4l
 
 " Opening a terminal window
-noremap <LEADER>/ :set splitbelow<CR>:split<CR>:res +10<CR>:term<CR>
+noremap <silent> <LEADER>/ :split<CR>:term<CR>
 
 " >>> autocmd
 " '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
