@@ -98,7 +98,7 @@
 	"diagnostic.virtualTextLines": 3,
 	"diagnostic.virtualTextLineSeparator": " \\ ",
 
-	// coc codelens
+	/* coc codelens */
 	"codeLens.enable": true,
 
 	// coc list
@@ -115,6 +115,7 @@
 
 	// coc git settings
 	"git.enableGutters": true,
+	"git.signPriority": 9999,
 	/* "git.addGBlameToVirtualText": true, */
 	/* "git.virtualTextPrefix": "       ", */
 	/* "git.virtualTextPrefix": "        ", */
