@@ -141,32 +141,9 @@ vnoremap Y "+y
 noremap s <nop>
 noremap ` ~
 
-" Space to Tab
-nnoremap <LEADER>st :%s/  /\t/g
-vnoremap <LEADER>st :s/  /\t/g
-nnoremap <LEADER>tt :%s/\t/  /g
-
-" Spelling Check with <space>sc
-noremap <LEADER>sc :set spell!<CR>
-
-" find and replace
-noremap \s :%s//g<left><left>
-
-" Folding
-noremap <silent> <LEADER>o za
-
-" set not hlsearch after '/'
-noremap <LEADER>n :nohlsearch<CR>
-
-" Press space twice to jump to the next '<++>' and edit it
-noremap <LEADER><LEADER> <Esc>/<++><CR>:nohlsearch<CR>c4l
-
-" Opening a terminal window
-noremap <LEADER>/ :set splitbelow<CR>:split<CR>:res +10<CR>:term<CR>
-
-" Compile function
-noremap <silent> \r :call CompileRun()<CR>
-func! CompileRun()
+" >>> functions
+" '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+fun! CompileRun()
   silent! exec "update"
   if &filetype == 'c'
     set splitbelow
@@ -216,20 +193,7 @@ func! CompileRun()
     :sp
     :term php %
   endif
-endfunc
-
-" >>> autocmd
-" '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-" autocmd BufRead,BufNewFile *.md setlocal spell  " set spell in markdown
-autocmd InsertLeave,WinEnter * set cursorline   " perform beautifully
-autocmd InsertEnter,WinLeave * set nocursorline
-autocmd BufWritePost $MYVIMRC source $MYVIMRC
-autocmd BufEnter * silent! lcd %:p:h            " Auto change directory to current dir
-
-" Automatically deletes all trailing whitespace and newlines at end of file on save.
-" >>>>>>>>> now I use a function to do this. Due to some file actually needs whitespace in the end of the line.
-" autocmd BufWritePre * %s/\s\+$//e
-" autocmd BufWritePre * %s/\n\+\%$//e
+endfun
 
 " del extra whitespace
 fun! CleanExtraSpaces()
@@ -241,22 +205,70 @@ fun! CleanExtraSpaces()
     call setreg('/', old_query)
 endfun
 
-command! -nargs=0 CleanExtraSpaces :call CleanExtraSpaces()
+fun! s:MakePair()
+	let line = getline('.')
+	let len= strlen(line)
+	if line[len - 1] == ";"
+		normal! lx$P
+	else
+		normal! lx$p
+	endif
+endfun
 
-if has("autocmd")
-    autocmd BufWritePre *.txt,*.js,*.py,*.wiki,*.sh,*.coffee :call CleanExtraSpaces()
-endif
 
 " press f10 to show hlgroup
-function! SynGroup()
+fun! SynGroup()
   let l:s = synID(line('.'), col('.'), 1)
   echo synIDattr(l:s, 'name') . ' -> ' . synIDattr(synIDtrans(l:s), 'name')
 endfun
 map <F10> :call SynGroup()<CR>
 
+" >>> features
+" '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+" commands
+command! -nargs=0 CleanExtraSpaces :call CleanExtraSpaces()
+command! -nargs=0 CompileRun :call CompileRun()
+
+inoremap <c-u> <ESC>:call <SID>MakePair()<CR> 
+
 " open init.vim anytime
 noremap <LEADER>rc :e ~/.config/nvim/plugsetting/plugins_config.vim<CR>
+
+" Compile function
+noremap <silent> \r :call CompileRun()<CR>
 
 " in case you forgot to sudo
 cnoremap w!! %!sudo tee > /dev/null %
 cnoremap <expr> %% getcmdtype( ) == ':' ? expand('%:h').'/' : '%%'
+
+" Space to Tab
+nnoremap <LEADER>st :%s/  /\t/g
+vnoremap <LEADER>st :s/  /\t/g
+nnoremap <LEADER>tt :%s/\t/  /g
+
+" Spelling Check with <space>sc
+noremap <LEADER>sc :set spell!<CR>
+
+" find and replace
+noremap \s :%s//g<left><left>
+
+" Folding
+noremap <silent> <LEADER>o za
+
+" set not hlsearch after '/'
+noremap <LEADER>n :nohlsearch<CR>
+
+" Press space twice to jump to the next '<++>' and edit it
+noremap <LEADER><LEADER> <Esc>/<++><CR>:nohlsearch<CR>c4l
+
+" Opening a terminal window
+noremap <LEADER>/ :set splitbelow<CR>:split<CR>:res +10<CR>:term<CR>
+
+" >>> autocmd
+" '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+autocmd BufRead,BufNewFile *.md setlocal spell  " set spell in markdown
+autocmd InsertLeave,WinEnter * set cursorline   " perform beautifully
+autocmd InsertEnter,WinLeave * set nocursorline
+autocmd BufWritePost $MYVIMRC source $MYVIMRC
+autocmd BufEnter * silent! lcd %:p:h            " Auto change directory to current dir
+autocmd BufWritePre *.txt,*.js,*.py,*.wiki,*.sh,*.coffee :call CleanExtraSpaces()
