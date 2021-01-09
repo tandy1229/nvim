@@ -265,7 +265,7 @@ noremap <silent> <LEADER>/ :sp<CR>:term<CR>
 
 " >>> autocmd
 " '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-autocmd BufRead,BufNewFile *.md setlocal spell  " set spell in markdown
+" autocmd BufRead,BufNewFile *.md setlocal spell  " set spell in markdown
 autocmd InsertLeave,WinEnter * set cursorline   " perform beautifully
 autocmd InsertEnter,WinLeave * set nocursorline
 autocmd BufWritePost $MYVIMRC source $MYVIMRC
