@@ -188,6 +188,7 @@ Plug 'nightsense/cosmic_latte'
 Plug 'Iron-E/nvim-highlite'
 Plug 'ghifarit53/tokyonight-vim'
 Plug 'ayu-theme/ayu-vim'
+Plug 'jeffkreeftmeijer/vim-numbertoggle'
 Plug 'matze/vim-move'
 
 " debugger
