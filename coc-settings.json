@@ -129,13 +129,7 @@
 	"git.changeRemovedSign.hlGroup": "GitGutterChangeDelete",
 
 	// coc-yank
-	"yank.priority": 10,
-	"yaml.format.enable": true,
-	"yank.enableCompletion": false,
-	"yank.highlight.enable": false, // use neovim's built-in instead
 	"yank.highlight.duration": 200,
-	"yank.limit": 2,
-	"yank.list.maxsize": 100,
 
 	// coc explorer
 	"explorer.width": 28,
@@ -150,6 +144,9 @@
 
 	// eslint
 	"eslint.autoFixOnSave": true,
+
+	// yank
+	"yank.priority": 10,
 
 	// typescript
 	"typescript.suggestionActions.enabled": true,
