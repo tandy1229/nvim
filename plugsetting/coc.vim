@@ -128,9 +128,10 @@ vmap <C-j> <Plug>(coc-snippets-select)
 imap <C-j> <Plug>(coc-snippets-expand-jump)
 
 " coc various setting
-let g:coc_status_warning_sign = '❗'
-" let g:coc_status_warning_sign = '⭕'
+" let g:coc_status_warning_sign = '❗'
 " let g:coc_status_error_sign = '✖'
+let g:coc_status_warning_sign = 'W:'
+let g:coc_status_error_sign = 'E:'
 let g:coc_disable_uncaught_error=1  " disable coc nodejs error
 let g:python_host_prog = '/usr/bin/python'
 let g:python3_host_prog = '/usr/local/bin/python3'
