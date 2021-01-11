@@ -69,6 +69,7 @@ let g:vista#renderer#icons = {
 \  }
 let g:scrollstatus_size = 15
 autocmd BufRead,BufNewFile *.json let g:vista_default_executive = 'coc'
+autocmd BufRead,BufNewFile *.py let g:vista_default_executive = 'coc'
 
 " >>> vim-go
 " '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
