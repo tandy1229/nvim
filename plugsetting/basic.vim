@@ -186,9 +186,9 @@ fun! CompileRun()
   elseif &filetype == 'go'
     :sp
     :term go run .
-  elseif &filetype == 'php'
+  elseif &filetype == 'lua'
     :sp
-    :term php %
+    :term lua %
   endif
 endfun
 
