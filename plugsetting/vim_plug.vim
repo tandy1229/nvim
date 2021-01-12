@@ -150,6 +150,9 @@ Plug 'dhruvasagar/vim-zoom'
 Plug 'skywind3000/vim-cppman'
 " Plug 'vimwiki/vimwiki'
 Plug 'chrisbra/NrrwRgn'
+Plug 'jeffkreeftmeijer/vim-numbertoggle'
+Plug 'matze/vim-move'
+Plug 'wellle/tmux-complete.vim'
 
 " focus mode
 Plug 'junegunn/goyo.vim'
@@ -188,8 +191,6 @@ Plug 'nightsense/cosmic_latte'
 Plug 'Iron-E/nvim-highlite'
 Plug 'ghifarit53/tokyonight-vim'
 Plug 'ayu-theme/ayu-vim'
-Plug 'jeffkreeftmeijer/vim-numbertoggle'
-Plug 'matze/vim-move'
 
 " debugger
 " Plug 'puremourning/vimspector'
