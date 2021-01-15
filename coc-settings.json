@@ -256,37 +256,6 @@
 					]
 				}
 			}
-		},
-		"dls": {
-			"command": "diagnostic-languageserver",
-			"args": ["--stdio"],
-			"filetypes": ["tex"],
-			"initializationOptions": {
-				"linters": {
-					"textidote": {
-						"command": "textidote",
-						"debounce": 500,
-						"args": ["--type", "tex", "--check", "en", "--output", "singleline", "--no-color"],
-						"offsetLine": 0,
-						"offsetColumn": 0,
-						"sourceName": "textidote",
-						"formatLines": 1,
-						"formatPattern": [
-							"\\(L(\\d+)C(\\d+)-L(\\d+)C(\\d+)\\):(.+)\".+\"$",
-							{
-								"line": 1,
-								"column": 2,
-								"endLine": 3,
-								"endColumn": 4,
-								"message": 5
-							}
-						]
-					}
-				},
-				"filetypes": {
-					"tex": "textidote"
-				}
-			}
 		}
 	},
 
@@ -459,6 +428,5 @@
 		"yitaimin",
 		"yuezk",
 		"yuttie"
-	],
-	"clangd.path": "/Users/yitaimin/.config/coc/extensions/coc-clangd-data/install/11.0.0/clangd_11.0.0/bin/clangd"
+	]
 }

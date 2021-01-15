@@ -28,6 +28,7 @@ let g:coc_global_extensions = [
   \ 'coc-yaml',
   \ 'coc-emmet',
   \ 'coc-vetur',
+  \ 'coc-clangd',
   \ 'coc-cmake',
   \ 'coc-vimlsp',
   \ 'coc-vimtex',
