@@ -9,6 +9,7 @@ let g:coc_global_extensions = [
   \ 'coc-pairs',
   \ 'coc-tasks',
   \ 'coc-syntax',
+  \ 'coc-ecdict',
   \ 'coc-snippets',
   \ 'coc-todolist',
   \ 'coc-leetcode',
@@ -67,6 +68,8 @@ function! Show_documentation()
   endif
 endfunction
 nnoremap <LEADER>h :call Show_documentation()<CR>
+
+nnoremap <silent> <leader>k :call CocActionAsync('doHover')<CR>
 
 " Useful commands
 nnoremap <silent> <space>y :<C-u>CocList -A --normal yank<cr>
@@ -134,9 +137,6 @@ imap <C-j> <Plug>(coc-snippets-expand-jump)
 let g:coc_status_warning_sign = 'W:'
 let g:coc_status_error_sign = 'E:'
 let g:coc_disable_uncaught_error=1  " disable coc nodejs error
-let g:python_host_prog = '/usr/bin/python'
-let g:python3_host_prog = '/usr/local/bin/python3'
-let g:ruby_host_prog = exepath('neovim-ruby-host')
 
 " Text Objects
 xmap if <Plug>(coc-funcobj-i)
