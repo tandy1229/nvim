@@ -134,6 +134,9 @@ nnoremap > >>
 noremap - N
 noremap = n
 
+noremap j gj
+noremap k gk
+
 " select all
 nnoremap <Leader>sa ggVG
 
